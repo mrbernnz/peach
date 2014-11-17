@@ -16,6 +16,7 @@ ___
 * <sgottfried@generalassemb.ly>
 
 ###Crawford Forbes
-* crawford.forbes@generalassemb.ly 
+* <crawford.forbes@generalassemb.ly>
+
 ###Olivia Grosvenor - Course Producer
 * <oliviag@generalassemb.ly>
