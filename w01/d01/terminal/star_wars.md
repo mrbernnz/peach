@@ -1,6 +1,6 @@
 ## Star Wars, the Command Line, and The Battle for the Fate of the Universe
 
-Working in the command line is a key skill to develop as a programmer. It's a big break from what you're used to, and practice makes (eventually) perfect. Let's explore the Star Wars narrative using the command line, and ONLY the command line.
+Working in the command line is a key skill to develop as a programmer. It's a big break from what you're used to, and practice makes (eventually) perfect. Let's explore the Star Wars narrative using the command line, and ONLY the command line. When you are finished with these exercises, create a repo and push up your work.
 
 ####"A New Hope"
 ######Act I
