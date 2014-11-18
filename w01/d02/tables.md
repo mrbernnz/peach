@@ -22,4 +22,4 @@ The IMDB column is the link to the movie page on [IMDB](http://www.imdb.com).
 
 The actors can just be 3 actors' names seperated by commas (i.e. Will Ferell, Paul Rudd, Steve Carell).
 
-Save this in a file called movies.html and push it to the w01/d02 folder on your Github repo.
+Save this in a file called movies.html and push it to it's own Github repo.
