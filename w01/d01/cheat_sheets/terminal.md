@@ -2,7 +2,7 @@
 
 ### Navigation
 - ```pwd``` print working directory (where am I?)
-- ```ls``` list files in current directory (what is here?)
+- ```ls``` list files in current directory (what is here?). Add -a to see hidden files.
 - ```cd``` go to home directory.
 - ```cd ..``` goes up a level in the directory hierarchy.
 - ```cd ../..``` go up two directories
