@@ -14,7 +14,7 @@ Write a javascript application that logs "I'm fine, how are you?" 5 times.
 #### Exercise: FizzBuzz in a loop
 Write a javascript application that logs all numbers from 1 - 100. If a number is divisible by 3 log "Fizz" instead of the number. If a number is divisible by 5 log "Buzz" instead of the number. If a number is divisible by 3 and 5 log "FizzBuzz" instead of the number.
 
-### Exercise: Print the Vowels
+#### Exercise: Print the Vowels
 
 Write a javascript application that takes a string as an argument and logs every vowel in the string.
 
