@@ -48,7 +48,7 @@ Canvas Boilerplate
 <html>
 <body>
   <canvas id="the_canvas" width="400" height="400"></canvas>
-  <script type="text/javascript">
+  <script>
     var canvas = document.getElementById('the_canvas');
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "red";
