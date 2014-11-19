@@ -1,4 +1,4 @@
-Conditionals
+#### Conditionals
 ```
 if (condition) {
   //do something
@@ -9,22 +9,21 @@ if (condition) {
 }
 ```
 
-
-While loop
+#### While loop
 ```
 while ( condition ) {
   //do something
 }
 ```
 
-String concatenation
+#### String concatenation
 ```
 var first = "Doogie";
 var last = "Howser";
 var full = first + " " + last;
 ```
 
-charAt
+#### charAt
 ```
 var word = "heya";
 
@@ -35,14 +34,13 @@ var letterh = word.charAt(0);
 var lettery = word.charAt(2);
 ```
 
-Random
+#### Random
 
 ```
 //number between 1 and 10
 var random = Math.floor(Math.random()*10) + 1;
 ```
-
-Canvas Boilerplate
+#### Canvas Boilerplate
 
 ```html
 <html>
