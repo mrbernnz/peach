@@ -2,35 +2,35 @@
 *You will be split up into these groups during lessons*
 
 ## Sean
-- Marc Derisse
-- Jerome Hardaway
-- Tyler Nodell
-- Alexander Deschamps
+- David Daniel
 - Genevieve Gorta
 - Joel Konjin
 - Noel Sagaille
 - Trey Jackson
-- Shoshanah Weissinger
+- Zohra Asrar
+- Giruad Julemis
 - Rachel Hazes
+- Jason Ng
+- Andrew Brice
 
 ## Sam
-- Adam Cooper
-- Gabriel Aldana
-- Joe Keohan
-- Ricki Steiner
-- Sean Coyle
-- Zohra Asrar
-- David Daniel
-- Giruad Julemis
-- Katrina Gardner
-
-## Crawford
-- Andrew Brice
-- James O'Toole
-- Kyle Hogan
-- Tiffany Poss
-- Will Wilcox
-- Ciara Foran
-- Jason Ng
+- Marc Derisse
+- Jerome Hardaway
+- Tyler Nodell
+- Alexander Deschamps
 - Lauren Podolnick
 - Alvin Liang
+- Kyle Hogan
+- Tiffany Poss
+- Joe Keohan
+
+## Crawford
+- Shoshanah Weissinger
+- James O'Toole
+- Ricki Steiner
+- Sean Coyle
+- Will Wilcox
+- Ciara Foran
+- Adam Cooper
+- Gabriel Aldana
+- Katrina Gardner
