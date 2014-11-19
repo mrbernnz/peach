@@ -60,7 +60,7 @@ Change the javascript in the boiler plate so when the page is refreshed the colo
 
 ##Even further bonuses!
 #### Bonus: Pyramid
-[pyramid](https://github.com/ga-students/zelda_instructors/blob/master/exercise_bank/basic_ruby/pyramid/pyramid.md)
+[pyramid](pyramid.md)
 
 #### Bonus: Palindrome
 Write a javascript application that takes a string as an argument and returns "That's a palindrome!" if the string is a palindrome.
