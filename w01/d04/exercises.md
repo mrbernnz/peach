@@ -3,6 +3,16 @@
   2. Further your understanding of loops with for loops.
   3. Continuing to use Canvas
 
+#### Exercise: Counting
+  1. Create an array of the numbers 1 - 100
+  2. return a random index from the array
+  
+#### Exercise: Sports
+  Reference site: - [MDN - arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+  1. Create an array of your 5 favorite sporting teams. (Don't know sports? Improvise!)
+  2. Using the reference above, experiment with pop, push, reverse, shift, and unshift.  These methods will alter your array, so when using these methods you should create a new array.  For example: newArray = oldArray.reverse().
+  3. Also using the reference above, experiment with contains, join, indexOf, lastIndexOf, and toString. These methods don't change the array, however if you want to continue using your new array you will still need to create a new array.
+
 #### Exercise: Yell at the Ninja Turtles
   1. Create an array with the members of the ninja turtles (Donatello, Leonardo, Raphael, Michaelangelo)
   2. Call to upperCase() on each of them and print out the result.
