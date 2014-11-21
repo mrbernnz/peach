@@ -17,6 +17,48 @@ var b = //something;
 var return_value = myfunc(a, b);
 ```
 
+#### Function Scope
+
+```
+var a = 5;
+var sum = function(a,b) {
+  // here a is a parameter
+  return a+b;
+};
+
+console.log(3, 4); // 7
+
+// outside the function, a is 5 again
+console.log(a); // 5
+```
+
+```
+var a = 5;
+var multipleOfN = function(x, y) {
+  // here we define a new variable using var
+  var a = x * y;
+  return a;
+};
+
+console.log(multipleOfN(3,7)); // 21
+
+// Outside of the function, a is 5 again
+console.log(a); // 5
+```
+
+```
+var a = 5;
+var multiplyA = function(n) {
+  // Here we are not using var,
+  // so we are changing the outside a variable
+
+  a = a * n;
+  return a;
+};
+
+console.log(multiplyA(3)); // 15
+console.log(a); // 15
+```
 #### Timers
 
 **Call a function 2 seconds from now**
