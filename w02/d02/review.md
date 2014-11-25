@@ -34,6 +34,21 @@
     - takes two hashes
     - returns the combination of the two hashes
 
+    ```javascript
+    var blue = {
+      "Heisenberg": "Hello, anyone home?",
+      "Cap'n Cook": "Science, friend!",
+      "James McGill": "Ring, ring!"
+    }
+    var ciudad = {
+      "Vuente": "Salud!",
+      "Gus": "One taste and you'll know.",
+      "Tio": "Family is all."
+    }
+    var happyFamily = mergeHashes(blue, ciudad);
+    // happyFamily now equals { Heisenberg: 'Hello, anyone home?', Vuente: 'Salud!', 'Cap\'n Cook': 'Science, friend!', Gus: 'One taste and you\'ll know.', 'James McGill': 'Ring, ring!', Tio: 'Family is all.' }
+    ```
+
   5. constructor ```Sheep```
     - takes no parameters
     - returns an object with the following properties:
@@ -42,21 +57,6 @@
       3. a ```genus``` of "Ovis"
       4. a ```phylum``` of "Chordata"
       5. a ```kingdom``` of "Animalia"
-
-        ```javascript
-        var blue = {
-          "Heisenberg": "Hello, anyone home?",
-          "Cap'n Cook": "Science, friend!",
-          "James McGill": "Ring, ring!"
-        }
-        var ciudad = {
-          "Vuente": "Salud!",
-          "Gus": "One taste and you'll know.",
-          "Tio": "Family is all."
-        }
-        var happyFamily = mergeHashes(blue, ciudad);
-        // happyFamily now equals { Heisenberg: 'Hello, anyone home?', Vuente: 'Salud!', 'Cap\'n Cook': 'Science, friend!', Gus: 'One taste and you\'ll know.', 'James McGill': 'Ring, ring!', Tio: 'Family is all.' }
-        ```
 
   2. constructor ```BaseballPlayer```
     - takes a baseball player name and team
