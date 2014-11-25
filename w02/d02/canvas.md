@@ -23,7 +23,7 @@ var square2 = new Square(300);
 ```
 
 #### User Input
-[Example using user input](https://github.com/ga-students/peach/blob/master/w01/d05/animation.html)
+[Example using user input](animation.html)
 ```js
 var handleKeyDown = function(evt) {
   if (evt.keyCode === 37) {
