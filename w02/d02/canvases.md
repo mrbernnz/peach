@@ -1,0 +1,13 @@
+
+- Adam ([Github](https://github.com/amcooper))
+- [Alexander](https://github.com/aadeschamps/rectangle_game/blob/master/current_final_game.html)
+- [Andrew](https://github.com/bricea27/got_canvas/blob/master/got.html)
+- [Ciara](https://github.com/cfo613/canvas/blob/master/animation3.html)
+- [Alvin](https://github.com/Liangalvin/laser_canvas/blob/master/cvsproj.html)
+- Rachel ([Github](https://github.com/r-a-c-h-e-l))
+- David ([Github](https://github.com/DavideDaniel))
+- Gabriel ([Github](https://github.com/gabrielaldana87))
+- Genevieve ([Github](https://github.com/ggorta/canvas))
+- Giraud ([Github](https://github.com/giraudjulemis?tab=repositories))
+- James ([Github](https://github.com/jtotoole?tab=repositories))
+- Jerome ([Github](https://github.com/JeromeHardaway?tab=repositories))

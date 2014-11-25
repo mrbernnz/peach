@@ -1,0 +1,58 @@
+<html>
+<body>
+<canvas id="the_canvas" width="400" height="400"></canvas>
+<script>
+var canvas = document.getElementById('the_canvas');
+var ctx = canvas.getContext('2d');
+
+var Square = function(x) {
+  this.x = x;
+  this.y = 100;
+  this.xspeed = Math.random()*1;
+  this.squaresize = 100;
+  this.dropspeed = 0;
+  this.move = function() {
+    this.x += this.xspeed;
+    if (this.x > canvas.width) {
+      this.xspeed = -this.xspeed;
+    }
+
+    this.y += this.dropspeed;
+    this.dropspeed += 1;
+
+    //if we've reached the bottom
+    if (this.y > canvas.width-this.squaresize) {
+      //then make it go in the opposite direction
+      this.dropspeed = -this.dropspeed;
+    }
+  }
+
+  this.draw = function() {
+    //draw square in new position
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x, this.y, 100,100)
+  }
+}
+
+var square1 = new Square(100);
+var square2 = new Square(300);
+
+var draw = function() {
+  //clear background
+  ctx.fillStyle = "blue";
+  ctx.fillRect(0,0, canvas.width, canvas.height);
+
+  //make squares move to the right
+  square1.move();
+  square2.move();
+
+  //draw squares
+  square1.draw();
+  square2.draw();
+}
+
+setInterval(draw, 20);
+
+</script>
+</body>
+</html>

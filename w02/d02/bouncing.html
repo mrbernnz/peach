@@ -1,0 +1,44 @@
+<html>
+<body>
+<canvas id="the_canvas" width="400" height="400"></canvas>
+<script>
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+  var x = 0;
+  var y = 100;
+  var squaresize = 100;
+  var dropspeed = 0;
+
+  var draw = function() {
+    y += dropspeed;
+    dropspeed += 1;
+
+    x+=1;
+
+    //if we've reached the bottom
+    if (y > canvas.width-squaresize) {
+      //then make it go in the opposite direction
+      dropspeed = -dropspeed;
+    }
+
+    //clear background
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+
+    //draw square in new position
+    ctx.fillStyle = "red";
+    ctx.fillRect(x,y, 100,100)
+
+    //make sure it doesn't go off the screen though
+    if (x > canvas.width) {
+      x %= canvas.width;
+      x = 0;
+    }
+  }
+
+  setInterval(draw, 20);
+
+</script>
+</body>
+</html>
