@@ -7,7 +7,7 @@
 4. While in your `github_pages` directory, clone your new repository:  
 `git clone https://github.com/username/username.github.io`  
 5. Copy your canvas files (or any other html work you have done) into the username.github.io directory that was created
-**Make sure that your html file is named `index.html`**.
+ - **Make sure that your html file is named `index.html`**.
 
 6. `cd` into the username.github.io directory and run `git add .` and  `git commit -m "Initial Github Page commit."`
 
