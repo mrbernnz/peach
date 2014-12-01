@@ -1,4 +1,3 @@
-Hello, Sam's group!
 ###Objectives:  
 1. Use anonymous functions as parameters
 2. Understand git cloning and pulling
