@@ -29,3 +29,4 @@
   - Giraud
   - Kyle
   - Trey
+  - James
