@@ -18,7 +18,7 @@ var elements = document.querySelectorAll(css_selector);
 #### grabbing the text of a textbox
 ```js
 var textbox = document.querySelector("input#mytextbox");
-var text.value
+var textbox.value
 ```
 
 #### grabbing whether a checkbox is checked
