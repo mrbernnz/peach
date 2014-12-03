@@ -30,3 +30,11 @@ parentElement.appendChild(elementToAppend)
 ```js
 parentElement.removeChild(elementToRemove)
 ```
+
+#### forEach
+```js
+var array = [1,2,3];
+array.forEach(function(elem) {
+  // do something for each element
+});
+```
