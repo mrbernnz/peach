@@ -22,7 +22,7 @@ Also, add a "Cheese" item to the list.
 ##Exercise: The Siiiiimpsons (part 1: Make the family)
 Create an HTML page with an unordered list.
 
-Use JavaScript to **loop** through the following array and add each item to that list:  
+In a script tag, use JavaScript to **loop** through the following array and add each item to that list:  
 
 ```
 ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Abe"]
@@ -30,16 +30,16 @@ Use JavaScript to **loop** through the following array and add each item to that
 
 ##Exercise: The Siiiiimpsons (part 2: Add a Simpsons Character)
 Add a button to your page (using HTML).
-
+The rest of this exercise should be in a script tag.
 When it is clicked, it will add a random Simpsons character from the following array:
 
 ```
 ["Apu", "Moe", "Barney", "Otto", "Nelson"]
 ```
 
-**The Booooonus:** Make a copy of this file.  In the copy, modify the button to prompt the user for the name of a character and then add the result to the page.  You will not need to use the random array for this.
+**The Booooonus:** Make a copy of this file.  In the copy, modify the button to prompt the user for the name of a character and then add the result to the page.  You will not need to use the random array for this. This, too, should be done in a script tag.
 
 ## Exercise: Leaving The Siiiiimpsons list (I guess this is part 3, isn't it?)
-Make another button to remove a character.
+Make another button to remove a character. This can be written in HTML if you'd like.
 
-Clicking on this button will remove the last element in the list.
+Clicking on this button will remove the last element in the list. This should be written in a script tag.
