@@ -28,5 +28,5 @@ parentElement.appendChild(elementToAppend)
 
 #### removeChild
 ```js
-parentElement.removeChild(elementToAppend)
+parentElement.removeChild(elementToRemove)
 ```
