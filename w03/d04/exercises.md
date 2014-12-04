@@ -18,7 +18,7 @@ Write a function called doublePrintRet that takes an array parameter and uses fo
 For example: `doublePrint([1,2,3])` would return `[2,4,6]`.
 
 ####Exercise: Manipulation of the DOM kind
-Create an HTML page with a `<p>` tag and a text input.  Add an event listener to the text input box that listens for the `keydown` event and updates the `<p>` to whatever is in the text input box.
+Create an HTML page with a `<p>` tag and a text input.  Add an event listener to the text input box that listens for the `keyup` event and updates the `<p>` to whatever is in the text input box.
 
 ####Todo: Make an exercise
 Make a todo list in HTML.  It will contain one text input box, 1 button, and 1 unordered list.
