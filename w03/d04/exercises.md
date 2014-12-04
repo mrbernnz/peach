@@ -48,3 +48,6 @@ Have the radio buttons call the function on click.
 On your todo list from earlier, add an event listener to each list item that will delete the item if it is dragged.
 
 **Hint**: Listen for the `dragstart` event. Also, set the `draggable` attribute on your list item element to `"true"`
+
+####Exercise: Don't take my word for it
+[learnlayout.com](http://www.learnlayout.com/) is a great site that walks through how to position your DOM elements with CSS. Please read the entire site. There's a lot of information in there, but there's no need to have this stuff memorized; the internet isn't going anywhere (yet). The most important parts are probably the sections on display, margin, width, and positioning. 
