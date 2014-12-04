@@ -6,7 +6,7 @@ For example: `doublePrint(3)` would print 6.
 ####Exercise double print arrays
 Write another function called `doublePrintArrays` that takes an array parameter and uses forEach to print double the value for each element in the array.
 
-For example: `doublePrint([1,2,3])` would print:  
+For example: `doublePrintArrays([1,2,3])` would print:  
 2  
 4  
 6  
