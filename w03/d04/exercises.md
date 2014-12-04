@@ -20,6 +20,8 @@ For example: `doublePrint([1,2,3])` would return `[2,4,6]`.
 ####Exercise: Manipulation of the DOM kind
 Create an HTML page with a `<p>` tag and a text input.  Add an event listener to the text input box that listens for the `keydown` event and updates the `<p>` to whatever is in the text input box.
 
+In other words, while the user is typing into the textbox the **same** text shows up in the p tag.
+
 ####Todo: Make an exercise
 Make a todo list in HTML.  It will contain one text input box, 1 button, and 1 unordered list.
 Add an event handler for the button that will add whatever is in the text input box to the unordered list.
