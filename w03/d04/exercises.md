@@ -15,7 +15,9 @@ For example: `doublePrintArrays([1,2,3])` would print:
 
 Write a function called doublePrintRet that takes an array parameter and uses forEach to add double each element to a new array.  Return that new array from the function.
 
-For example: `doublePrint([1,2,3])` would return `[2,4,6]`.
+For example: `doublePrintRet([1,2,3])` would return `[2,4,6]`.
+
+**Hint**: this should not use the `doublePrint` function created previously.
 
 ####Exercise: Manipulation of the DOM kind
 Create an HTML page with a `<p>` tag and a text input.  Add an event listener to the text input box that listens for the `keyup` event and updates the `<p>` to whatever is in the text input box.
