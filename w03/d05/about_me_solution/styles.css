@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  padding: 5px;
+  width: 125px;
+  margin: 20px;
+  border-bottom: black 2px solid;
+}
+
+header {
+  padding: 20px;
+  height: 50px;
+  border-bottom: white 1px solid;
+  border-radius: 50px;
+}
+
+header h1 {
+  margin: auto;
+  text-align: center;
+}
+
+#main {
+  padding-top: 20px;
+  height: 100px;
+  position: relative;
+}
+
+#left {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 10px;
+  width: 48%;
+}
+
+#right {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+  width: 48%;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center
+}
