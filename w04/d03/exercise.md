@@ -34,12 +34,12 @@ We don't yet know how to use npm libraries in browser-side javascript, but we wi
 - change your solution to part 2 so that you add the li to the **top** of the list
 - **Hints**:
 - `element.firstChild`
-- called like `ul.firstChild()`
-- [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.firstChild)
-- will return the first child of the ul element
+  - called like `ul.firstChild()`
+  - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.firstChild)
+  - will return the first child of the ul element
 - `element.insertBefore`
-- called like `ul.insertBefore(newElement, elementToInsertBefore)`
-- [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.insertBefore)
+  - called like `ul.insertBefore(newElement, elementToInsertBefore)`
+  - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.insertBefore)
 
 
 
