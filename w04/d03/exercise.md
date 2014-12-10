@@ -93,6 +93,13 @@ That's it! Test it out by connecting to the server with multiple `wscat`'s (each
 
 ## Chatroom Enhancement ideas:
 
-#### Replace :) with smiley face emoticons automatically
+#### 1-line ASCII!!
+
+- Whenever the user types in the message `(table flip)` (yes paranthesis are included)
+  - send the message `(╯°□°）╯︵ ┻━┻` to the server.
+  - in other words. Have the client recognize this text as a special command, and completely replace the message sent to the server. It's like an emoticon in Hipchat.
+  - **Bonus**: implement other 1 line ascii art!!!
+  - [1-line-ascii art link](http://1lineart.kulaone.com/)
+
 #### Bonus: render img links in the browser chat client
 #### Bonus: render gifs in the browser chat client
