@@ -25,21 +25,21 @@ We don't yet know how to use npm libraries in browser-side javascript, but we wi
 
 #### First Client in the browser
 - Part 1:
-- `console.log` incoming messages
-- also `document.write` the messages
+  - `console.log` incoming messages
+  - also `document.write` the messages
 - Part 2:
-- create an `ul` element
-- add an `li` to this `ul` with the `innerHtml` set to the message
+  - create an `ul` element
+  - add an `li` to this `ul` with the `innerHtml` set to the message
 - Part 3: **Bonus**
-- change your solution to part 2 so that you add the li to the **top** of the list
-- **Hints**:
-- `element.firstChild`
-  - called like `ul.firstChild()`
-  - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.firstChild)
-  - will return the first child of the ul element
-- `element.insertBefore`
-  - called like `ul.insertBefore(newElement, elementToInsertBefore)`
-  - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.insertBefore)
+  - change your solution to part 2 so that you add the li to the **top** of the list
+  - **Hints**:
+  - `element.firstChild`
+    - called like `ul.firstChild()`
+    - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.firstChild)
+    - will return the first child of the ul element
+  - `element.insertBefore`
+    - called like `ul.insertBefore(newElement, elementToInsertBefore)`
+    - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.insertBefore)
 
 
 
