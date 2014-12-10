@@ -102,4 +102,9 @@ That's it! Test it out by connecting to the server with multiple `wscat`'s (each
   - [1-line-ascii art link](http://1lineart.kulaone.com/)
 
 #### Bonus: render img links in the browser chat client
+- whenever the user (or somebody else you are chatting with) posts a link to an image, create an `<img>` tag and render it directly into the browser chat window (just like in hipchat)
+- you can tell whether a link is an image because the very last characters of the url (link address) are `png` or `bmp` or `jpg` . E.g. http://animalia-life.com/data_images/wallpaper/cat-wallpaper/cat-wallpaper-01.jpg
+
 #### Bonus: render gifs in the browser chat client
+- same exercise as for img links but for rendering gifs
+- gif links end with the characters `.gif` like http://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif
