@@ -11,9 +11,9 @@
   - James
   - Adam
   - Kyle
+  - Will
 
 # Sam (back)
-  - Will
   - David
   - Ciara
   - Tyler
