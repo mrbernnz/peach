@@ -73,14 +73,47 @@ Node-notifier version
 - write a client that takes input from the terminal and sends it to the server
 - in other words, whatever you type will be sent up to the server (when you press enter)
 
+```
+var WebSocket = require("ws");
+var ws = new WebSocket("ws://localhost:3000");
+
+ws.on("open", function(message) {
+  process.stdin.on("data", function(input) {
+    var processedInput = input.toString().trim();
+    ws.send(processedInput);
+  })
+});
+```
+
 
 ## Receiving data from the server
 
 #### Exercise: Echo client
 - write a client that sends back to the server any message it receives
 
+```
+var WebSocket = require("ws");
+var ws = new WebSocket("ws://localhost:3000");
+
+ws.on("message", function(message) {
+  ws.send(message);
+});
+```
+
 #### Further Exercise: Picky client
 - write a client that sends back to the server `hey server` when (and only when) it receives the message `hey client`
+- 
+```
+var WebSocket = require("ws");
+var ws = new WebSocket("ws://localhost:3000");
+
+ws.on("message", function(message) {
+  if (message === "hey client") {
+    ws.send("hey server");
+  }
+});
+```
+
 
 #### Further Exercise: only accept one
 **Reference**
