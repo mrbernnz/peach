@@ -67,12 +67,78 @@ Store the objects in an array and print out the name for each turtle.
 Leonardo wears a blue bandana, his weapon is ninjato, he is named after Leonardo da Vinci, and he likes pizza.
 ```
 
+```
+var leonardo = {
+  name: "Leonardo",
+  color: "blue",
+  weapon: "ninjato",
+  namedAfter: "Leonardo da Vinci",
+  likesPizza: true
+}
+
+var michelangelo = {
+  name: "Michelangelo",
+  color: "orange",
+  weapon: "nunchucks",
+  namedAfter: "Michaelangelo Buonarroti",
+  likesPizza: true
+}
+
+var raphael = {
+  name: "Raphael",
+  color: "red",
+  weapon: "sai",
+  namedAfter: "Raffaello Sanzio da Urbino",
+  likesPizza: true
+}
+
+var donatello = {
+  name: "Donatello",
+  color: "purple",
+  weapon: "bo",
+  namedAfter: "Donato di Niccolo di Betto Bardi",
+  likesPizza: true
+}
+
+var turtles = [leonardo, michelangelo, raphael, donatello];
+
+for (var i = 0; i < turtles.length; i++) {
+  console.log(turtles[i].name + " wears a " + turtles[i].color + " bandana, " +
+  "his weapon is " + turtles[i].weapon + ", he is named after " +
+  turtles[i].namedAfter + ", and he likes pizza.");
+}
+```
+
 ### Exercise: Make Leonardo eat pizza
 Add a boolean property to Leonardo called ```pizzaEaten``` (initially set to false).  
 Add a method to Leonardo called ```eatPizza()``` which does the following:  
 1. If ```pizzaEaten``` is true, print out "Leonardo has already eaten pizza." and set ```pizzaEaten``` to false.
 2. If ```pizzaEaten``` is false, print out "Leonardo is eating pizza." and set ```pizzaEaten``` to true.  
 
+```
+var leonardo = {
+  name: "Leonardo",
+  color: "blue",
+  weapon: "ninjato",
+  namedAfter: "Leonardo da Vinci",
+  likesPizza: true,
+  pizzaEaten: false,
+  eatPizza: function() {
+    if(this.pizzaEaten) {
+      console.log("Leonardo has already eaten pizza.");
+      this.pizzaEaten = false;
+    }
+
+    else {
+      console.log("Leonardo is eating pizza.");
+      this.pizzaEaten = true;
+    }
+  }
+}
+
+leonardo.eatPizza();
+leonardo.eatPizza();
+```
 
 ### Exercise: Make a Turtle constructor
 Make a ```Turtle``` constructor that takes a name, a color, and a weapon.  
@@ -86,6 +152,43 @@ To verify everything works:
 2. Print out the weapon of that turtle.  
 3. Add a new turtle for the person sitting next to you.  
 4. Print out the contents of the turtles array.  
+
+```
+var Turtle = function(name, color, weapon) {
+  this.name = name;
+  this.color = color;
+  this.weapon = weapon;
+
+  this.likesPizza = true;
+  this.pizzaEaten = false;
+  this.eatPizza = function() {
+    if(this.pizzaEaten) {
+      console.log(this.name + " has already eaten pizza.");
+      this.pizzaEaten = false;
+    }
+
+    else {
+      console.log(this.name + " is eating pizza.");
+      this.pizzaEaten = true;
+    }
+  }
+};
+
+var leonardo = new Turtle("Leonardo", "blue", "ninjato");
+var michelangelo = new Turtle("Michelangelo", "orange", "nunchucks");
+var raphael = new Turtle("Raphael", "red", "sai");
+var donatello = new Turtle("Donatello", "purple", "bo");
+
+var turtles = [leonardo, michelangelo, raphael, donatello];
+
+leonardo.name = "Sam";
+console.log(leonardo.weapon);
+
+var sean = new Turtle("Sean", "green", "JavaScript");
+turtles.push(sean);
+
+console.log(turtles);
+```
 
 
 ### Further Exercise: Tamagotchi
@@ -130,3 +233,82 @@ Try the following:
 7. Make the cat use the litter box.  
 8. Give the fish medicine twice.  
 9. Make the fish swim.  
+
+```
+var Tamagotchi = function() {
+  this.hungry = false;
+  this.sick = false;
+  this.age = 0;
+
+  this.feed = function() {
+    if(this.hungry === true) {
+      console.log("That was yummy!");
+      this.hungry = false;
+    }
+    else {
+      console.log("No thanks, I'm full.");
+      this.hungry = true;
+    }
+  };
+
+  this.sleep = function() {
+    console.log("zzzzzzzzzzzz");
+  };
+
+  this.medicate = function() {
+    if(this.sick === true) {
+      console.log("I feel much better");
+      this.sick = false;
+    }
+    else {
+      console.log("No thanks, I feel fine.");
+      this.sick = true;
+    }
+  };
+
+  this.increaseAge = function() {
+    this.age ++;
+    console.log("Happy Birthday to me! I am " + this.age +
+    " years old!");
+  };
+};
+
+var dog = new Tamagotchi();
+dog.bark = function() {
+  console.log("ruff ruff!");
+}
+
+dog.goOutside = function() {
+  console.log("I own that tree now!");
+}
+
+var cat = new Tamagotchi();
+cat.meow = function() {
+  console.log("Meow!");
+}
+cat.useLitterBox = function() {
+  console.log("Burried treasure!");
+}
+
+var fish = new Tamagotchi();
+fish.swim = function() {
+  console.log("Just keep swimming...");
+}
+
+dog.feed();
+dog.feed();
+dog.increaseAge();
+dog.increaseAge();
+dog.bark();
+dog.goOutside();
+console.log();
+
+cat.meow();
+cat.sleep();
+cat.useLitterBox();
+console.log();
+
+fish.medicate();
+fish.medicate();
+fish.swim();
+```
