@@ -102,7 +102,8 @@ ws.on("message", function(message) {
 
 #### Further Exercise: Picky client
 - write a client that sends back to the server `hey server` when (and only when) it receives the message `hey client`
-- 
+
+ 
 ```
 var WebSocket = require("ws");
 var ws = new WebSocket("ws://localhost:3000");
