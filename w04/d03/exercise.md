@@ -41,6 +41,27 @@ We don't yet know how to use npm libraries in browser-side javascript, but we wi
     - called like `ul.insertBefore(newElement, elementToInsertBefore)`
     - [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node.insertBefore)
 
+```
+var ws = new WebSocket("ws://localhost:3000");
+
+var addText = function(msg) {
+  var newli = document.createElement("li");
+  newli.innerHTML = msg;
+
+  var ul = document.querySelector("ul");
+  //https://developer.mozilla.org/en-US/docs/Web/API/Node.firstChild
+  var firstli = ul.firstChild;
+  ul.insertBefore(newli, firstli);
+}
+
+ws.addEventListener("open", function(evt) {
+  addText('connected');
+});
+
+ws.addEventListener("message", function(evt) {
+  addText(evt.data);
+});
+```
 
 
 #### Exercise: Let the user chat!
@@ -62,6 +83,17 @@ We don't yet know how to use npm libraries in browser-side javascript, but we wi
 
 #### Exercise : Put each `ws` in an array
 - Hint: use ```.push()```
+
+```
+var WSS = require('ws').Server;
+var server = new WSS({port: 3000});
+
+var clients = [];
+
+server.on("connection", function(ws) {
+  clients.push(ws);
+});
+```
 
 #### Exercise : Broadcasting messages
 - everytime a client connects, broadcast  the message `client connected` to every already connected client
