@@ -11,6 +11,48 @@
     - when a client connects `wscat` prints `client connected`
     - when the client disconnects it prints `disconnected`
 
+```
+var WSS = require('ws').Server;
+
+var flag = process.argv[2];
+var portArg = process.argv[3];
+
+if (flag !== "-l" || !portArg) {
+  console.log('bad args!')
+  process.exit(1);
+}
+
+var server = new WSS({port: portArg});
+var client;
+var connected = false;
+
+console.log("listening on port " + portArg + " (press CTRL+C to quit)");
+
+server.on("connection", function(ws) {
+  if (connected === false) {
+    client = ws;
+    connected = true;
+    ws.on("message", function(msg) {
+      console.log(msg);
+    })
+    ws.on("close", function() {
+      connected = false;
+      console.log("disconnected");
+    })
+    console.log("client connected")
+  } else {
+    ws.close();
+  }
+})
+
+process.stdin.on('data', function(input) {
+  if (connected === true) {
+    var processedInput = input.toString().trim();
+    client.send(processedInput);
+  }
+})
+```
+
 
 #### Exercise: wscat client
 - write a client that connects to one server.
@@ -22,6 +64,35 @@
     - `wscat -c ws://localhost:3000` prints out right away `connected (press CTRL+C to quit)`.
     - when the server closes the connection (e.g. if you type `CTRL+C` in the terminal on the **server** side) it prints out `disconnected`. Also exit the program.
 
+```
+var Client = require('ws');
+
+var address = process.argv[2];
+if (!address) {
+  console.log("bad args!");
+  process.exit(1);
+}
+
+var ws = new Client(address);
+
+ws.on("open", function() {
+  console.log("connected (press CTRL+C to quit)");
+})
+
+ws.on("message", function(msg) {
+  console.log(msg);
+})
+
+ws.on("close", function() {
+  console.log("disconnected");
+  process.exit();
+})
+
+process.stdin.on("data", function(input) {
+  var processedInput = input.toString().trim();
+  ws.send(processedInput);
+})
+```
 
 ## Persistence
 
@@ -31,6 +102,20 @@
 - this is like in hipchat when you join a room and you get to see all the chat history that you missed
 - **Hint:** Here's how you can convert an array of strings to a long message with each element of the array seperated by newlines: `arr.join('\n')`
 
+```
+var WSS = require('ws').Server;
+var server = new WSS({port: 3000});
+
+var history = [];
+
+server.on("connection", function(ws) {
+  ws.on("message", function(msg) {
+    history.push(msg);
+  });
+  var historyMsg = history.join("\n");
+  ws.send(historyMsg);
+})
+```
 
 ## Serialization
 
@@ -55,6 +140,51 @@
 - So if the input box is currently filled with the text `Jack` and the user types in the message `Hello Everybody` then the object that is serialized and sent to the server would be `{name: "Jack", msg: "Hello Everybody"}`
 
 
+html:
+```
+<html>
+<body>
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="msg">
+<button>Send message</button>
+<ul></ul>
+<script src="user_names.js"></script>
+</body>
+</html>
+```
+js:
+```
+var ws = new WebSocket("ws://localhost:3000");
+
+var addText = function(msg) {
+  var newli = document.createElement("li");
+  newli.innerHTML = msg;
+
+  var ul = document.querySelector("ul");
+  var firstli = ul.firstChild;
+  ul.insertBefore(newli, firstli);
+}
+
+ws.addEventListener("message", function(evt) {
+  var obj = JSON.parse(evt.data);
+  var newmsg = obj.name + ": " + obj.msg;
+  addText(newmsg);
+})
+
+var button = document.querySelector("button");
+button.addEventListener("click", function() {
+  var text = document.querySelector('#msg').value;
+  var name = document.querySelector('#name').value;
+  addText(text);
+  var obj = {}
+  obj.name = name;
+  obj.msg = text;
+  var json = JSON.stringify(obj);
+  ws.send(json);
+})
+```
+
+
 ## Further Exercises
 
 #### Change the message
@@ -67,6 +197,37 @@
 - Also when the button is pushed, send to a connected server the message
 - Whenever the client receives a message from the server, change the `h1` to the message received
 - In other words, this is like a chatroom but instead of accumulating messages, people are collaboratively changing just one message
+
+html:
+```
+<html>
+<body>
+<h1></h1>
+<input type="text"></input>
+<button>Change Message</button>
+<script src="change_message.js"></script>
+</body>
+</html>
+```
+js:
+```
+var ws = new WebSocket("ws://localhost:3000");
+
+var changeText = function(msg) {
+  document.querySelector("h1").innerHTML = msg;
+}
+
+ws.addEventListener("message", function(evt) {
+  changeText(evt.data);
+})
+
+var button = document.querySelector("button");
+button.addEventListener("click", function() {
+  var text = document.querySelector('input').value;
+  changeText(text);
+  ws.send(text);
+})
+```
 
 #### Bonus: Serialization and Persistence
 
