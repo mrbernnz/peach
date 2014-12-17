@@ -1,44 +1,30 @@
 # Crawford (3E)
-  - Andrew
-  - Adam
+  - Andrew/Adam
 
-  - Gabriel
-  - Alex
+  - Gabriel/Alex
 
-  - Giraud
-  - Alvin
+  - Giraud/Alvin
 
-  - Ciara
-  - Lauren
+  - Ciara/Lauren
 
 # Sam (Back)
 
-  - Jerome
-  - David
+  - Jerome/David
 
-  - Joe
-  - Geneveve
+  - Joe/Geneveve
 
-  - Katrina
-  - James
+  - Katrina/James
 
-  - Marc
-  - Joel
+  - Marc/Joel
 
-  - Noel
-  - Kyle
+  - Noel/Kyle
 
 # Sean (Front)
 
-  - Ricki
-  - Jason
+  - Ricki/Jason
 
-  - Sean
-  - Rachel
+  - Sean/Rachel
 
-  - Shoshanna
-  - Tiffany
+  - Shoshanna/Tiffany
 
-  - Trey
-  - Will
-  - Tyler
+  - Trey/Will/Tyler
