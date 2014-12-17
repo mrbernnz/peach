@@ -39,7 +39,7 @@ var fs = require('fs');
 var txt = "hello";
 
 fs.writeFile("blah.txt", txt, function (err) {
-  if (err)
+  if (err) {
     console.log(err)
   } else {
     console.log("it worked!")
