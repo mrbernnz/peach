@@ -7,9 +7,11 @@
 
   - Ciara/Lauren
 
-# Sam (Back)
-
   - Jerome/David
+
+  - Ricki/Jason
+
+# Sam (Back)
 
   - Joe/Geneveve
 
@@ -20,8 +22,6 @@
   - Noel/Kyle
 
 # Sean (Front)
-
-  - Ricki/Jason
 
   - Sean/Rachel
 
