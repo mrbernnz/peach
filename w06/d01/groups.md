@@ -24,7 +24,6 @@
 # 5
 - Rachel
 - Geneveve
-- Jerome
 - Andrew
 
 # 6
