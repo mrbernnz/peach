@@ -18,7 +18,10 @@
   - Copy the `Ip Address` of that droplet
 6. Back in your terminal, type `ssh root@[paste-ip-address-here]`
   - You're in! Hipchat Crawford this ip address
-7. paste this code in ```bash <(wget -qO- http://gitlab.generalassemb.ly/princess-peach/install_fest/raw/master/install_script_ubuntu)```, it should take about 10 minutes.
+7. paste this code in 
+```
+bash <(wget -qO- http://gitlab.generalassemb.ly/princess-peach/install_fest/raw/master/install_script_ubuntu)
+```, it should take about 10 minutes to finish.
   - once it is completed, ctrl-c out of that ssh session, and ssh back in. Then type `ruby -v`. If it says anything like `ruby 2.1.4p265 (2014-10-27 revision 48166) [x86_64-linux]` then you're good
 8. For now, whenever you ssh to this DO box you have to do `ssh root@[your-ip-address]`.
   - Whenever you want to reach it in the browser you hit the url `http://[your-ip-address]:2000` (or another port other than 2000)
