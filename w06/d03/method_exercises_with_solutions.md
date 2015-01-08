@@ -140,7 +140,7 @@ process.stdin.on("data", function(data) {
 
   ```
 
-  ##### JavaScript
+##### JavaScript
   ```js
   var mult_five = function(number) {
     return number % 5 === 0;
