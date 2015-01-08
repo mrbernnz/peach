@@ -17,6 +17,20 @@ puts arr - show [1, "c","d",[3,4]]
 arr [3][0] - show 3
 ```
 
+```rb
+puts "What's your name"
+name=gets.chomp
+puts "Hello,#{name}, where are you from?"
+state = gets.chomp.upcase
+
+if state =="NY"
+	puts "Welcome to NY"
+elsif state == "NJ"
+	puts "You must merge well"
+else
+	puts "Whaat!"
+end
+```
 ###hash:
 
 ```rb
