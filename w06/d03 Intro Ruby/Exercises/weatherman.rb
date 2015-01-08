@@ -1,10 +1,17 @@
+# require "pry"
 
+# binding.pry
+# 
 # david's cold
 puts "What's the condition out side?"
 condition = gets.chomp.downcase
 puts "What's the temperature?"
 temperature = gets.chomp.downcase
 def weatherman(condition, temperature)
+	/**
+	 * [condition description]
+	 * @type {[type]}
+	 */
 	if condition == "rainy"
 		if temperature == "cold"
 			puts "better stay inside"

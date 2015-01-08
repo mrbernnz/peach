@@ -12,14 +12,25 @@
 # end
 
 # sam's solution
+/**git
+ * method of multi_five
+ */
 def multi_five?(number)
   return number % 5 == 0
 end
-
+/**
+ * [get_fives description]
+ * @type {Boolean}
+ */
 get_fives = true
+/**
 while get_fives
   puts "Enter a number or quit."
   number = gets.chomp
+  /**
+   * [number description]
+   * @type {[type]}
+   */
   if number == "quit"
     puts "Goodbye"
     get_fives = false
