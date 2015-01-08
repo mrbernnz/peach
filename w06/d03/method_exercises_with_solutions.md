@@ -64,7 +64,7 @@ weather("windy", "cold")
 weather("sunny", "hot")
 ```
 
-####Exercise: The meaning of Life
+#### Exercise: The meaning of Life
 Write a method called `meaning_of_life` which returns the number 42 to you.  
 Use this method to write a Ruby program that:
 - Asks the user whether they want to know what the meaning of life is
@@ -106,7 +106,7 @@ process.stdin.on("data", function(data) {
   });
 
   ```
-  ####Exercise: Fives  
+  #### Exercise: Fives  
   Write a method called `mult_five?` which accepts one number argument.
   Returns true if the argument is divisible by five, otherwise return false.  
 
