@@ -106,14 +106,14 @@ process.stdin.on("data", function(data) {
   });
 
   ```
-  #### Exercise: Fives  
+#### Exercise: Fives  
   Write a method called `mult_five?` which accepts one number argument.
   Returns true if the argument is divisible by five, otherwise return false.  
 
   Use this method within a while loop. Within the while loop, ask the user to enter a number or enter the word "quit".  If the user enters a number, use mult_five? to check the number and let the user know if their number was divisible by five
   If the user entered quit, exit the program.  
 
-  ##### Ruby
+##### Ruby
   ```rb
   def mult_five(number)
     return number % 5 == 0
