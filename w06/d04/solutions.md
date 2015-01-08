@@ -1,4 +1,4 @@
-###It's-a-me! Mario!
+##It's-a-me! Mario!
 
 ```rb
 super_mario = ["Mario","Luigi","Peach","Toad"]
@@ -6,7 +6,7 @@ super_mario.each do |character|
     puts character
 end
 ```
-
+####javascript
 ```js
 super_mario = ["Mario","Luigi","Peach","Toad"]
 super_mario.forEach(function(character)
@@ -15,7 +15,7 @@ super_mario.forEach(function(character)
     });
 ```
 
-###Console Wars
+##Console Wars
 
 ```rb
 characters = {
@@ -28,13 +28,13 @@ hash.each do |key,value|
     puts "#{key}" has the following characters "#{value}"
 end
 ```
-####David's solution
+###David's solution
 ```rb
 characters.each do |key,value|
     puts "#{key}" has the following characters "#{value}"
 end
 ```
-####Sam's
+###Sam's
 ```rb
 characters.each do |key,value|
     puts "#{key}<words>"
@@ -45,7 +45,7 @@ characters.each do |key,value|
 end
 ```
 
-###I 'C' your point
+##I 'C' your point
 
 ```rb
 characters = ["Mario", "Luigi", "Peach",
@@ -57,12 +57,12 @@ c = characters.select do |letter|
 end
 puts c
 ```
-####alternate
+###Alternate
 ```rb
 characters.select {|character| character.upcase.include?("c")}
 ```
 
-####Rachel's
+###Rachel's
 ```rb
 special_array =[]
 characters.each do |char|
@@ -76,7 +76,7 @@ end
 ```
 
 
-####Sam's
+###Sam's javascript
 ```js
 var c_characters = characters.filter(function(char)
 {
@@ -95,7 +95,7 @@ characters = ["Mario", "Luigi", "Peach",
 capital = characters.map!{|cap| cap.upcase}
 puts capital
 ```
-
+####javascript
 ```js
 var capital = characters.map(function(cap)
 {
@@ -104,11 +104,11 @@ var capital = characters.map(function(cap)
 console.log(capital)
 ```
 
-####David's
+###David's
 ```rb
 puts characters.map!{|char| char.upcase}
 ```
-
+####javascript
 ```js
 var charC = characters.map(function(char)
 {
@@ -117,7 +117,7 @@ var charC = characters.map(function(char)
 console.log(CharC)
 ```
 
-####Sam's one line code
+###Sam's one line code javascript
 ```js
 console.log(haracters.map(function(char){return char.toUpperCase();});)
 ```
