@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Event Listeners</title>
+  </head>
+  <body>
+    <img src="http://www.hybridcars.com/wp-content/uploads/2013/01/tesla-model-x-08.jpg"><br>
+    <input type="checkbox" id="chckbx"><br>
+    <button id="button">Hit this</button>
+    <script>
+      var button = document.querySelector("#button");
+
+      var chckbx = function() {
+        if (document.getElementById("chckbx").checked === true){
+          alert("Checked");
+        }
+        else {
+          alert("Empty");
+        }
+      }
+
+      button.addEventListener("click", chckbx);
+
+    </script>
+  </body>
+</html>

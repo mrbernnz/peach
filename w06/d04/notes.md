@@ -59,3 +59,20 @@ var multiBy3 = numbers.map(function(numb)
     });
 ```
 
+###Hosting
+
+```
+$ node server.js &
+
+$ http-server &
+
+$ nohup node server.js &
+
+$ ps
+$ ps -a
+$ ps -ef #
+$p s -aux #
+
+$ kill -9 #
+
+$ ps -aux | grep node or http-server

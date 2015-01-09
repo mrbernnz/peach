@@ -20,7 +20,7 @@ node server.js &
 
 First run this:
 ```
-ps | grep node
+ps | grep node #grep filters to the following condition.
 ```
 
 You will see somethign like this:
@@ -36,4 +36,11 @@ kill -9 [number-goes-here]
 #### Running your server, in the background, through SSH
 ```
 nohup node server.js &
+```
+
+####Portfolio Hosting
+- ####Subfolders for each project
+- ####Multiple http-server on multiple ports
+```
+jdl
 ```
