@@ -51,14 +51,14 @@ You will be able to:
   - Git/Github
   - Deploying a web app to production servers
   - Command Line tools
-4. Front end design and layout
+2. Front end design and layout
   - HTML/CSS
   - External CSS frameworks (bootstrap)
-2. Javascript and Ruby Mechanics
-3. JS on the server and in the browser
+3. ~~Javascript~~ and Ruby Mechanics
+~~4. JS on the server and in the browser
   - Using node for server-side Javascript
-  - JS in the browser and DOM manipulation
-3. Using External Libraries and APIs
+  - JS in the browser and DOM manipulation~~
+5. Using External Libraries and APIs
   - utilize external libraries in your own code
   - consume external APIs reached from a server
   - consume APIs through AJAX calls in the browser
@@ -77,9 +77,10 @@ You will be able to:
 1. ORMs
   - Sequalize (Javascript)
   - ActiveRecord (ruby)
-2. MVC Frameworks
+2. MVC (Model View Controller) Frameworks
   - Backbone (Javascript)
   - Ruby on Rails
+  - *Angular (Javascript)*
 
 # Course Themes
 
