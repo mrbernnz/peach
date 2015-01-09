@@ -1,19 +1,20 @@
 ## RPG GROUPS
 
+Group 1:
 - marc
 - ciara
 - adam
-- 
 
+Group 2:
 - giraud
 - alex
 - katrina
-- 
+
 
 - sean
 - james
 - joe
-- 
+
 
 - genevieve
 - andrew
@@ -23,6 +24,7 @@
 - alvin
 - david
 - tiffany
+
 
 - noel
 - rachel
