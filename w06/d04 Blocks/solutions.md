@@ -1,5 +1,4 @@
 ##It's-a-me! Mario!
-
 ```rb
 super_mario = ["Mario","Luigi","Peach","Toad"]
 super_mario.each do |character|
@@ -14,9 +13,7 @@ super_mario.forEach(function(character)
     console.log(character)
     });
 ```
-
 ##Console Wars
-
 ```rb
 characters = {
   "Nintendo" => ["Mario", "Luigi", "Peach", "Toad"],
@@ -44,24 +41,21 @@ characters.each do |key,value|
     #this will puts after every characters string
 end
 ```
-
 ##I 'C' your point
-
-```rb
+```ruby
 characters = ["Mario", "Luigi", "Peach",
   "Toad", "Sonic", "Tails",
   "Robotnick", "Crash Bandicoot", "Nathan Drake",
   "Solid Snake"]
 c = characters.select do |letter|
-    letter.upcase.include?("c")
+    letter.include?("c")
 end
 puts c
 ```
 ###Alternate
 ```rb
-characters.select {|character| character.upcase.include?("c")}
+characters.select {|character| character.include?("c")}
 ```
-
 ###Rachel's
 ```rb
 special_array =[]
@@ -74,8 +68,6 @@ characters.each do |char|
     end
 end
 ```
-
-
 ###Sam's javascript
 ```js
 var c_characters = characters.filter(function(char)
@@ -84,9 +76,7 @@ var c_characters = characters.filter(function(char)
     });
 console.log(c_characters);
 ```
-
-###I can't hear you!
-
+##I can't hear you!
 ```rb
 characters = ["Mario", "Luigi", "Peach",
               "Toad", "Sonic", "Tails",
@@ -103,7 +93,6 @@ var capital = characters.map(function(cap)
     });
 console.log(capital)
 ```
-
 ###David's
 ```rb
 puts characters.map!{|char| char.upcase}
@@ -116,7 +105,6 @@ var charC = characters.map(function(char)
     });
 console.log(CharC)
 ```
-
 ###Sam's one line code javascript
 ```js
 console.log(haracters.map(function(char){return char.toUpperCase();});)
