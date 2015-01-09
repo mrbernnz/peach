@@ -37,10 +37,3 @@ kill -9 [number-goes-here]
 ```
 nohup node server.js &
 ```
-
-####Portfolio Hosting
-- ####Subfolders for each project
-- ####Multiple http-server on multiple ports
-```
-jdl
-```
