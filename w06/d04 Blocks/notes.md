@@ -60,7 +60,6 @@ var multiBy3 = numbers.map(function(numb)
 ```
 
 ###Hosting
-
 ```
 $ node server.js &
 
