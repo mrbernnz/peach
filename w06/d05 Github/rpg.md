@@ -12,7 +12,7 @@ In your group you will need to create a new github organization just for this ap
 Get as far as possible doing this until 5pm.
 
 ## Over the weekend
-Each member of the group must fork this repository on github and contribute extra commits just in their own repository. Add whatever you want, and see how far you can get.
+Each member of the group must fork this repository on github and contribute extra commits just in thdaeir own repository. Add whatever you want, and see how far you can get.
 
 ## What will this look like?
 
