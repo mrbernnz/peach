@@ -1,6 +1,3 @@
-#Notes
-##Server
-```rb
 require "sinatra"
 
 # Method erb and you pass the parameter :index
@@ -55,18 +52,3 @@ get '/:id' do
   erb(:index, locals:{name:repeated})
 end
 
-```
-##Index.erb
-```rb
-<!-- localhost:4567 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sinatra</title>
-</head>
-<body>
-  <h1><%=name%></h1>
-</body>
-</html>
-```
