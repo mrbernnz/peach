@@ -101,3 +101,11 @@ get '/' do #grabbing the path
  #also takes the locals hash that can use name as a key and a variable as a value
 end
 ```
+##Other Notes
+```
+#creates an array of strings
+%w{cat dog bird}
+#spacing the string in the array
+%w{first\ name last\ name}
+#array
+["first name","last name"]
