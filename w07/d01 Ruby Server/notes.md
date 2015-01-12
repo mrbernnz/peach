@@ -1,4 +1,5 @@
 #Notes
+##RUBYrrito
 ##Server
 ```rb
 require "sinatra"
@@ -69,4 +70,34 @@ end
   <h1><%=name%></h1>
 </body>
 </html>
+```
+###Andrew's Server Notes
+```rb
+#Sinatra is just like websockets / http - install globally on your machine, but you will have to reinstall on your DO
+
+#Sinatra likes to have a directory
+
+# /blue_eyes
+#    /views
+#      index.erb
+#    server.rb
+
+# .erb files take html syntax - embedded ruby file
+# allows you to use two additional tags
+
+# <head>
+#  < %= variable % >
+
+# we will be sending something into this variable
+
+thebriceisright [1:27 PM]
+#sinatra uses port 4567
+require 'sinatra' #tells computer hey we are going to be using sinatra
+
+my_name = "Andrew"
+
+get '/' do #grabbing the path
+ erb(:index, locals:{name: my_name}) #grabs the index.erb file (sinatra method that takes in parameter of the filename and looks in the views folder for it)
+ #also takes the locals hash that can use name as a key and a variable as a value
+end
 ```

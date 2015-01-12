@@ -1,0 +1,41 @@
+var http = require ("http");
+var msg = ""
+var server = http.createServer(function(request,response)
+{
+    console.log(request.url.split[1])
+    if (request.url.split[1] === "/say"){
+        console.log(request.url.split[2] === "/something")
+    
+        if (request.url.split[2]){
+        msg = "Hello World"
+        }
+    }
+    else{
+        msg = "Please go to http://localhost:2000/say/something"
+    }
+response.end(msg);
+});
+server.listen(2000);
+
+// Server File
+
+var http = require("http");
+var msg = "";
+var server = http.createServer(function(request, response){
+
+ var path = request.url;
+ //creates a new array
+ var arr = path.split("/")
+
+ //if this index equals say
+ if (arr[1] === "say") {
+   msg = arr[2]; //print the next index
+ } else {
+   msg = "Phooey"
+ }
+
+ response.end(msg);
+
+});
+
+server.listen(2000);
