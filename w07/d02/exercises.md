@@ -47,6 +47,41 @@ Here's your task:
 * Write a route that takes two parameters, a width and a height
 * Render an erb template that has 15 different cat pictures. Use the width from the route, but increment the height for each cat picture in order to pull down a unique cat for each image.
 * **Hint**: you'll probably want to convert the width/height url parameters to integers
+####solution
+```html
+<!-- localhost:4567 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The World of Cats</title>
+</head>
+<body>
+  <h1><%=name%></h1>
+  <ul>
+        <%image.each do |image|%>
+        <li><img src='<%=image%>'><li>
+        <% end%>
+  </ul>
+</body>
+</html>
+```
+```ruby
+require 'sinatra'
+get '/:width/:height' do
+  # puts "#{fullpath}"
+  path1=(params[:width])
+  path2=(params[:height])
+  path2 = Integer(path2)
+  # fullpath = ":width/:height"
+  page = []
+  15.times do
+    page.push "http://placekitten.com/g/#{path1}/#{path2}"
+    path2+=2
+  end
+  erb(:index, locals:{name:"HELLO CAT LOVERS!!", image:page})
+end
+```
 
 ### Exercise: EJS with a basic node http server
   * Repeat the placekitten exercise, but this time create a basic node http server and use EJS for templating
