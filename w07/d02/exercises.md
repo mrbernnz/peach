@@ -9,6 +9,22 @@
 * Create an array of celebrity names at the top of your server
 * Create a route for `/` that loops through the array of names and builds an unordered list in html with each name
 
+####Solution
+```ruby
+#sinatra server
+require 'sinatra'
+get '/' do
+celebs = ["George\ Clooney","Angelina\ Jolie","Matt\ Damon","Don\ Cheadle","Amy\ Poehler"]
+#short hand only done for strings
+celebs = %w{George\ Clooney Angelina\ Jolie Matt\ Damon Don\Cheadle Amy\ Poehler}
+celeb_string = <html><body><ul>
+    celebs.each do |celeb|
+        celeb_string += "<li>#{celeb}</li>"
+    end
+    return celeb_string += </ul></body></html>
+end
+```
+
 ### Exercise: Cats are cool
 
 Check out http://placekitten.com. Basically it allows you to do this:
