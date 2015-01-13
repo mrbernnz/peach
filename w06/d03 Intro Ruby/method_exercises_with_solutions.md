@@ -105,7 +105,7 @@ process.stdin.on("data", function(data) {
   }
   });
 
-  ```
+```
 #### Exercise: Fives  
   Write a method called `mult_five?` which accepts one number argument.
   Returns true if the argument is divisible by five, otherwise return false.  
@@ -114,7 +114,8 @@ process.stdin.on("data", function(data) {
   If the user entered quit, exit the program.  
 
 ##### Ruby
-  ```rb
+
+```ruby
   def mult_five(number)
     return number % 5 == 0
   end
@@ -137,8 +138,7 @@ process.stdin.on("data", function(data) {
     end
     puts
   end
-
-  ```
+```
 
 ##### JavaScript
   ```js
@@ -166,5 +166,4 @@ process.stdin.on("data", function(data) {
       console.log("Enter a number or quit:");
     }
     });
-
-    ```
+```
