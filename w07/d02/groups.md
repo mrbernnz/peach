@@ -1,4 +1,4 @@
-# Crawford (4E)
+# Crawford (3B)
 Alvin  
 Andrew  
 Gabriel  
@@ -13,7 +13,7 @@ James
 Jason
 Joe  
 
-# Sam (3B)
+# Sam (4E)
 Joel  
 Katrina  
 Lauren  
