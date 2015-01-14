@@ -17,11 +17,3 @@ And your favorite color is [color].
 2. No html
 3. Hipchat just the EJS template
 4. Test it out if you have time
-
-#### Solution
-
-```js
-Hello <%= obj.name %>!
-You are <%= obj.age %> years old.
-And your favorite color is <%= obj.color %>.
-```
