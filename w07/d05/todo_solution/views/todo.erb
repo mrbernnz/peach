@@ -1,0 +1,18 @@
+<html>
+<body>
+
+<form action="/add" method="post">
+  <input type="text" name="item">
+  <input type="submit" value="Add">
+</form>
+
+<% if (items) %>
+<ul>
+  <% items.each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+</ul>
+<% end %>
+
+</body>
+</html>

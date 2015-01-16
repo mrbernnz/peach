@@ -1,0 +1,18 @@
+<html>
+<body>
+
+<form action="/add" method="post">
+  <input type="text" name="item">
+  <input type="submit" value="Add">
+</form>
+
+<% if (items.length > 0) { %>
+<ul>
+  <% items.forEach(function(item) { %>
+    <li><%= item %></li>
+  <% }) %>
+</ul>
+<% } %>
+
+</body>
+</html>
