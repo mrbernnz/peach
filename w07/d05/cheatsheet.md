@@ -77,9 +77,9 @@ var url_safe = encodeURI(movie_name);
 var url = "http://someurl"
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
-xhr.onreadystatechange = function() {
+xhr.addEventListener('load', function(e) {
   console.log(xhr.responseText)
-}
+});
 xhr.send();
 ```
 
