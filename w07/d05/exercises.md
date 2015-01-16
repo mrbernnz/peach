@@ -10,6 +10,8 @@ Modify the todo homework from yesterday to submit to the server a user's first n
 #### Exercise: Movie Poster search
 Create an html page with one textbox and one button. When the user enters in a movie title in the textbox and clicks on the button a movie poster should appear below. You will have to use the OMDB API and AJAX to pull this off.
 
+**Hint:** Don't use a form. Just add a "click" eventlistener to the button that reads in the text in the textbox.
+
 #### Exercise: Clean up RandomUser output
 Use the `request` package to create your own randomuser route in express that returns one object in JSON with the properties of a randomuser (rather than a response with nested objects/arrays).
 
