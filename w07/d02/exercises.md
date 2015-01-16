@@ -47,7 +47,8 @@ Here's your task:
 * Write a route that takes two parameters, a width and a height
 * Render an erb template that has 15 different cat pictures. Use the width from the route, but increment the height for each cat picture in order to pull down a unique cat for each image.
 * **Hint**: you'll probably want to convert the width/height url parameters to integers
-####solution
+
+###Solution
 ```html
 <!-- localhost:4567 -->
 <!DOCTYPE html>
@@ -90,3 +91,42 @@ end
 ### Exercise: Express with EJS
 * Repeat the placekitten exercise, but now using Express instead of a basic node http server
 * On your cheatsheet is an example of using Express with parameters
+
+###Solution
+```html
+<!-- localhost:3000 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The World of Cats</title>
+</head>
+<body>
+  <h1><%=name%></h1>
+  <ul>
+        <%image.forEach(function(image){%>
+          <li><img src='<%=image%>'></li>
+          <%})%>
+  </ul>
+</body>
+</html>
+```
+```js
+var express = require('express');
+var app = express();
+var fs = require('fs');
+var ejs = require('ejs');
+app.get('/:width/:height', function(req, response) {
+var str = fs.readFileSync('./html/index.ejs', 'utf8');
+  var path1 = req.params.width;
+  var path2 = req.params.height;
+  var page = [];
+  for (var i = 0; i < 16; i++) {
+    page.push("http://placekitten.com/g/" + path1 + "/" + path2);
+    i++;
+  };
+  var rendered = ejs.render(str, {name: "HELLO CAT LOVERS",image: page});
+  response.end(rendered);
+});
+app.listen(3000);
+```
