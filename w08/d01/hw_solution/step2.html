@@ -1,0 +1,39 @@
+<html>
+<body>
+  <h1></h1>
+  <ul></ul>
+  <script>
+    var movie_name = "Top Gun";
+    var url_safe = encodeURI(movie_name);
+
+    var url = "http://omdbapi.com/?t=" + url_safe;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.addEventListener("load", function() {
+      //parse the JSON response
+      var data = JSON.parse(xhr.responseText)
+      //data is now an object
+
+      //title
+      var h1 = document.querySelector('h1');
+      h1.innerHTML = data.Title;
+
+      //create list items
+      var ul = document.querySelector('ul');
+      ul.innerHTML = "";
+      var addLi = function(property) {
+        var li = document.createElement('li');
+        li.innerHTML = data[property];
+        ul.appendChild(li);
+      }
+      addLi("Year");
+      addLi("Rated");
+      addLi("Released");
+      addLi("Runtime");
+      addLi("imdbRating");
+
+    });
+    xhr.send();
+  </script>
+</body>
+</html>
