@@ -25,7 +25,7 @@ You will create two similiar components, but instead of being for a random **use
   * Have a Results section that shows a sample JSON response from your API
   * **Styling is cool** As much as possible, imagine this is as a portfolio piece for an API you're showing off. If anything, you can use this as a template for a future API that you create and want to have a user-facing frontend for.
 
-### Want even more of a challenge?
+### Optional Bonus
   * Add to your front-end a special admin interface where the user could add to their backend extra random values
   * For instance, if we were doing just a plain random user api, we could have a form to add hometowns, or emails, etc.
   * Make sure that these forms do a post request
