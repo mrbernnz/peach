@@ -74,9 +74,9 @@ Create the route `/top_dvd`
   * Construct your reponse to be of this form:
   ```
   { "results": [
-    {"Jurassic Park", 9},
-    {"Superman", 2},
-    {"Inception", 8}
+    {"Jurassic Park": 9},
+    {"Superman": 2},
+    {"Inception": 8}
   ]}
   ```
 
