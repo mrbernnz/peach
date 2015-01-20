@@ -2,13 +2,13 @@
 The [randomuser.me](https://randomuser.me) website showcases the usage of the randomuser API, and is pretty sweet.
 
 You should realize a couple things about this website
-1. The site https://randomuser.me is not the API, it is a user-facing web app that consumes the randomuser API
-2. The **api** is at the different address http://api.randomuser.me
-3. The user-facing web app calls the API through AJAX, and just puts some fancy animation on top of that
+* The site https://randomuser.me is not the API, it is a user-facing web app that consumes the randomuser API
+* The **api** is at the different address http://api.randomuser.me
+* The user-facing web app calls the API through AJAX, and just puts some fancy animation on top of that
 
 So there is:
-1. The backend API at https://randomuser.me
-2. The user-facing web app that consumes the backend API at http://api.randomuser.me
+* The backend API at https://randomuser.me
+* The user-facing web app that consumes the backend API at http://api.randomuser.me
 
 You will create two similiar components, but instead of being for a random **user**, it will be for something else random, like a band or a sports team.
 
