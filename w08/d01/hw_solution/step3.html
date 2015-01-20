@@ -1,0 +1,65 @@
+<html>
+<body>
+  <h1></h1>
+  <ul></ul>
+  <button>Change Movie</button>
+  <script>
+    var showMovie = function(movie_name) {
+      var url_safe = encodeURI(movie_name);
+
+      var url = "http://omdbapi.com/?t=" + url_safe;
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.addEventListener("load", function() {
+        //parse the JSON response
+        var data = JSON.parse(xhr.responseText)
+        //data is now an object
+
+        //title
+        var h1 = document.querySelector('h1');
+        h1.innerHTML = data.Title;
+
+        //create list items
+        var ul = document.querySelector('ul');
+        ul.innerHTML = "";
+        var addLi = function(property) {
+          var li = document.createElement('li');
+          li.innerHTML = data[property];
+          ul.appendChild(li);
+        }
+        addLi("Year");
+        addLi("Rated");
+        addLi("Released");
+        addLi("Runtime");
+        addLi("imdbRating");
+
+      });
+      xhr.send();
+    }
+
+    var favs = ["The Truman Show", "Multiplicity", "Dazed and Confused" ];
+    var fav_index = 0;
+
+    var button = document.querySelector('button');
+    button.addEventListener('click', function() {
+      //go to the next movie in the favs array
+      fav_index+=1;
+      //if we've done all the movies then cycle
+      //back to the beginning
+      if (fav_index >= favs.length)
+        fav_index=0;
+
+      //show the next movie
+      var movie = favs[fav_index];
+      showMovie(movie);
+    })
+
+    //when the screen first loads play the first
+    //movie in the list
+    var movie = favs[fav_index];
+    showMovie(movie);
+
+  </script>
+
+</body>
+</html>
