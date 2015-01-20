@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <input type="text"><br>
+  <img src="">
+  <script>
+  var text = document.querySelector('input');
+  var text2 = text.value;
+    text.addEventListener('keydown',function(enter){
+      if (enter.keyCode === 13) {
+        var safe = encodeURI(text2);
+        var url = "http://omdbapi.com?t=" + safe
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', function(e) { /*event listener, callback*/
+          var d = xhr.responseText
+          var parsed = JSON.parse(d)
+          var img = document.querySelector('img')
+          img.src = parsed.Poster;
+          // console.log(parsed.Poster)
+        });
+        xhr.open("GET", url); /*when you recieve a request, this is where I want you to send it.*/
+        xhr.send();
+      }
+    })
+  </script>
+</body>
+</html>
+
+
+<!-- var submit = document.querySelector('button')
+var input = document.querySelector('input')
+submit.addEventListener('click', function() {
+    findPoster();
+});
+input.addEventListener('keyup', function(e) {
+    if (e.keyCode === 13) {
+        findPoster();
+    }
+})
+
+function findPoster() {
+    var movie = input.value
+    var movie_url = encodeURI(movie)
+    var url = "http://omdbapi.com/?t=" + movie_url
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', function(e) {
+        var d = xhr.responseText
+        var parsed = JSON.parse(d)
+        var img = document.querySelector('img');
+        img.src = parsed.Poster;
+    })
+    xhr.open("GET", url);
+    xhr.send();
+} -->

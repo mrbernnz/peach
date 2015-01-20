@@ -58,3 +58,11 @@ get '/' do
   erb(:name, locals: {name:"Instructor Sam!", name2: "Noel"})
 end
 ```
+####alternate
+```
+#populates html directly from server
+require 'sinatra'
+get '/' do
+"<h1>Hello, World!</h1>"
+end
+```

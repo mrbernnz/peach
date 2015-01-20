@@ -17,3 +17,10 @@ And your favorite color is [color].
 2. No html
 3. Hipchat just the EJS template
 4. Test it out if you have time
+
+#### My Solution
+```js
+<h1>Hello <%=name%>!</h1> //the value of [key = name]
+<p>You are <%=age%> years old.</p> //the value of [key = age]
+<p> And your favorite color is <%=color%> //the value of [key = color]
+```

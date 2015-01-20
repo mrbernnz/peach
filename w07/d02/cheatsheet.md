@@ -10,8 +10,8 @@ end
 ## Looping to build up html
 ```rb
 get '/' do
-  mystring = "<html><body><ul>"
-  mystring += "<li>sonny</li>"
+  mystring = "<html><body><ul>" #builds
+  mystring += "<li>sonny</li>" #adds and stores
   mystring += "<li>cher</li>"
   mystring += "</ul></body></html>"
   return mystring
@@ -72,20 +72,33 @@ var rendered = ejs.render(str, {applecount: 10});
 
 console.log(rendered);
 ```
-
+###note
+```js
+var http = require('localhost:3000')
+```
 ## Basic Node HTTP
 ```js
 var http = require('http');
 
 var server = http.createServer(function(req, res){
-  res.end('<h1>Hello World!</h1>');
+  var str = fs.readFileSync('/apple.ejs', 'utf8');
+<!-- second argument in ejs.render is a variable in this example -->
+var rendered = ejs.render(str, {applecount: 10});
+res.end(rendered)
+  //res.end('<h1>Hello World!</h1>');
 });
 
 server.listen(3000);
 
 console.log('listening on port 3000!');
 ```
-
+###note 
+```js
+var str = fs.readFileSync('/apple.ejs', 'utf8');
+<!-- second argument in ejs.render is a variable in this example -->
+var rendered = ejs.render(str, {applecount: 10});
+res.end(rendered)
+```
 ## Basic Express
 ```js
 // make sure that you npm install express --save
@@ -100,7 +113,12 @@ app.listen(3000);
 
 console.log('listening on port 3000!');
 ```
-
+###note
+```js
+#the way express rights params
+var name = req.params["name"];
+var name = req.params.name;
+```
 ## Express with parameters
 ```js
 var express = require('express')

@@ -1,0 +1,16 @@
+<!-- localhost:3000 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The World of Cats</title>
+</head>
+<body>
+  <h1><%=name%></h1>
+  <ul>
+        <%image.forEach(function(image){%>
+          <li><img src='<%=image%>'></li>
+          <%})%>
+  </ul>
+</body>
+</html>

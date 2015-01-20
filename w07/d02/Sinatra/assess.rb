@@ -1,9 +1,9 @@
-require "sinatra"
+# require "sinatra"
 
-# Method erb and you pass the parameter :index
-get '/' do
-  erb(:name, locals: {name:"Instructor Sam!", name2: "Noel"})
-end
+# # Method erb and you pass the parameter :index
+# get '/' do
+#   erb(:name, locals: {name:"Instructor Sam!", name2: "Noel"})
+# end
 # get '/goodbye' do
 #   not_a_name = "goodbye"
 #   # if you want to just tab the variable
@@ -16,7 +16,7 @@ end
 # #   path=(params[:id])
 # #   erb(:index, locals: {name: path})
 # # end
-# # 
+# #
 # get '/google' do
 #   str = "<a href='www.google.com'>google</a>"
 #   erb(:index,locals:{name:str})
@@ -34,4 +34,21 @@ end
 #   end
 #   erb(:index, locals:{name:repeated})
 # end
+#
+#sinatra server
+require 'sinatra'
+get '/:width/:height' do
+  # puts "#{fullpath}"
+  path1=(params[:width])
+  path2=(params[:height])
+  path2 = Integer(path2)
+  # fullpath = ":width/:height"
+  page = []
+  15.times do
+    page.push "http://placekitten.com/g/#{path1}/#{path2}"
+    path2+=2
+  end
+  erb(:index, locals:{name:"HELLO CAT LOVERS!!", image:page})
+end
+
 
