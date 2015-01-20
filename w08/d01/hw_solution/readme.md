@@ -2,6 +2,8 @@
 
 ### Step 1: Make a request to OMDB with one movie
 
+[Full Solution](step1.html)
+
 ```js
 var movie_name = "Top Gun";
 var url_safe = encodeURI(movie_name);
@@ -19,6 +21,9 @@ xhr.send();
 ```
 
 ### Step 2: Fill in Screen elements with the data that comes back
+
+[Full Solution](step2.html)
+
 ```js
 //title
 var h1 = document.querySelector('h1');
@@ -40,6 +45,9 @@ addLi("imdbRating");
 ```
 
 ### Step 3: Create button to repeat 1-2 for another movie
+
+[Full Solution](step3.html)
+
 **Step 3a: Put 1-2 in a function**
 ```js
 var showMovie = function(movie_name) {
