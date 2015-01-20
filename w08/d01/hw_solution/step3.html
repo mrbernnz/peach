@@ -19,9 +19,17 @@
         var h1 = document.querySelector('h1');
         h1.innerHTML = data.Title;
 
-        //create list items
+        //create list
         var ul = document.querySelector('ul');
         ul.innerHTML = "";
+
+        //add a poster
+        var img = document.createElement('img');
+        img.src = data["Poster"];
+        img.height = "200";
+        ul.appendChild(img);
+
+        //add list items
         var addLi = function(property) {
           var li = document.createElement('li');
           li.innerHTML = data[property];
