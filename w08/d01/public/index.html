@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+  <p>YO</p>
+    <script>
+      var url = 'http://localhost:4567/';
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.addEventListener('load', function() {
+        var data = JSON.parse(xhr.responseText);
+        var p = document.createElement('p');
+        document.body.appendChild(p);
+        var msg = data;
+        console.log(data)
+        p.innerHTML = msg; /*parse the message*/
+      });
+      xhr.send();
+    </script>
+  </body>
+</html>
+ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies</title>
+</head>
+<body>
+  <script>
+  var url = 'http://localhost:4567/';
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.addEventListener('load', function() {
+    var data = JSON.parse(xhr.responseText);
+    data.forEach(function(movie) {
+      var list_item = movie
+      var ul = document.createElement('ul');
+      var li = document.createElement('li');
+      document.body.appendChild(ul);
+      ul.appendChild(li);
+      li.innerHTML = list_item;
+      console.log(list_item);
+    });
+  });
+  xhr.send();
+  </script>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic API part 2</title>
+</head>
+<body>
+  <script>
+  var url = 'http://localhost:4567/';
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.addEventListener('load', function() {
+    var data = JSON.parse(xhr.responseText);
+    data.forEach(function(movie) {
+      var list_item = movie.results[0, key/* + value*/];
+      var ul = document.createElement('ul');
+      var li = document.createElement('li');
+      document.body.appendChild(ul);
+      ul.appendChild(li);
+      li.innerHTML = list_item;
+      console.log(list_item);
+    });
+  });
+  xhr.send();
+  </script>
+</body>
+</html>
+
+<!-- Andrew's Solution -->
+<!-- inside event listener -->
+<!-- h1.innerHTML = data.results[0];
+document.body.appendChild(h1); -->
+
+<!-- Gabriel's Solution -->
+<!-- inside event listener -->
+<!-- var object = data.results;
+object.forEach(function(datum) {
+  var li = document.createElement('li);
+  li.innerHTML = objects.keys(datum);
+  var values = objects.key(datum);
+  values.forEach(function(parameter) {
+  parameter = datum[value];
+  })
+})
+ -->
