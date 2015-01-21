@@ -44,6 +44,7 @@ Write a command line application in ruby that:
 #### Exercise: get familiar with instagram
 - go [here](http://instagram.com/developer/register/#) to register for an instagram api key.
 - go [here](http://instagram.com/developer/endpoints/tags/#) to learn about how to find instagram pictures by tag name.
+- instagram's documentation calls for you to use "access_token=A LONG NUMBER" in the url when you consumer their api, however you should replace that with "client_id=YOUR CLIENT ID"
 - write a server that hits instagram's api and returns all images with a certain tag.
 - the tag should be hardcoded into your server.
 - the pictures should show up on index.erb
