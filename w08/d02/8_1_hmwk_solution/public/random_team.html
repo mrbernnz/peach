@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html>
+  <body>
+    <div style = "text-align: center">
+      <h1>Random Baseball Team</h1>
+      <img id = "logo">
+      <h2 id = "teamName"></h1>
+      <h3 id = "coach"></h3>
+
+      <button id = "next">That sounds lame, give me another</button>
+    </div>
+    <div id = "explanation" style = "position: relative; left: 200px; top: 50px;">
+      The Random Baseball Team API generates a random baseball team with a random logo, city, team name, and coach (using current 2015 MLB data).
+      <h2>How to Use:</h2>
+      <pre>
+          var url = 'http://localhost:3000/';
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", url);
+          xhr.addEventListener('load', function(e) {
+            console.log(xhr.responseText);
+          });
+      </pre>
+      <h2>Results:</h2>
+      <pre>
+        {
+          "team":"Reds",
+          "city":"Milwaukee",
+          "coach":"Chip Hale",
+          "logo":"http://mlb.mlb.com/mlb/images/team_logos/logo_col_79x76.jpg"
+        }
+      </pre>  
+    </div>
+    <script>
+      var randomTeam = function() {
+        var url = 'http://localhost:3000/';
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.addEventListener('load', function(e) {
+            var randomTeam = JSON.parse(xhr.responseText);
+            var name = document.getElementById('teamName');
+            var coach = document.getElementById('coach');
+            var logo = document.getElementById('logo');
+            name.innerText = randomTeam.city + ' ' + randomTeam.team;
+            coach.innerText = 'Coached by: ' + randomTeam.coach;
+            logo.setAttribute('src', randomTeam.logo);
+        });
+        xhr.send();
+      };
+      
+      document.getElementById('next').addEventListener('click', function(e) {
+          randomTeam();
+      });
+
+      randomTeam();
+    </script>
+  </body>
+</html>
