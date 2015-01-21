@@ -4,6 +4,14 @@
 - Go to: https://developers.google.com/maps/documentation/javascript/tutorial#api_key
   - Follow steps 1-4
 
+#### note
+when looking for keys within hash
+```
+pry(main)> res['results'][0]['geometry'].keys
+=> ["bounds", "location", "location_type", "viewport"]
+```
+
+
 Create an HTML page with the following:  
 ```html
 <!DOCTYPE>
@@ -33,13 +41,51 @@ Open this in a browser.  You should see a Google Map centered on New York City.
 - Create an html page that will prompt the user for a latitude and a longitude.
 - Render the location with that lat and long in a Google Maps using the Google Maps API.
 
+#### Solution
+```html
+<!DOCTYPE>
+<html>
+  <head>
+    <style type="text/css">
+      #map-canvas { height: 600px; width: 800px;}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYEvZl6I5vJ6tSVutlF2EF9qsPcOexswA"></script>
+  </head>
+  <body>
+  <input id="lat" type="text">
+  <input type="text" id="long">
+    <div id="map-canvas"></div>
+    <script>
+    // var lat = parseFloat(prompt("Enter latitude."))
+    // var lng = parseFloat(prompt("Enter longitude."))
+      var mapOptions = {
+        center: { lat: parseFloat(prompt("Enter latitude.")), lng: parseFloat(prompt("Enter longitude."))},
+        zoom: 11
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    </script>
+  </body>
+</html>
+```
+
 #### Exercise: Coordinate RandomUser with google maps API
 Write a command line application in ruby that:
 - Consumes the randomuser api to get a random city and state
 - Consumes the google maps api to get the latitude and longitude of the random user's city and state.
 - Don't forget gsub so names with spaces will work when hitting the google api.
 - go [here](https://developers.google.com/maps/documentation/geocoding/#JSON) for help with getting lat and long.
+#### Solution
+```ruby
+require 'pry'
+require 'HTTParty'
 
+response = HTTParty.get('http://api.randomuser.me')
+city = response['results'][0]['user']['location']['city']
+location = city.gsub(' ', '+')
+res = HTTParty.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=AIzaSyCYEvZl6I5vJ6tSVutlF2EF9qsPcOexswA')
+locale = res['results'][0]['geometry']['location']
+binding.pry
+```
 
 #### Exercise: get familiar with instagram
 - go [here](http://instagram.com/developer/register/#) to register for an instagram api key.
@@ -48,6 +94,12 @@ Write a command line application in ruby that:
 - the tag should be hardcoded into your server.
 - the pictures should show up on index.erb
 
+
+#### Solution
+```ruby
+```
+```html
+```
 
 #### Exercise: See the World
 Write a Sinatra app that does the following:
