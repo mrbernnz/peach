@@ -95,11 +95,38 @@ binding.pry
 - the tag should be hardcoded into your server.
 - the pictures should show up on index.erb
 
-
 #### Solution
 ```ruby
+require 'sinatra'
+require 'httparty'
+page = []
+
+get '/' do
+  response = HTTParty.get('https://api.instagram.com/v1/tags/nohairdontcare/media/recent?client_id=03bc56793b474dcc8f6cbfb66e6b50a9')
+  picture = response['data']
+  picture.each do |response|
+    page.push(response['images']['standard_resolution']['url'])
+  end
+  erb(:index, locals:{name:"HELLO INSTASCAM!", image:page})
+end
 ```
 ```html
+<!-- localhost:4567 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The World of Cats</title>
+</head>
+<body>
+  <h1><%=name%></h1>
+  <ul>
+        <%image.each do |image|%>
+        <li><img src='<%= image %>'></li>
+        <% end%>
+  </ul>
+</body>
+</html>
 ```
 
 #### Exercise: See the World
