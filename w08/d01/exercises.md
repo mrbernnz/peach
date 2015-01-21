@@ -129,6 +129,74 @@ Create the route `/top_dvd`
 * You will still be hitting the RandomUser API, just on the server
 * Instead of sending back to the client exactly what RandomUser gives you, you need to put the properties of one random user in just one object, and return that one object
 
+```js
+var express = require('express');
+var request = require('request');
+
+var app = express();
+
+app.get('/', function(req, res) {
+  var url = 'http://api.randomuser.me/';
+  var personJSON;
+
+  request(url, function(error, response, body) {
+    if(!error && response.statusCode === 200) {
+      var data = JSON.parse(body);
+      var person = data['results'][0]['user'];
+      personJSON = {
+        firstName: person['name']['first'],
+        lastName: person['name']['last'],
+        email: person['email'],
+        username: person['username']
+      };
+      res.json(personJSON);
+    }
+  });
+});
+
+var server = app.listen(3000, function() {
+  console.log('Server is listening on port 3000');
+});
+```
+
 ## Exercise: Create your own RandomUser API endpoint
 * In Express create one route that returns in JSON the properties of a random user.
 * **Do not** use the RandomUser API, for this exercise you will be making random users on your own.
+
+
+```js
+var express = require('express');
+var app = express();
+var names = ["Jack", "Sayid", "Kate", "Hurley", "Sun", "Aaron"]
+var hometown = ["Los Angeles", "Tikrit", "Ames", "Miami", "Seoul", "The Island"]
+var dob = ["1969/12/03", "1967/08/15", "1977/05/08", "1978/12/28", "1980/03/20", "2004/11/01"]
+
+var rando = function(array) {
+  return array[Math.floor(Math.random()*array.length)]
+};
+
+app.get('/', function(req, res) {
+  hash = {
+    name: rando(names),
+    hometown: rando(hometown),
+    dob: rando(dob)
+  };
+  res.json(hash)
+});
+//the next part wasn't in the instructions, but here it is anyways!
+app.get('/name', function(req, res) {
+  res.json({name: rando(names)})
+});
+
+app.get('/hometown', function(req, res) {
+  res.json({hometown: rando(hometown)})
+});
+
+app.get('/dob', function(req, res) {
+  res.json({dob: rando(dob)})
+});
+
+var server = app.listen(3000, function() {
+  console.log('Server is listening on port 3000');
+});
+```
