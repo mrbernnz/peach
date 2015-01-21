@@ -59,7 +59,7 @@ Write a Sinatra app that does the following:
   - Have the pictures populate on results.erb.
 
 in views/index.erb:
-
+```html
 <html>
 <body>
 <h1>You'll gram it in an instant!</h1>
@@ -70,8 +70,9 @@ in views/index.erb:
 
 </body>
 </html>
+```
 in views/results.erb:
-
+```html
 <html>
 <body>
 <h1>Here are the results for <%= tag %>! You can also
@@ -80,8 +81,9 @@ in views/results.erb:
 <%= pics %>
 </body>
 </html>
+```
 in server.rb:
-
+```ruby
 require 'HTTParty'
 require 'sinatra'
 
@@ -109,3 +111,4 @@ pics = "<div><ul>" + picArr.join('') + "</ul></div>"
 
 erb(:results, {locals: {tag: request.params["city"], pics: pics}})
 end
+```
