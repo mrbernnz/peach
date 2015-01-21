@@ -58,3 +58,54 @@ Write a Sinatra app that does the following:
   - Instagram requires longitude and latitude, so we better hit google's api (you'll need your key!) to get those coordinates for the city.
   - Have the pictures populate on results.erb.
 
+in views/index.erb:
+
+<html>
+<body>
+<h1>You'll gram it in an instant!</h1>
+
+<form action="/city" method="GET">
+<input type="text" name="city" placeholder="city, state">
+<button>Let's go!</button>
+
+</body>
+</html>
+in views/results.erb:
+
+<html>
+<body>
+<h1>Here are the results for <%= tag %>! You can also
+<a href="/">search again.</a>
+</h1>
+<%= pics %>
+</body>
+</html>
+in server.rb:
+
+require 'HTTParty'
+require 'sinatra'
+
+get("/") do
+erb(:index)
+end
+
+get("/city") do
+location = request.params["city"]
+location = location.gsub(" ", "+")
+
+googresponse = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{location}&key=AIzaSyCUDbbdZqgnvYm0LmOJAXlm_lJKTOERRYg")
+
+lat = googresponse["results"][0]["geometry"]["location"]["lat"]
+long = googresponse["results"][0]["geometry"]["location"]["lng"]
+
+response = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{lat}&lng=#{long}&client_id=8fe4db31e3a940068664c1e7e3c5c061")
+
+picArr = []
+response["data"].each do |x|
+picArr<<"<li><img src='#{x["images"]["standard_resolution"]["url"]}'></li>"
+end
+
+pics = "<div><ul>" + picArr.join('') + "</ul></div>"
+
+erb(:results, {locals: {tag: request.params["city"], pics: pics}})
+end
