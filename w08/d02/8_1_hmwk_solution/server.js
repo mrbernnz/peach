@@ -56,12 +56,39 @@ var generateRandomTeam = function() {
 // server starts here 
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function(req, res) {
   res.json(generateRandomTeam());
+});
+
+app.post('/addTeam', function(req, res) {
+  var city = req.body.city;
+  var team = req.body.team;
+  var coach = req.body.coach;
+  var logo = req.body.logo;
+
+  if(city !== '') {
+    cities.push(city);
+  }
+
+  if(team !== '') {
+    teams.push(team);
+  }
+
+  if(coach !== '') {
+    coaches.push(coach);
+  }
+
+  if(logo !== '') {
+    logos.push(logo);
+  }
+
+  res.sendFile(__dirname + '/public/random_team.html');
 });
 
 app.listen(3000);
