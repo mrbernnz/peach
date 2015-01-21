@@ -1,0 +1,14 @@
+{
+  "name": "random_something",
+  "version": "1.0.0",
+  "description": "A random sports team website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Gottfried",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.1"
+  }
+}
