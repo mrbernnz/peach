@@ -14,7 +14,6 @@ var request = require('request');/*be careful to not overide 'parameter' in app.
 app.get('/', function(req, res) /*you will never use req, unless you are grabbing information from the header*/
 {
   var url = 'http://api.randomuser.me/';
-    // var person_json; 
     request(url, function(error, response, body) 
     {
       if (!error && response.statusCode === 200) 

@@ -1,0 +1,16 @@
+<!-- localhost:4567 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The World of Cats</title>
+</head>
+<body>
+  <h1><%=name%></h1>
+  <ul>
+        <%image.each do |image|%>
+        <li><img src='<%= image %>'></li>
+        <% end%>
+  </ul>
+</body>
+</html>

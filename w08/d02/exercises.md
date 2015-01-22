@@ -136,4 +136,8 @@ Write a Sinatra app that does the following:
   - On your server, use HTTParty to hit instagram's api (you'll need your key!) and get pictures taken near said city.
   - Instagram requires longitude and latitude, so we better hit google's api (you'll need your key!) to get those coordinates for the city.
   - Have the pictures populate on results.erb.
-
+#### Solution
+```ruby
+```
+```html
+```

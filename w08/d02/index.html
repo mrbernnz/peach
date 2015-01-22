@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <style type="text/css">
+      #map-canvas { height: 600px; width: 800px;}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYEvZl6I5vJ6tSVutlF2EF9qsPcOexswA"></script>
+  </head>
+  <body>
+  <input id="lat" type="text">
+  <input type="text" id="long">
+    <div id="map-canvas"></div>
+    <script>
+    // var lat = parseFloat(prompt("Enter latitude."))
+    // var lng = parseFloat(prompt("Enter longitude."))
+      var mapOptions = {
+        center: { lat: parseFloat(prompt("Enter latitude.")), lng: parseFloat(prompt("Enter longitude."))},
+        zoom: 11
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    </script>
+  </body>
+</html>
