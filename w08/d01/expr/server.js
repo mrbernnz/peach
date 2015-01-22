@@ -8,6 +8,7 @@
 //     console.log(data.results[0].user.name.first); /*syntax specific*/
 //   };
 // });
+
 var express = require('express');
 var app = express();
 var request = require('request');/*be careful to not overide 'parameter' in app.get*/

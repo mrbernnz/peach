@@ -54,7 +54,6 @@ Open this in a browser.  You should see a Google Map centered on New York City.
   <body>
   <input id="lat" type="text">
   <input type="text" id="long">
-    <div id="map-canvas"></div>
     <script>
     // var lat = parseFloat(prompt("Enter latitude."))
     // var lng = parseFloat(prompt("Enter longitude."))
