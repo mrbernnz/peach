@@ -4,10 +4,18 @@
     <div style = "text-align: center">
       <h1>Random Baseball Team</h1>
       <img id = "logo">
-      <h2 id = "teamName"></h1>
+      <h2 id = "teamName"></h2>
       <h3 id = "coach"></h3>
 
       <button id = "next">That sounds lame, give me another</button>
+      <h3>Add a Team!</h3>
+      <form action = "/addTeam" method = "POST">
+        City: <input type = "text" name = "city"><br />
+        Team: <input type = "text" name = "team"><br />
+        Coach: <input type = "text" name = "coach"><br />
+        Logo: <input type = "text" name = "logo">
+        <button>add team</button>
+      </form>
     </div>
     <div id = "explanation" style = "position: relative; left: 200px; top: 50px;">
       The Random Baseball Team API generates a random baseball team with a random logo, city, team name, and coach (using current 2015 MLB data).
