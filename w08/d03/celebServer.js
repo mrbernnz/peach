@@ -27,15 +27,16 @@ app.get('/', function(req, res) {
 app.get('/:CELEBNAME', function(req, res) {
   var address = req.params.CELEBNAME;
   if (CELEBNAME !== req.params.CELEBNAME) {
-    i = parseInt(req.params.CELEBNAME);
     j = 0
-    while (j < 4) {
+    if (j < 4) {
       res.json(incor['incorrect']);
       j++
-    };
-    res.json(wrong['wrong'])
+    }
+    else {
+      res.json(wrong['wrong']);
+    }
   }
-  if (CELEBNAME === req.params.CELEBNAME) {
+  else if (CELEBNAME === req.params.CELEBNAME) {
     res.json(cor['correct']);
   };
 });

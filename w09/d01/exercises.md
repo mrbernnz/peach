@@ -30,7 +30,7 @@ You will do this with a Sintara server and will have to create the following rou
   - Store your data in a file (as JSON) and load it when the server loads.
 
   Here is how to read a file in Ruby:
-  ```rb
+  ```ruby
   json = ''
   if File.exist? "my/file/path"
       File.open("my/file/path", "r") do |f|
@@ -44,7 +44,7 @@ You will do this with a Sintara server and will have to create the following rou
   end
   ```
   Here is how you can write a file in Ruby:
-  ```rb
+  ```ruby
   File.open("my/file/path", 'w') do |f|
     f << JSON.generate(students)
   end

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Giffy</title>
+  <style type="text/css">
+    img {
+      width: 50%;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="gif">
+  <input type="button" value="next" id="button">
+  <img src="">
+  <script>
+  var text = document.getElementById('gif');
+  var button = document.getElementById('button')
+  var text2 = text.value;
+    text.addEventListener('keydown',function(enter){
+      if (enter.keyCode === 13) {
+        var safe = encodeURI(text2);
+        var url = "http://api.giphy.com/v1/gifs/search?q=" + safe + "&api_key=dc6zaTOxFJmzC"
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url); /*when you recieve a request, this is where I want you to send it.*/
+        xhr.addEventListener('load', function(e) { /*event listener, callback*/
+          var data = JSON.parse(xhr.responseText)
+          var img = document.querySelector('img')
+          var picture = data['data']
+          img.src = picture['images'];
+          img.height = "200";
+          document.body.appendChild(img);
+          console.log(picture['images'])
+        });
+        xhr.send();
+      }
+    })
+    button.addEventListener('click',function(){
+      if (text.value!=="") {
+        var safe = encodeURI(text2);
+        var url = "http://api.giphy.com/v1/gifs/search?q=" + safe + "&api_key=dc6zaTOxFJmzC"
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url); /*when you recieve a request, this is where I want you to send it.*/
+        xhr.addEventListener('load', function(e) { /*event listener, callback*/
+          var data = JSON.parse(xhr.responseText)
+          var img = document.querySelector('img')
+          var picture = data['data']
+          img.src = picture['images'];
+          img.height = "200";
+          document.body.appendChild(img);
+          console.log(picture['images'])
+        });
+        xhr.send();
+      }
+    })
+  </script>
+</body>
+</html>

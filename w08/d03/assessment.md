@@ -39,8 +39,3 @@ end
 </body>
 </html>
 ```
-
-#### Rachel's
-```
-
-```
