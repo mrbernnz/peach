@@ -1,20 +1,16 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
-=======
 <html>
->>>>>>> 6beea7c83380cc37c8c3484ed6e0c1a73a65891a
 <body>
   <header>
     <h1>petulance</h1>
   </header>
   <ul>
     <% pets.each do |key, pet| %>
-<<<<<<< HEAD
       <li><%= pet[:name] %> is a <%= pet[:type] %>. This pet has a id of <a href="/pet/<%= pet[:id] %>"><%= pet [:id] %></a>.</li>
     <% end %>
   </ul>
@@ -24,17 +20,6 @@
     <input type="text" name="type" placeholder="pet type" required>
     <button>ADD IT!!</button>
   </form>
-=======
-    <li><%= pet[:name] %> is a <%= pet[:type] %>. This pet has an id of <a href="/pet/<%= pet[:id] %>"><%= pet[:id] %></a>.</li>
-    <% end %>
   </ul>
-
-<h3>Add a pet here:</h3>
-<form action="/pet" method="post">
- <input type="text" name="name" placeholder="pet name" required>
- <input type="text" name="type" placeholder="pet type" required>
- <button>ADD IT!</button>
- </form>
->>>>>>> 6beea7c83380cc37c8c3484ed6e0c1a73a65891a
 </body>
 </html>
