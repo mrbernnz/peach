@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Pets</title>
 </head>
+=======
+<html>
+>>>>>>> 6beea7c83380cc37c8c3484ed6e0c1a73a65891a
 <body>
   <header>
     <h1>petulance</h1>
     <a href="/pets">go home</a>
   </header>
   <p><%= thispet[:name] %> is a <%= thispet[:type] %></p>
+<<<<<<< HEAD
   <h3>Change <%= thispet[:name] %>'s name here:</h3>
   <form action="/pet/<%= thispet[:id] %>" method="post">
     <input type="hidden" name="_method" value="put">
@@ -21,5 +26,19 @@
     <input type="hidden" name="_method" value="delete">
     <button>DELETE IT!!</button>
   </form>
+=======
+<h3>Change <%= thispet[:name] %>'s name here:</h3>
+<form action="/pet/<%= thispet[:id] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="newname" placeholder="what's their new name?" required>
+  <button>UPDATE IT!!!1!</button>
+</form>
+
+<p><%= thispet[:name] %> can be removed here:</p>
+<form action="/pet/<%= thispet[:id] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>DELETE IT!!!!</button>
+</form>
+>>>>>>> 6beea7c83380cc37c8c3484ed6e0c1a73a65891a
 </body>
 </html>

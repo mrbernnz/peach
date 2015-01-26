@@ -1,0 +1,9 @@
+p {
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+}
+
+.fade {
+  opacity: 1;
+}

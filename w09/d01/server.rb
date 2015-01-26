@@ -23,6 +23,7 @@ post '/pet' do
   counter += 1
   redirect '/pets'
 end
+
 get '/pet/:id' do
   thispet = pets[params[:id].to_i]
   erb :show, locals: {thispet: thispet}
@@ -34,5 +35,14 @@ put '/pet/:id' do
 end
 delete '/pet/:id' do
   pets.delete(parasm[:id].to_i)
+
+put '/pet/:id' do
+  pet=pets[params[:id].to_i]
+  pet[:name] = params["newname"]
+  redirect '/pets'
+end
+
+delete '/pet/:id' do
+  pets.delete(params[:id].to_i)
   redirect '/pets'
 end
