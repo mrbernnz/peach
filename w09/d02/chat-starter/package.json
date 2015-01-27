@@ -1,0 +1,9 @@
+{
+  "name": "chat-starter",
+  "version": "1.0.0",
+  "description": "A Websocket Chatroom",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^0.5.0"
+  }
+}
