@@ -150,7 +150,7 @@ Go nuts! Here are some ideas:
 
 - Create a weather bot, so that when a user types "/weather ZIP" the weather underground api is consumed and a chatbot puts the 3 day forecast for the referenced zip code into chat.
 
-- Do the same, but with the omdb api. Or maybe randomthoughts.link....
+- Do the same, but with the omdb api, or any api you fancy.
 
 
 ### Work on this past weekend's projects and review exercises
