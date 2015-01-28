@@ -7,7 +7,7 @@
 - Geneveve  
 - Jerome
 - Katrina  
-- Noel  
+- Jerome  
 - Ricki  
 - Shoshanna  
 - Tiffany  

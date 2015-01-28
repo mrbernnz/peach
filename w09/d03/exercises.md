@@ -1,4 +1,3 @@
-# Exercise: Change the dwarfs
 Make the following changes to your table:  
 1. Change Grumpy's name to Grouchy  
 2. Change Sleepy's name to Dreamy  
