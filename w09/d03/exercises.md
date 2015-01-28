@@ -91,9 +91,9 @@ create table if not exists friends (
   ```
 
 
-  # Further exercises:
+# Further exercises:
 
-  ###Part 1: Fun with tables
+### Part 1: Fun with tables
   - do the following steps in the terminal.
   - Create a file called ```outputs.txt```. Throughout this exercise you will be copying output from your terminal after running a specific command and pasting it into this ```outputs.txt```.
   - Create a database called ```tablefun```
