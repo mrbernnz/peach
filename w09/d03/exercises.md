@@ -127,4 +127,9 @@ create table if not exists friends (
 
 
   ## Apply your knowledge to the pets exercise from monday
-  Add an sqlite database to the pets exercise from Monday so any pets added or deleted remain that way when the server is restarted.
+  - your table should include an id supplied by the database, a name column, a type column, a created_at column, and an updated_at column.
+  - create this table in a ```seed.sql``` file for your app that includes a trigger for updating timestamps when an entry is updated.
+  - Don't forget to include ```db = SQLite3::Database.new YOUR_DB_NAME_HERE```, but you shouldn't set the table in the server like we did in the rolodex exercise; your ```seed.sql``` took care of that for you.
+  
+## Integrate sqlite into your previous (or future previous) projects
+- as you see fit
