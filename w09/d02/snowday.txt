@@ -1,0 +1,14 @@
+- What is the difference between an API and a server?
+    + API's are apps talk each other. A server is a running app.
+
+- what does a DNS server do when you type "www.google.com" into an address bar?
+    + A DNS server checks against the domain name 'www.google.com' against the ip address to make sure they correlate.
+
+- What are some differences between a single page application and a multipage application? List one example of each.
+    + DOM manipulation, backend JSON, and backend API's are in SPA's. Examples are Trello and Google Maps. Forms, server side rendering, backend HTML are in MPA's. Examples are Wikipedia and Reddit.
+
+- Why do we use RESTful routes?
+    + I honestly can't remember.
+
+- What is an API key and why are they used?
+    + Allows access to external API's such as google and instagram; and are unique to the user.
