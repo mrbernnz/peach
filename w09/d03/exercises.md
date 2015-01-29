@@ -1,3 +1,130 @@
+# SQLite 3
+
+# Instructor Notes:
+Today we are going to learn about databases.  
+Databases allow us to store and persist data so that we can access it even after our server restarts.
+
+So far, we have looked at in memory objects like arrays and hashes.
+  - These don't persist after the server shuts down
+  - They also can get really complex and hard to maintain.
+
+We have also looked at storing our hashes/arrays in files.
+  - This is still done for certain types of things, but can also get really complex and messy.
+
+This brings us to databases.
+Databases can store our data on the server side (or on a remote server).
+  - They are typically optimized for performance and speed
+  - We don't have to worry as much about the structure of our data
+  - Finally, we can access it from other apps that might need to access it.
+
+Many databases use the Structured Query Language, or SQL standard language for performing CRUD operations on the database.
+  - This isn't true for all databases (for example, Mongo DB or Level DB), but is used in Postgres, MySQL, and SQLite.
+
+We are going to be using SQLite, which is an easy to set up database that stores its data in files.
+
+To begin, create a directory called dwarves.
+
+Go into that directory and type:
+`sqlite3 dwarfs.db` and hit enter.
+
+You should see a prompt for a command (like IRB or the Node REPL).
+  - If you don't, you can run
+  `brew install sqlite3`
+
+We just created a database called dwarves.db.
+  - In SQLite, databases are stored in files instead of on servers like many other types of SQL databases
+  - this makes it a little more portable since you can store it and, say, push it to Github
+    - but it's not so great if multiple services want to access the same database
+
+A database contains one or more tables.
+Tables are sort of like spreadsheets that have multiple columns that specify attributes, and multiple rows that specify entrees in the database.
+
+Let's create a table.
+Type the following:
+
+`CREATE TABLE dwarfs (id INTEGER PRIMARY KEY, name TEXT, color TEXT);` and hit enter.
+
+SQL is generally case-insensitive but commands are typically written in CAPS to distinguish them from table or column names.
+
+We also need to end most statements with a semi-colon.
+
+CREATE TABLE is the command to create a table.
+
+Dwarfs is the name of the table.
+
+id, name, and color are all column names for the table.
+
+We specify the types right after the column name.  Id is an integer, name and color contain text (like a String).
+Id is also a primary key, which ensures that it's unique.  Sqlite will automatically insert an id into your rows, so you don't have to worry about that.
+
+If you run `.schema dwarfs`, you'll see the create statement for Dwarfs.  It may be useful if you forget which columns are in the table.
+
+Now let's insert a row into the table.
+With REST API routes, this would look like `POST /dwarf`.
+
+In SQLite, you can run this:
+`INSERT INTO dwarfs (name, color) VALUES("Happy", "yellow");`
+
+Now that we have a row, how do we see what our table looks like?
+
+In REST, this looks like `GET /dwarfs`.
+
+In SQLite, you can run this:
+`SELECT * FROM dwarfs;`
+You should see this:
+`1|Happy|yellow`
+
+`*` is a wildcard that basically says select all the from the Dwarfs table.
+
+# Exercise: Add the rest of the Dwarfs
+Insert the following Dwarfs into the table:
+
+| name  | color  |
+|-------| ------ |
+|Dopey  | purple |
+|Sneezy | yellow |
+|Grumpy | brown  |
+|Doc    | brown  |
+|Sleepy | blue   |
+|Bashful| blue   |
+
+# Instruction Notes:
+Run `SELECT * FROM dwarfs;` to see all the dwarfs in the database.
+
+Now that we have 7 Dwarfs, what if we only want to show one?
+
+In REST, this looks like `GET /dwarf/:id`.
+
+In SQLite, you can run this:
+`SELECT * FROM dwarfs WHERE id = 3;`
+
+You should see
+`3|Sneezy|yellow`
+
+WHERE clauses add conditions to SELECT queries to narrow down the results.  In this case, we are looking for the result with the ID of 3.
+
+We could also do something like this:
+`SELECT * FROM Dwarfs WHERE color = "brown";`
+
+You should see
+```
+4|Grumpy|brown
+5|Doc|brown
+```
+What if we want to update a dwarf?
+In REST, this looks like `PUT /dwarf/:id`
+In SQLite, you can run this:
+`UPDATE dwarfs SET name = "Sniffy", color = "green" WHERE id = 7;`
+
+Use `SELECT * FROM dwarfs WHERE id = 7;` to see the change.
+
+Once again, we used the where clause to specify a condition for which records to change.
+
+We could also do this:
+`UPDATE dwarfs SET color = "gray" WHERE color = "yellow";`
+
+Use `SELECT * FROM dwarfs;` to see the results.
+# Exercise: Change the dwarfs
 Make the following changes to your table:  
 1. Change Grumpy's name to Grouchy  
 2. Change Sleepy's name to Dreamy  
