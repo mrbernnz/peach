@@ -1,0 +1,19 @@
+{
+  "name": "pets-spa-sql",
+  "version": "1.0.0",
+  "description": "Pets app in SQL",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "cors": "^2.5.3",
+    "ejs": "^2.2.3",
+    "express": "^4.11.1",
+    "sqlite3": "^3.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Princess Peach",
+  "license": "ISC"
+}
