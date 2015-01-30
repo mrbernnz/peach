@@ -33,7 +33,7 @@ Next:
 2|blue|4
 4|blue|3
 - DELETE FROM chairs WHERE ID=4;
--1|green|4
+1|green|4
 2|blue|4
 3|yellow|3
 5|green|3
