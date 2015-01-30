@@ -1,4 +1,3 @@
-// 
 var express = require('express');
 var cors = require('cors'); /*a fix for...*/
 var bodyParser = require('body-parser');
