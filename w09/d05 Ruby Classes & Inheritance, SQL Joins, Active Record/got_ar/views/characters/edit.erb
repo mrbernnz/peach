@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <meta charset="UTF-8">
+  <title>Edit <%= character.name %></title>
+</head>
+<body>
+  <form action="/characters/<%= character.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="name" placeholder="Name" value="<%= character.name %>" />
+    <input type="text" name="url" placeholder="Image Url" value="<%= character.image_url %>"/>
+    <select name="house_id">
+      <% houses.each do |house| %>
+        <option value="<%= house.id %>" <%= "selected" if character.house.id == house.id%> ><%= house.name %></option>
+      <% end %>
+    </select>
+    <button>Submit</button>
+  </form>
+
+  <form action="/characters/<%= character.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button>Delete Character</button>
+  </form>
+</body>
+</html>
