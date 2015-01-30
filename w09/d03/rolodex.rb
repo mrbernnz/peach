@@ -47,7 +47,8 @@ create table if not exists friends (
   puts "what is their new number?"
   number = gets.chomp
   # update the entry
-  db.execute(&& use an update command to change the phone number of the id given by the user &&)
+  db.execute(
+    && use an update command to change the phone number of the id given by the user &&)
   # get the updated entry so the user can see that the change happened
   person = db.execute(&& use a select command to get the name and new phone number from the given id &&)
   && display the person's name and number in the following format: "so-and-so's number is now xxxxxx" &&

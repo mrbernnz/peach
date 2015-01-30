@@ -61,7 +61,7 @@ var editPet = function(li, name, type) {
   nameField.value = name;
   li.appendChild(nameField);
   // filler text
-  var isA = document.createElement(' is a ');
+  var isA = document.createTextNode(' is a ');
   li.appendChild(isA);
   // pet type input text field
   var typeField = document.createElement('input');
@@ -92,10 +92,10 @@ var updatePet = function(li, newName, newType) {
     name: newName,
     type: newType
   };
-  xhr.send.(JSON.stringify(updatePet));
+  xhr.send(JSON.stringify(updatePet));
 };
 // 
-var 
+var addNewPetButton = document.getElementById('addNewPet');
 addNewPetButton.addEventListener('click', function() {
   var newName = document.getElementById('newPetName');
   var newType = document.getElementById('newPetType');
