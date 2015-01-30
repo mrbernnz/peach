@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <meta charset="UTF-8">
+  <title>Characters</title>
+</head>
+<body>
+  <a href="/characters/new">Create a Character</a>
+  <ul>
+    <% characters.each do |character| %>
+      <li>
+        <a href="/characters/<%= character.id %>">
+        <%= character.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
