@@ -1,8 +1,10 @@
 ##Topics
+---
 - Ruby Classes + Inheritance
 - SQL Joins
 - Active Record
-
+- Serving static html files in JS express
+- Use a crappy crystal ball
 ```js
 var person = function(name,age){
     this.name=name;
@@ -17,6 +19,7 @@ var sam = new person('Sam',26);
 sam.sayHello();
 ```
 ####Ruby Class
+---
 ```ruby
 sam = person.new('Sam',26)
 class Person
@@ -75,6 +78,7 @@ class Cat
 end
 ```
 ####Ruby Inheritance
+---
 ```ruby
 Class Animal
 attr_accessor :name, :owner
@@ -115,3 +119,30 @@ puts c.name
 a = Animal.new('Giraffe','Peach')
 puts a.name
 a.name = ''
+---
+```
+####Serving Static HTML files.
+---
+```js
+// main>>server.js+public>>index.html+script.js+style.css
+  app.use('/public', express.static(__dirname + '/public')); //serves up index.html when server is not running. server.js file
+  app.get('/check') //server.js file
+```
+```html
+<script src="script.js"></script> <!-- inside index.html -->
+```
+####Crappy Crystal Ball
+---
+|Monday|Tuesday|Wednesday|
+|------|-------|---------|
+|OAuth|Bootstrap|Backbone|
+| |(Calm before the MVC storm)||
+
+####Post Backbone
+---
+rails
+####Possible
+---
+- sessions/cookies
+- bcrypt
+- whatever else

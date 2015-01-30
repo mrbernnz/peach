@@ -9,6 +9,7 @@ Create the following Ninja Turtles:
 |Raphael|Red|Sai|
 |Michalangelo|Orange|Nunchucks|
 ####Solution
+---
 ```ruby
 class Turtles
 attr_reader :name, :color, :weapon
@@ -28,6 +29,7 @@ puts Leo.name...
 
 Create a class called Food. Give it a method eat. Have it print out 'eating now...'. Create a class called Pizza. Give it a method called Taste. Have it print out 'Cowabunga'. Create a subclass call Asparagus. Give it a method called turtle. Have it print out 'Yuck!'
 ####Solution
+---
 ```ruby
 class Food
 def eat
