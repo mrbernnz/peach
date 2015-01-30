@@ -1,0 +1,15 @@
+body {
+	background-color: lightblue;
+	font-size: 24px;
+}
+
+li, form, img {
+	margin: 10px;
+	padding: 8px;
+	border: darkblue solid 2px;
+	border-radius: 8px;
+}
+
+li, form {
+	display: inline-block;
+}

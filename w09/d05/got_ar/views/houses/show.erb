@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <meta charset="UTF-8">
+  <title><%= house.name %></title>
+</head>
+<body>
+  <h1><%= house.name %></h1>
+  <img src="<%= house.sigil_url %>" />
+  <p>Characters:</p>
+  <ul>
+    <% house.characters.each do |character| %>
+      <li>
+        <a href="/characters/<%= character.id %>">
+        <%= character.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
