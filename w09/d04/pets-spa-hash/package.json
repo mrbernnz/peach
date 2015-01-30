@@ -1,0 +1,18 @@
+{
+  "name": "pets-spa-hash",
+  "version": "1.0.0",
+  "description": "We are going to take our Pets app and re-create it as a Single Page App (SPA)! As a bonus, we will be doing this in Express.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "cors": "^2.5.3",
+    "express": "^4.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Princess Peach",
+  "license": "ISC"
+}
