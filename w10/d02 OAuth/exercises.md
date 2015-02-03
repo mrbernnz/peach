@@ -1,6 +1,5 @@
 ## The Road to Login/Authentication
 
-
 #### Part 1: What's the secret?
 
 * Create a server (express or sinatra) with the routes:
@@ -55,6 +54,7 @@ If you were to push the previous code to Github you probably would be showing th
 ---
   add the secret.json file into .gitignore
 ```html
+<!-- index.html -->
 ```
 ```json
 //json file
@@ -150,6 +150,7 @@ app.use(session({
 ####Solution
 ---
 ```js
+// server file
 var express = require('express');
 var session = require('express-session');
 var bodyParser require('body-parser'); // require values within a HTML file
