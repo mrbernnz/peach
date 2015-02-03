@@ -112,7 +112,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     valid_user: true
-  }); app.get('/', function(require) {
+  }); app.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/index.html');
   }); app.post('/session', function(req, res) {
     if (req.body.password === secret.password) {
