@@ -9,7 +9,9 @@
     * You can redirect in express like this: `res.redirect('/someroute')`
   * `GET /secret_page` say Hello! and provide a link to `/secret_page2`.
   * `GET /secret_page2` say Hello Again! and provide a link back to `/secret_page`.
+
 ####Solution
+---
 ```js
 // server file
 var express = require('express');
@@ -48,7 +50,9 @@ If you were to push the previous code to Github you probably would be showing th
 3. In your server simply load this file in with `var secret = require('./secret.json');`
  * We have to do `./secret.json` rather than `secret.json` because it is a local file. `./` just means "in the directory I'm in"
 4. Whenever you need to use the secret password in code, use `secret.password`.
+
 ####Solution
+---
   add the secret.json file into .gitignore
 ```html
 ```
@@ -85,7 +89,9 @@ app.get('/secret_page2',function (req,res) {
 * First change the `GET /login` route to be `POST /session`. This is a RestFUL way of saying "Create a new session".
 * On `POST /session` add the key `valid_user` to the session object with the value `true` if the secret is valid. If the secret is not valid you should still redirect to `/login`
 * Change `/secret_page` and `/secret_page2` to check the `valid_user` key on the session object. If it is not set to true, redirect the user back to `/` to login.
+
 ####Solution
+---
 ```html
 <!-- index.html -->
 <form action="session"  method="post">
@@ -140,7 +146,9 @@ app.use(session({
   * Otherwise add a new user to a `User` table with that `username` and `password`. Give the user a session with a `valid_user` key (like in `/session`) and redirect them to `/secret_page`
 * `POST /session`
   * Check to see that there is a user in the `User` table that matches the passed in `username` and `password`. If so redirect them to `/secret_page` with a `valid_user` session key, if not redirect them to `/`
+
 ####Solution
+---
 ```js
 var express = require('express');
 var session = require('express-session');
