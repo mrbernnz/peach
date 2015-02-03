@@ -129,16 +129,14 @@ a.name = ''
   app.get('/check') //server.js file
 ```
 ```html
-<script src="script.js"></script> <!-- inside index.html -->
+<script src="script.js"></script> <!-- index.html -->
 ```
-
 ####Crappy Crystal Ball
 ---
 |Monday|Tuesday|Wednesday|
 |------|-------|---------|
 |OAuth|Bootstrap|Backbone|
 | |(Calm before the MVC storm)||
-
 ####Post Backbone
 ---
 - rails

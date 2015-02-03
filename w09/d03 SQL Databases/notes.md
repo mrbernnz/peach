@@ -1,6 +1,5 @@
 ###Objective
 - SQL
-
 ```sql
 CREAT TABLE dwarfs (ID INTEGER PRIMARY KEY, name TEXT, color TEXT);
 INSERT INTO dwarfs (name, color) VALUES('Happy', 'Yellow');

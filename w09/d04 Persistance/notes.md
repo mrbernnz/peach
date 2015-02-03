@@ -1,5 +1,6 @@
 server.rb(only changes!!!)
 ```ruby
+# RESTful routes with a database
 require 'sqlite3'
 db = SQLite3::Database.new 'petulance.db'
 get '/pets' do

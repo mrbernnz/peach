@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= artist.name %></title>
+</head>
+<body>
+  <h1><%= artist.name %></h1>
+  <form action="/artist/<%= artist.id %>" method="get"></form>
+  <div><a href="/artist/<%= artist.id %>">Edit</a></div>
+  <img src="<%= artist.image_url %>" />
+</body>
+</html>

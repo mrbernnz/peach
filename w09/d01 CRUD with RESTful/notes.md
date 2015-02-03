@@ -1,5 +1,5 @@
 ##Objectives
-CRUD w/ RESTful routes
+- CRUD w/ RESTful routes
 ```ruby
 # server.rb
 require 'sinatra'

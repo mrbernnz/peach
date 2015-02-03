@@ -1,0 +1,4 @@
+CREATE TABLE songs (
+  id INTEGER PRIMARY KEY, title INTEGER, album_id TEXT);
+CREATE TABLE albums(id INTEGER PRIMARY KEY, name TEXT, artist_id INTEGER);
+CREATE TABLE artist(id INTEGER PRIMARY KEY, name TEXT);
