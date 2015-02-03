@@ -15,9 +15,9 @@
 var express = require('express');
 var pw = 'sleepy_dragon';
 
-app.get('/', function (require) {
+app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
-})
+});
 app.get('/login', function (req, res) {
   if (req.query.password===pw) {
     res.redirect('/secret_page');
@@ -26,13 +26,11 @@ app.get('/login', function (req, res) {
   };
 });
 app.get('/secret_page',function (req,res) {
-  console.log('Hello!');
-  res.send('/secret_page2');
+  res.send('Hello! <a href="/secret_page2">secret_page2</a>');
 });
 app.get('/secret_page2',function (req,res) {
-  console.log('Hello Again!');
-  res.send('/secret_page');
-})
+  res.send('Hello Again! <a href="/secret_page">secret_page</a>');
+});
 ```
 
 
@@ -52,6 +50,8 @@ If you were to push the previous code to Github you probably would be showing th
 4. Whenever you need to use the secret password in code, use `secret.password`.
 ####Solution
   add the secret.json file into .gitignore
+```html
+```
 ```json
 //json file
 {
@@ -61,9 +61,9 @@ If you were to push the previous code to Github you probably would be showing th
 ```js
 // server file
 var express = require('express');
-var secret = require('./secret.json');
+var secret = require('./secret.json'); // requiring the json file that is in .gitignore file
 
-app.get('/', function (require) {
+app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/index.html');
 })
 app.get('/login', function (req, res) {
@@ -74,19 +74,62 @@ app.get('/login', function (req, res) {
   };
 });
 app.get('/secret_page',function (req,res) {
-  console.log('Hello!');
-  res.send('/secret_page2');
+  res.send('Hello! <a href="/secret_page2">secret_page2</a>');
 });
 app.get('/secret_page2',function (req,res) {
-  console.log('Hello Again!');
-  res.send('/secret_page');
-})
+  res.send('Hello Again! <a href="/secret_page">secret_page</a>');
+});
 ```
 
 #### Part 2: Sessions
 * First change the `GET /login` route to be `POST /session`. This is a RestFUL way of saying "Create a new session".
 * On `POST /session` add the key `valid_user` to the session object with the value `true` if the secret is valid. If the secret is not valid you should still redirect to `/login`
 * Change `/secret_page` and `/secret_page2` to check the `valid_user` key on the session object. If it is not set to true, redirect the user back to `/` to login.
+####Solution
+```html
+<!-- index.html -->
+<form action="session"  method="post">
+      <input type="password" name="password">
+      <button>Enter</button>
+</form>
+```
+```js
+// server file
+var express = require('express');
+var secret = require('./secret.json'); // requiring the json file that is in .gitignore file
+var session = require('express-session');
+var bodyParser require('body-parser'); // require values within a HTML file
+var app = express();
+app.use(bodyParser.urlencoded({extend: false}););
+app.use(session({
+    secret: secret.password,
+    resave: false,
+    saveUninitialized: true,
+    valid_user: true
+  }); app.get('/', function(require) {
+    res.sendFile(__dirname + '/public/index.html');
+  }); app.post('/session', function(req, res) {
+    if (req.body.password === secret.password) {
+      req.session.valid_user = true;
+      res.redirect('/secret_page2');
+    }; else {
+      res.redirect('/login');
+    };
+  }); 
+  }); app.get('/secret_page', function(req, res) {
+    if (req.session.valid_user) {
+      res.send('Hello! <a href="/secret_page2">secret_page2</a>');
+    }; else {
+      req.redirect('/');
+    };
+  }); app.get('/secret_page2', function(req, res) {
+    if (req.session.valid_user) {
+      res.send('Hello Again! <a href="/secret_page">secret_page</a>');
+    }; else {
+      req.redirect('/');
+    };
+  });
+```
 
 #### Part 3: Real User Passwords
 * Change the `/` page so that there are two forms.
@@ -97,7 +140,7 @@ app.get('/secret_page2',function (req,res) {
   * Otherwise add a new user to a `User` table with that `username` and `password`. Give the user a session with a `valid_user` key (like in `/session`) and redirect them to `/secret_page`
 * `POST /session`
   * Check to see that there is a user in the `User` table that matches the passed in `username` and `password`. If so redirect them to `/secret_page` with a `valid_user` session key, if not redirect them to `/`
-
+####Solution
 
 #### Part 4: Tales from the BCrypt
 
