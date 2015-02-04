@@ -10,6 +10,6 @@ Read up to and including "What does MVC give us?".
 
 Then, look at this. It's beautiful.
 
-![](https://github.com/ga-students/peach_instructors/blob/master/10.3/mvc_detailed-full.png "so beautiful")
+![](https://github.com/ga-students/peach/blob/master/10.3/mvc_detailed-full.png "so beautiful")
 
 Tomorrow we will be doing our first rails app; these concepts will become more clear as you get exposed to them. Happy reading!
