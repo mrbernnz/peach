@@ -73,7 +73,7 @@ app.get('/secret_page2',function (req,res) {
   res.send('Hello Again! <a href="/secret_page">secret_page</a>');
 });
 ```
-####SQLite in JavaScript
+####SQLite in JavaScript (Review)
 ```
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('<database_name>.db');

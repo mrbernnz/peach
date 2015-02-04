@@ -242,8 +242,10 @@ app.post('/user', function(req, res) {
   } else {
     db.run("INSERT INTO users (username, password) VALUES (?, ?)", username, password, function(err) {
       if(err) { throw err; }
+      else{
         req.session.valid_user = true;
         res.redirect('/secret_page');
+      }
       });
   }
 });
