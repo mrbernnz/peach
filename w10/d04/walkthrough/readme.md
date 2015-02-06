@@ -146,7 +146,7 @@ Before we leave the routes file, add the following to the top of that block (abo
 
   Rails looked in the routes file and saw that we want to start off at the index action of the posts controller.  But we don't have a posts controller!  Let's make one.
 
-  # Controllers
+# Controllers
 
   Make a new file in `app/controllers` called `posts_controller.rb`
   Add the following to it:
@@ -175,7 +175,7 @@ Before we leave the routes file, add the following to the top of that block (abo
 
   Now it's looking for a view, which is just an ERB file associated with our controller and action.  Let's create one!
 
-  # Views
+# Views
 
   Create a directory in `app/views` called `posts`.  Inside of that `posts` directory, create a file called `index.html.erb`
 
@@ -284,7 +284,7 @@ Before we leave the routes file, add the following to the top of that block (abo
   Now if we reload the page, we'll see our individual post.
   We can change the id in the URL bar, and see different posts in our app.
 
-  # Linking Everything Together
+# Linking Everything Together
   Let's update our index page to link to our individual posts, and our create page.
 
   Update our `app/views/posts/index.html.erb` to look like this:
