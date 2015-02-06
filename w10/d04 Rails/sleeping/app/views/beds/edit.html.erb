@@ -1,0 +1,12 @@
+<%= form_for @beds, url: {actions: 'update'} do |f| %>
+    <%= f.label :mattress %>
+    <%= f.text_field :mattress %>
+    <br>
+    <%= f.label :sheets %>
+    <%= f.text_field :sheets %>
+    <br>
+    <%= f.label :pillows %>
+    <%= f.text_field :pillows %>
+    <br>
+    <%= f.submit 'Click it'%>
+<% end %>

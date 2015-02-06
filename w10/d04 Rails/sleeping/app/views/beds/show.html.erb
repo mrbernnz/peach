@@ -1,0 +1,14 @@
+a  <%= @bed.mattress %>
+  <br>
+  <%= @bed.sheets %>
+  <br>
+  <%= @bed.pillows %>
+  <br>
+  <%= link_to 'Edit', edit_bed_path(@bed) %>
+  <br>
+  <%= link_to 'Destroy!!!', bed_path(@bed), method: :delete %>
+  <br>
+  <%= link_to 'Back', beds_path %>
+
+<!--     <%= image_tag (column source) %>
+-->    
