@@ -146,7 +146,7 @@ Before we leave the routes file, add the following to the top of that block (abo
 
   Rails looked in the routes file and saw that we want to start off at the index action of the posts controller.  But we don't have a posts controller!  Let's make one.
 
-  # Controllers
+# Controllers
 
   Make a new file in `app/controllers` called `posts_controller.rb`
   Add the following to it:
@@ -175,7 +175,7 @@ Before we leave the routes file, add the following to the top of that block (abo
 
   Now it's looking for a view, which is just an ERB file associated with our controller and action.  Let's create one!
 
-  # Views
+# Views
 
   Create a directory in `app/views` called `posts`.  Inside of that `posts` directory, create a file called `index.html.erb`
 
@@ -284,7 +284,7 @@ Before we leave the routes file, add the following to the top of that block (abo
   Now if we reload the page, we'll see our individual post.
   We can change the id in the URL bar, and see different posts in our app.
 
-  # Linking Everything Together
+# Linking Everything Together
   Let's update our index page to link to our individual posts, and our create page.
 
   Update our `app/views/posts/index.html.erb` to look like this:
@@ -303,175 +303,175 @@ Before we leave the routes file, add the following to the top of that block (abo
 
   `link_to` is a view helper provided by Rails that takes a string (in this case post.title), and a url.  If you just give it a model, it will go to the show page for that model.  Otherwise, you can give it a path (like what you see on the left side in `rake routes`.  
 
-    Now let's update our edit page to go back to the end of our index page.  
-    Add the following to our `app/views/posts/new.html.erb`
+Now let's update our edit page to go back to the end of our index page.  
+Add the following to our `app/views/posts/new.html.erb`
 
-    ```erb
-    <%= link_to 'cancel', posts_path %>
-    ```
+```erb
+<%= link_to 'cancel', posts_path %>
+```
 
-    That will link our edit page back to our posts index.
+That will link our edit page back to our posts index.
 
-    Finally, add the following to the bottom of our `app/views/posts/show.html.erb` file:
-    ```erb
-    <br />
-    <%= link_to 'back', posts_path %>
-    ```
+Finally, add the following to the bottom of our `app/views/posts/show.html.erb` file:
+```erb
+<br />
+<%= link_to 'back', posts_path %>
+```
 
-    Now we can navigate our app.  We can create new posts, see all existing posts,
-    and see an individual post.  
+Now we can navigate our app.  We can create new posts, see all existing posts,
+and see an individual post.  
 
-    We have the C and R of CRUD.  Let's work on the D (Destroy) portion next.
+We have the C and R of CRUD.  Let's work on the D (Destroy) portion next.
 
-    # Deleting a Post
+# Deleting a Post
 
-    In our `app/views/posts/show.html.erb` file, add the following to the bottom of the view:
-    ```erb
-    <br /><br />
-    <%= link_to 'delete', @post, method: :delete %>
-    ```
+In our `app/views/posts/show.html.erb` file, add the following to the bottom of the view:
+```erb
+<br /><br />
+<%= link_to 'delete', @post, method: :delete %>
+```
 
-    and go to an individual post (like http://localhost:3000/posts/1).
+and go to an individual post (like http://localhost:3000/posts/1).
 
-    Now click on the "delete" link.
+Now click on the "delete" link.
 
-    You know the drill.  We have to create a "destroy" action on our Posts controller.
+You know the drill.  We have to create a "destroy" action on our Posts controller.
 
-    Let's add the following to our `app/controllers/posts_controller.rb` file:
+Let's add the following to our `app/controllers/posts_controller.rb` file:
 
-    ```rb
-    def destroy
-    @post = Post.find_by(id: params[:id])
-    @post.destroy
+```rb
+def destroy
+@post = Post.find_by(id: params[:id])
+@post.destroy
 
-    redirect_to posts_path
-    end
-    ```
+redirect_to posts_path
+end
+```
 
-    **NOTE:** Put this ABOVE the `private` keyword you used for the `post_params` method.
+**NOTE:** Put this ABOVE the `private` keyword you used for the `post_params` method.
 
-    The first thing we do is get the Post from the database based on the id that was passed in.  Then we call the `destroy` method on that Post.  `destroy` is an ActiveRecord method for removing something from the database.
+The first thing we do is get the Post from the database based on the id that was passed in.  Then we call the `destroy` method on that Post.  `destroy` is an ActiveRecord method for removing something from the database.
 
-    Finally, we redirect to the posts index page.  Remember: You can't redirect back to the Post show page because that Post no longer exists!
+Finally, we redirect to the posts index page.  Remember: You can't redirect back to the Post show page because that Post no longer exists!
 
-    So, we now have CR & D.  Next up is U (Update).
+So, we now have CR & D.  Next up is U (Update).
 
-    # Updating a Post
+# Updating a Post
 
-    The first thing we want to do is add a form for editing.
+The first thing we want to do is add a form for editing.
 
-    This will look almost identical to the new post form we made earlier.
+This will look almost identical to the new post form we made earlier.
 
-    ```erb
-    <%= form_for @post, url: {action: 'update'} do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, value: @post.title %>
-    <br /><br />
+```erb
+<%= form_for @post, url: {action: 'update'} do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, value: @post.title %>
+<br /><br />
 
-    <%= f.label :author %>
-    <%= f.text_field :author, value: @post.author %>
-    <br /><br />
+<%= f.label :author %>
+<%= f.text_field :author, value: @post.author %>
+<br /><br />
 
-    <%= f.label :content %>
-    <%= f.text_area :content, value: @post.author %>
-    <br /><br />
+<%= f.label :content %>
+<%= f.text_area :content, value: @post.author %>
+<br /><br />
 
-    <%= f.submit %>
-    <% end %>
-    <%= link_to 'cancel', @post %>
-    ```
+<%= f.submit %>
+<% end %>
+<%= link_to 'cancel', @post %>
+```
 
-    Go to your index page and click on one of your posts.
-    Add `/edit` to the end of the url and hit enter.
+Go to your index page and click on one of your posts.
+Add `/edit` to the end of the url and hit enter.
 
-    Oh no! Another ArgumentError!
+Oh no! Another ArgumentError!
 
-    Looks like we have to pass a Post to the edit page!
+Looks like we have to pass a Post to the edit page!
 
-    Go to your PostsController.  Add the following method (ABOVE `post_params`):
+Go to your PostsController.  Add the following method (ABOVE `post_params`):
 
-    ```rb
-    def edit
-    @post = Post.find_by(id: params[:id])
-    end
-    ```
+```rb
+def edit
+@post = Post.find_by(id: params[:id])
+end
+```
 
-    Now reload that page.
+Now reload that page.
 
-    Try to make a change to one or more of the values, and click on the "Update Post"
-    button.
+Try to make a change to one or more of the values, and click on the "Update Post"
+button.
 
-    Once again, we have an unkown action for our PostsController.
+Once again, we have an unkown action for our PostsController.
 
-    Let's add the update action that it's looking for.
+Let's add the update action that it's looking for.
 
-    Add the following to PostsController (ABOVE `post_params`).
+Add the following to PostsController (ABOVE `post_params`).
 
-    ```rb
-    def update
-    @post = Post.find_by(id: params[:id])
-    @post.update_attributes(post_params)
+```rb
+def update
+@post = Post.find_by(id: params[:id])
+@post.update_attributes(post_params)
 
-    redirect_to @post
-    end
-    ```
+redirect_to @post
+end
+```
 
-    This is very similar to create. We grab the Post out of the database (based on the id that comes in). Then we update the attributes of that Post from the form.  `update_attributes` is an ActiveRecord method for updating multiple attributes of an object and then saving them to the database.
+This is very similar to create. We grab the Post out of the database (based on the id that comes in). Then we update the attributes of that Post from the form.  `update_attributes` is an ActiveRecord method for updating multiple attributes of an object and then saving them to the database.
 
-    Once again, we need `post_params` because we need to allow those attributes to be saved.
+Once again, we need `post_params` because we need to allow those attributes to be saved.
 
-    If you reload the page (and click "Yes" to the warning about submitting the form), you'll see that your changes have been saved.
+If you reload the page (and click "Yes" to the warning about submitting the form), you'll see that your changes have been saved.
 
-    Finally, we should add a link from the show post page to go to the edit form.
+Finally, we should add a link from the show post page to go to the edit form.
 
-    Open up `app/views/posts/show.html.erb` and add the following (above the delete link):
+Open up `app/views/posts/show.html.erb` and add the following (above the delete link):
 
-    ```erb
-    <%= link_to 'edit', edit_post_path(@post) %>
-    ```
+```erb
+<%= link_to 'edit', edit_post_path(@post) %>
+```
 
-    That's it!  We have a CRUD app!  We can create, read, update, and delete posts on our blog!
+That's it!  We have a CRUD app!  We can create, read, update, and delete posts on our blog!
 
-    # Styling
+# Styling
 
-    Let's add some styling to prettify this app.
+Let's add some styling to prettify this app.
 
-    We can create a style for our Post routes in `app/assets/stylesheets/posts.css`.
-    Add the following to that CSS file:
+We can create a style for our Post routes in `app/assets/stylesheets/posts.css`.
+Add the following to that CSS file:
 
-    ```css
-    a { text-decoration: none }
-    
-    body {
-      margin-left: 3em;
-      font-family: "Helvetica Neue";
-    }
+```css
+a { text-decoration: none }
 
-    form {
-      width: 200px;
-      margin-bottom: 1em;
-    }
+body {
+  margin-left: 3em;
+  font-family: "Helvetica Neue";
+}
 
-    input[type="text"] {
-      float: right;
-    }
+form {
+  width: 200px;
+  margin-bottom: 1em;
+}
 
-    #posts, #post, .post {
-      margin-bottom: 1em;
-    }
+input[type="text"] {
+  float: right;
+}
 
-    .post {
-      padding-bottom: 1em;
-      border-bottom: 1px solid lightGray;
-    }
-    ```
+#posts, #post, .post {
+  margin-bottom: 1em;
+}
 
-    This CSS file will automatically be included in all Post related routes.
+.post {
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightGray;
+}
+```
 
-    To get the full benefits, you'll have to make the following changes:
+This CSS file will automatically be included in all Post related routes.
 
-    In `app/views/posts/index.html.erb`:  
-    Wrap the `@posts.each` block in a `<div id = "posts">` and wrap each post in a `<div class = "post">`.
+To get the full benefits, you'll have to make the following changes:
 
-    In `app/views/posts/show.html.erb`:  
-    Wrap the post info in a `<div id = "post">`
+In `app/views/posts/index.html.erb`:  
+Wrap the `@posts.each` block in a `<div id = "posts">` and wrap each post in a `<div class = "post">`.
+
+In `app/views/posts/show.html.erb`:  
+Wrap the post info in a `<div id = "post">`
