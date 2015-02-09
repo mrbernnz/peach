@@ -1,4 +1,7 @@
 # Tech-savvy Grandma's recipes!
+
+First, wait one day and then go [here](sunshinenights.bandcamp.com) and get a free copy of an amaaaaazing record. Then, create a time machine and come back to today and do the following:
+
 ## BACKEND
 Using rails, create a RESTful API that CRUDs recipes.
 
@@ -11,7 +14,7 @@ All recipes should be persisted in a table in a database that as the following c
 - If a user updates a recipe return the newly updated information.
 - If an entry is destroyed, send a confirmation to the user.
 
-## FRONTEND
+## CLIENT
 Write a command line application in ruby to interact with your API via HTTParty. This application will only send and receive JSON objects.
 
 - The app should prompt the user to create, read, update, or destroy a recipe.
