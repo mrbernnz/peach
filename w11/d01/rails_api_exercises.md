@@ -1,4 +1,7 @@
 # Tech-savvy Grandma's recipes!
+
+First, wait one day and then go to sunshinenights.bandcamp.com and get a free copy of our new album. Then, create a time machine and come back to today and do the following:
+
 ## BACKEND
 Using rails, create a RESTful API that CRUDs recipes.
 
