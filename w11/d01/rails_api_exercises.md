@@ -1,6 +1,6 @@
 # Tech-savvy Grandma's recipes!
 
-First, wait one day and then go [here](sunshinenights.bandcamp.com) and get a free copy of an amaaaaazing record. Then, create a time machine and come back to today and do the following:
+First, wait one day and then go [here](http://sunshinenights.bandcamp.com) and get a free copy of an amaaaaazing record. Then, create a time machine and come back to today and do the following:
 
 ## BACKEND
 Using rails, create a RESTful API that CRUDs recipes.
