@@ -1,0 +1,41 @@
+<!-- <%= @article.headline %>
+<br>
+<%= @article.author.name %>
+<br>
+<%= @article.content %>
+<br>
+<%= image_tag @article.photo_url, height:300 %>
+<br>
+<%= link_to "Destroy!!!", article_path(@article), method: :delete %>
+<br>
+<%= link_to "Go home!", articles_path %>
+<%= link_to "Edit", edit_article_path(@article)%> -->
+
+<%= @article.headline %>
+<br>
+<%= @article.author.name %>
+<br>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Button with data-target
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    ...
+
+<%= @article.content %>
+  </div>
+</div>
+<br>
+<!-- <div class="container"> -->
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag @article.photo_url, height:300 %>
+    </div>
+  </div>
+<!-- </div> -->
+<%= image_tag @article.photo_url, height:300 %>
+<br>
+<%= link_to "Destroy!!!", article_path(@article), method: :delete %>
+<br>
+<%= link_to "Go home!", articles_path %>
+<%= link_to "Edit", edit_article_path(@article)%>

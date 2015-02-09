@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Comment</strong>
+  <%= @entry.content %>
+</p>
+
+<p>
+  <strong>Created</strong>
+  <%= @entry.created_at %>
+</p>
+
+<p>
+  <strong>Updated</strong>
+  <%= @entry.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Delete', entry_path(@entry), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', entries_path %>

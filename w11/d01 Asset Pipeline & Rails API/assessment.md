@@ -1,0 +1,2 @@
+- In your own words, explain what a MVC framework is and how the different components interact with each other. Oh and why we use them.
+ - A MVC is a front facing framework on the client side. Interprets information coming from an external source and manipulates the resulting captured information.
