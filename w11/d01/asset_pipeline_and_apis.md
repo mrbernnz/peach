@@ -412,16 +412,3 @@ document.addEventListener('DOMContentLoaded', function() {
 Change the newspaper app so when a user goes to ```/articles``` they get a JSON object  of all newspaper articles, including each article's headline, content, and just the author's name.
 
 Hint: use map.
-
-Solution:
-```ruby  
-def index
-  articles = Article.all
-  json_obj = articles.map do |article|
-    { name: article.headline,
-      author: article.author.name,
-      content: article.content }
-    end
-    render json: json_obj
-  end
-```
