@@ -2,7 +2,7 @@
 ## Make a back end
 - Turn the newspaper app from w10/d04 into an API.
 - Add all necessary backbone files to the app. This can be done by downloading the files or linking to them in layout.html.erb.
-- Add a collections.js and models.js to apps/assets/javascript. Don't forget to include them in your asset pipeline.
+- Add a collections.js and models.js to app/assets/javascript. Don't forget to include them in your asset pipeline.
 
 ## Manipulate your models.
 - In your models script, create an article class that, when initialized, logs "A new article has been written."
