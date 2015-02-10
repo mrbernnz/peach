@@ -23,3 +23,26 @@ var newArticle = new Article({
 ```
 
 Test your initialize hash by writing code that creates a valid article which has a change to its content followed by a change to its headline. Paste this code into the console to test.
+
+## Collect your models
+![Collect your Models](http://cdn.makeagif.com/media/2-10-2014/bIK3dS.gif)
+
+Write code to do the following; it does not all have to execute all at once (basically, feel free to comment out working sections as you see fit):
+- get all articles in the database
+- create a new instance of an article and post it to the database
+- edit a previously existing article and put it to the database
+- destroy an existing article so it is no longer in the database
+
+### Bonus
+- get a single item out of your database.
+- [Hint](http://documentcloud.github.io/backbone/#Model-url)
+
+### SUPER Bonus
+This one is tough.
+- Backbone doesn't preclude regular javascript!
+- if a user goes to /, render an html file and append all of the articles to the page using js.
+- [Hint](http://stackoverflow.com/questions/17858178/allow-anything-through-cors-policy)
+- [Go to section 8 for a hint on the hint](http://guides.rubyonrails.org/action_controller_overview.html)
+
+### SUPERER Bonus
+- style your page with bootstrap.
