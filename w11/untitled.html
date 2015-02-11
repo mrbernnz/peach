@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title></title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+      <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+    </script>
+  </head>
+  <body>
+    <script type = "text/template" id = "foodTemplate">
+      <h1>Hello, I love <%= foodX.name %></h1>
+      These are the following ingredients:
+      <ul>
+        <% foodX.ingredients.forEach(function(food) { %>
+          <li><%= food %></li>
+          <% }); %>
+      </ul>
+    </script>
+    <div id='food'></div>
+    <script>
+    var FoodView = Backbone.View.extend({
+        el: '#food', /*grabs the id of that tag and renders a view inside that tag*/
+        template: _.template($('#foodTemplate').html()),
+        initialize: function () {
+            this.render();
+        },
+        events: {'click h1': 'changeFood'}, /*you can use classes or ids in place of h1 tag*/
+
+        changeFood: function () {
+            this.$el.html(this.template({foodX: {name: 'Veggie Pizza', ingredients: ['spinach', 'mushrooms', 'cheese']}}));
+        },
+
+        render: function () {
+            this.$el.html(this.template({foodX: {name: 'Pepperoni Pizza', ingredients: ["cheese", "sauce", "pepperoni"]}}));
+            return this
+        }
+    });
+    new FoodView();
+    </script>
+  </body>
+</html>
+
+<!-- <html>
+  <head>
+    <title></title>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  </head>
+  <body>
+    <script type = "text/template" id = "personTemplate">
+      <h1>Hello, my name is <%= person.name %></h1>
+      I like doing the following things:
+      <ul>
+        <% person.hobbies.forEach(function(hobby) { %>
+          <li><%= hobby %></li>
+          <% }); %>
+      </ul>
+    </script>
+    <script>
+      var template = _.template(document.getElementById("personTemplate").innerHTML);
+      document.write(template({person: {name: "Ron Burgendy", hobbies: ["Reporting the news", "Playing the jazz flute", "jogging"]}}));
+      </script>
+  </body>
+</html>
+ -->
