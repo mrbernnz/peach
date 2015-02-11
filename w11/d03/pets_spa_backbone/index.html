@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+  <body>
+    <header>
+      <h1>Petulance</h1>
+    </header>
+    <ul id="petsList">
+    </ul>
+
+    <h3>Add a pet here:</h3>
+    <div id = "addPetForm">
+      <input type="text" id="newPetName" placeholder="pet name">
+      <input type="text" id="newPetType" placeholder="animal type">
+      <button id = "addNewPet">ADD IT!</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+    <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+
+    <script src = "js/models/pet.js"></script>
+    <script src = "js/collections/pet_collection.js"></script>
+    <script src = "js/views/pet_views.js"></script>
+
+    <script type = "text/template" id = "petTemplate">
+      <span class = "pet">
+        <%= pet.name %> is a <%= pet.type %>
+        <button class = "editButton">Edit</button>
+        <button class = "deleteButton">Delete</button>
+      </span>
+      <span class = "editForm" style = "display: none">
+        <input type = "text" id = "newName<%= pet.id %>"
+              value = "<%= pet.name %>"> is a
+        <input type = "text" id = "newType<%= pet.id %>"
+              value = "<%= pet.type %>">
+        <button class = "updateButton">Update</button>
+      </span>
+    </script>
+  </body>
+</html>
