@@ -1,0 +1,12 @@
+<%= form_for @article, url: {action: 'create'} do |f|%>
+  <%= f.label :headline%>
+  <%= f.text_field :headline%>
+  <br>
+  <%= f.label :content%>
+  <%= f.text_area :content%>
+  <br>
+  <%= f.label :photo_url%>
+  <%= f.text_field :photo_url%>
+  <br>
+  <%= f.submit %>
+<% end %>
