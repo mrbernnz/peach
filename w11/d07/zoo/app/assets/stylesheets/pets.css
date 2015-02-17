@@ -1,0 +1,24 @@
+a { text-decoration: none }
+
+body {
+  margin-left: 3em;
+  font-family: "Helvetica Neue";
+}
+
+form {
+  width: 200px;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  float: right;
+}
+
+#pets, #pet, .pet {
+  margin-bottom: 1em;
+}
+
+.pet {
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightGray;
+}
