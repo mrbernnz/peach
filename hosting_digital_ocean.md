@@ -2,7 +2,7 @@
 
 # Sinatra
 
-1. In your Gemfile, add the following:
+In your Gemfile, add the following:
 
 ```rb
 source "https://www.rubygems.org"
@@ -12,7 +12,7 @@ gem "unicorn"
 ```
 Digital Ocean does not play well with Webrick (the default server that comes with Sinatra and Rails).  We will use Unicorn instead.
 
-2. Create a file called `config.ru` in your project directory. (NOTE THE `.ru` EXTENSION!)
+Create a file called `config.ru` in your project directory. (NOTE THE `.ru` EXTENSION!)
 
 Put the following in it:
 
@@ -21,24 +21,24 @@ require './server'
 run Sinatra::Application
 ```
 
-3. Push your project to Github  
+1. Push your project to Github  
 
-4. SSH to your Digital Ocean Box.  
+2. SSH to your Digital Ocean Box.  
 `ssh root@your-digital-ocean-ip`  
 
-5. Use `git clone your-repo` to clone from Github to your Digital Ocean box  
+3. Use `git clone your-repo` to clone from Github to your Digital Ocean box  
 
-6. `cd` into that directory  
+4. `cd` into that directory  
 
-7. Run `bundle install`  
+5. Run `bundle install`  
 
-8. Run `nohup unicorn -p80 &`  
+6. Run `nohup unicorn -p80 &`  
 `nohup` allows your server to run even after you close out of your terminal.  
 `unicorn` is the command to run the Unicorn server (works similar to `ruby server.rb`)  
 `-p80` will use port 80 (the default port for http requests).  The default port for unicorn is 8080 if you don't do that.
 
-9. Go to `http://your-digital-ocean-ip-address` (assuming you use port 80)
-10. You should see your app (as long as you have a `/` route).
+7. Go to `http://your-digital-ocean-ip-address` (assuming you use port 80)
+8. You should see your app (as long as you have a `/` route).
 
 # Rails
 
