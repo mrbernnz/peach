@@ -1,6 +1,6 @@
 # Digital Ocean Tips
 
-Here are some tips for running your server on Digital Ocean:
+Here are some tips for running your rails server on Digital Ocean:
 
 1. Uncomment this line in your Gemfile:
 
