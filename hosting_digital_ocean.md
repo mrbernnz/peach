@@ -33,7 +33,6 @@ run Sinatra::Application
 
 7. Run `bundle install`  
 
-
 8. Run `nohup unicorn -p80 &`  
 `nohup` allows your server to run even after you close out of your terminal.  
 `unicorn` is the command to run the Unicorn server (works similar to `ruby server.rb`)  
