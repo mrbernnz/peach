@@ -8,14 +8,14 @@ Here are some tips for running your rails server on Digital Ocean:
 # gem 'unicorn'
 ```
 Unicorn is another HTTP server that you can run Rails apps on.  
-Digital Ocean doesn't seem to work well with Webrick (the default Rails server).
-2. Push your project to Github
-3. SSH to your Digital Ocean Box.
-`ssh root@your-digital-ocean-ip`
-4. Use `git clone your-repo` to clone from Github to your Digital Ocean box
-5. `cd` into that directory
-6. Run `bundle install` to install your Gems
-7. Run `rake db:migrate` and `rake db:seed` to set up your database.
+Digital Ocean doesn't seem to work well with Webrick (the default Rails server).  
+2. Push your project to Github  
+3. SSH to your Digital Ocean Box.  
+`ssh root@your-digital-ocean-ip`  
+4. Use `git clone your-repo` to clone from Github to your Digital Ocean box  
+5. `cd` into that directory  
+6. Run `bundle install` to install your Gems  
+7. Run `rake db:migrate` and `rake db:seed` to set up your database.  
 8. Run `nohup unicorn -p80 &`  
 `nohup` allows your server to run even after you close out of your terminal.  
 `unicorn` is the command to run the Unicorn server (works similar to `rails server`)  
