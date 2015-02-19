@@ -10,7 +10,6 @@ source "https://www.rubygems.org"
 gem "sinatra"
 gem "unicorn"
 ```
-
 Digital Ocean does not play well with Webrick (the default server that comes with Sinatra and Rails).  We will use Unicorn instead.
 
 2. Create a file called `config.ru` in your project directory. (NOTE THE `.ru` EXTENSION!)
