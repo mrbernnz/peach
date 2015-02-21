@@ -2,7 +2,16 @@
 <br>
 <%= @article.author.name %>
 <br>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Click here to read the story!
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    ...
+
 <%= @article.content %>
+  </div>
+</div>
 <br>
 <%= image_tag @article.photo_url, height:300 %>
 <br>

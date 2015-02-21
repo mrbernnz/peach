@@ -3,15 +3,16 @@
     <title></title>
   </head>
   <body>
-
+  <div class="container">
     <% @articles.each do |article| %>
-      <%= link_to article.headline, article_path(article) %>
+
+      <%= link_to article.headline, article_path(article), class:"col-md-12", style:"text-align: center;"%>
       <br>
       <%= link_to article.author.name, author_path(article.author) %>
       <br>
       <%= article.content %>
       <br>
-      <%= image_tag article.photo_url, height:300 %>
+      <%= image_tag article.photo_url, height:300, class:"img-circle"  %>
       <br>
     <% end %>
 
