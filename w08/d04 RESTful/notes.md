@@ -2,7 +2,7 @@
 - Trello
 - Google Maps
 - Chat APP
------------
+---
 - AJAX
 <!-- DOM manipulation -->
 <!-- backend JSON -->
@@ -11,7 +11,7 @@
 ###MPA
 - Wikipedia
 - Reddit
-------------
+---
 - Form <!-- refreshing the page every time -->
 - Server side rendering <!-- using a template i.e. EJS/ERB -->
 <!-- backend HTML -->

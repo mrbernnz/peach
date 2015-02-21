@@ -9,6 +9,6 @@ get '/' do
   picture.each do |response|
     page.push(response['images']['standard_resolution']['url'])
   end
-  erb(:index, locals:{name:"HELLO INSTASCAM!", image:page})
+  erb(:index, locals: { name: "HELLO INSTASCAM!", image: page })
 end
 
