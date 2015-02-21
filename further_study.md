@@ -46,6 +46,11 @@ Online
 - [Johnny-Five](https://github.com/rwaldron/johnny-five) - Open source robotics progamming framoework written in Node
 - [Node Copter](http://nodecopter.com/) - Full day event where 15 - 60 developers team up in groups of 3 and use Node to program a drone.
 
+###Backbone
+
+Online
+
+- [developing backbone.js applications](http://addyosmani.github.io/backbone-fundamentals/) - A thorough and well written book on backbone.
 
 
 ###Misc
