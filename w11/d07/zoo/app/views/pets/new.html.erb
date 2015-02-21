@@ -1,0 +1,13 @@
+  <%= form_for @pet, url: {action: 'create'} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br /><br />
+
+  <%= f.label :pet_type %>
+  <%= f.text_field :pet_type %>
+  <br /><br />
+
+
+  <%= f.submit %>
+  <% end %>
+  <%= link_to 'cancel', pets_path %>

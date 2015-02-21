@@ -1,0 +1,8 @@
+  <h1>Welcome to my zoo!</h1>
+  <div id = "pets"><% @pets.each do |pet| %>
+  <div class = "pet"><p><%= link_to pet.name, pet %> is a <%= pet.pet_type %></p></div>
+  <% end %>
+</div>
+
+  <br /><br />
+  <%= link_to 'Create a new pet!', new_pet_path %>

@@ -1,0 +1,6 @@
+  <p><%= @pet.name %> is a <%= @pet.pet_type %></p>
+  <br />
+<%= link_to 'back', pets_path %>
+<br /><br />
+<%= link_to 'delete', @pet, method: :delete %>
+<%= link_to 'edit', edit_pet_path(@pet) %>
