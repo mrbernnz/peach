@@ -1,0 +1,17 @@
+<html>
+<!-- <head>
+  <title></title>
+</head> -->
+<body>
+  <canvas id="canvas" width="300" height="300"></canvas>
+  <script>
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+  var draw = function(x){
+    ctx.fillStyle = "red";
+    ctx.fillRect (x, 10, 55, 50);
+  }
+  setInterval(draw, 20);
+  </script>
+</body>
+</html>

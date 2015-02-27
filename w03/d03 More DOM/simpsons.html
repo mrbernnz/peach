@@ -1,0 +1,33 @@
+<!-- Create an HTML page with an unordered list.
+
+Use JavaScript to loop through the following array and add each item to that list:
+
+["Homer", "Marge", "Bart", "Lisa", "Maggie", "Abe"] -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Simpsons</title>
+  </head>
+  <body>
+  <script>
+  debugger;
+  var simp = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Abe"];
+  var h1 = document.createElement("h1");
+  var ul = document.createElement("ul");
+  //var list = document.createElement("li");
+  var body = document.querySelector("body");
+  h1.innerText = "The Simpsons!";
+  // list.innerHTML = simp;
+  body.appendChild(h1);
+  body.appendChild(ul);
+  simp.forEach(function(name){
+    var list = document.createElement("li");
+    ul.appendChild(list);
+    list.innerHTML = name;
+  });
+  //ul.appendChild(list);
+    </script>
+  </body>
+</html>

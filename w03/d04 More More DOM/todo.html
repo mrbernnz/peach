@@ -1,0 +1,37 @@
+<!-- Make a todo list in HTML. It will contain one text input box, 1 button, and 1 unordered list. Add an event handler for the button that will add whatever is in the text input box to the unordered list.
+
+Bonus: Add another event handler for pressing enter in the text input box. This will also add whatever is in the text input box to the unordered list. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO</title>
+  </head>
+  <body>
+    <input type="text" id="box" value=""><br>
+    <input type="button" id="button" value="Press">
+    <script>
+      var ul = document.createElement("ul");
+      var li = document.createElement("li");
+      var bd = document.querySelector("body");
+      var bttn = document.querySelector("#button");
+      bttn.addEventListener("keyup",function()
+      {
+        
+      })
+    </script>
+  </body>
+</html>
+
+<!--
+<script type="text/javascript">
+function changeText2()
+{
+var userInput = document.getElementById('userInput').value;
+document.getElementById('boldStuff2').innerHTML = userInput;
+}
+</script>
+<p>Welcome to the site <b id='boldStuff2'>dude</b> </p>
+<input type='text' id='userInput' value='Enter Text Here' />
+<input type='button' onclick='changeText2()' value='Change Text'/>
+-->

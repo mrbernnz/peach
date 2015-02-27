@@ -1,0 +1,69 @@
+<!-- Using removeChild and insertBefore, take out the "pasta" list item and replace it with "Lasagna Noodles".
+
+Also, add a "Cheese" item to the list. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookbook</title>
+  </head>
+  <body>
+  <script>
+  debugger;
+  var h1 = document.createElement("h1");
+  var ul = document.createElement("ul");
+  var one = document.createElement("li");
+  var two = document.createElement("li");
+  var thr = document.createElement("li");
+  var par1 = document.createElement("p1");
+  var body = document.querySelector("body");
+  h1.innerText = "Lasagna!";
+  par1.innerText = "Ingredients needed";
+  one.innerText = "Pasta";
+  two.innerText = "Sauce";
+  thr.innerText = "Lasagna Noodles";
+  body.appendChild(h1);
+  body.appendChild(par1);
+  body.appendChild(ul);
+  body.insertBefore(par1,ul);
+  ul.appendChild(one);
+  ul.appendChild(two);
+  ul.removeChild(one); //taking  out pasta
+  ul.insertBefore(thr,two);
+  var four = document.createElement("li");
+  ul.appendChild(four);
+  four.innerText = "Cheese";
+  //ul.appendChild(one);
+  //ul.appendChild(thr);
+  </script>
+  </body>
+</html>
+
+<!--
+<script>
+debugger;
+var h1 = document.createElement("h1");
+var ul = document.createElement("ul");
+var one = document.createElement("li");
+var two = document.createElement("li");
+var thr = document.createElement("li");
+var par1 = document.createElement("p1");
+var body = document.querySelector("body");
+h1.innerText = "Lasagna!";
+one.innerText = "Pasta";
+two.innerText = "Sauce";
+thr.innerText = "Cheese";
+par1.innerText = "Ingredients needed";
+one.innerText = "Lasagna Noodles";
+body.appendChild(h1);
+body.appendChild(ul);
+ul.appendChild(one);
+ul.appendChild(two);
+body.appendChild(par1);
+ul.insertBefore(par1,one);
+ul.removeChild(one);
+ul.appendChild(one);
+ul.insertBefore(one,two);
+ul.appendChild(thr);
+</script>
+-->

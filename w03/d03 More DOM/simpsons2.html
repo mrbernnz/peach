@@ -1,0 +1,40 @@
+<!-- ["Apu", "Moe", "Barney", "Otto", "Nelson"]
+The Booooonus: Make a copy of this file. In the copy, modify the button to prompt the user for the name of a character and then add the result to the page. You will not need to use the random array for this. This, too, should be done in a script tag. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Simpsons</title>
+</head>
+<body>
+  <button id="button">ADD</button>
+  <script>
+
+var simp = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Abe"];
+var addsp = ["Apu", "Moe", "Barney", "Otto", "Nelson"];
+var h1 = document.createElement("h1");
+var ul = document.createElement("ul");
+var body = document.querySelector("body");
+h1.innerText = "The Simpsons!";
+body.appendChild(h1);
+body.appendChild(ul);
+simp.forEach(function(name){
+  var list = document.createElement("li");
+  ul.appendChild(list);
+  list.innerHTML = name;
+});
+
+//debugger;
+var bttn = document.querySelector("#button");
+bttn.addEventListener("click", function(){
+  var list = document.createElement("li");
+  var rand = Math.floor((addsp.length) * Math.random());
+  list.innerHTML = addsp[rand];
+  ul.appendChild(list);
+  }
+)
+</script>
+</body>
+</html>
+<!-- addsp[rand]
+var rand = Math.floor((addsp.length-1) * Math.random()) + 1 -->

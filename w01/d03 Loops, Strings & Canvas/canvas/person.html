@@ -1,0 +1,51 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="800" height="800"></canvas>
+
+  <script>
+  function draw() {
+    var canvas = document.getElementById('the_canvas');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+
+      //Face
+      ctx.beginPath();
+      ctx.arc(75,75,50,0,Math.PI*2,true);
+      // Outer circle
+      ctx.moveTo(110,75);
+      ctx.arc(75,75,35,0,Math.PI,false);
+      // UpperMouth (clockwise)
+      ctx.moveTo(65,65);
+      ctx.arc(60,65,5,0,Math.PI*2,true);
+
+      // Mouth (clockwise)
+      ctx.moveTo(65,65);
+      ctx.arc(60,65,5,0,Math.PI*2,true);
+      // Left eye
+      ctx.moveTo(95,65);
+      ctx.arc(90,65,5,0,Math.PI*2,true);
+      ctx.fillStyle
+
+      // Right eye
+      ctx.stroke();
+
+      ctx.strokeRect(50,125,50,120);
+
+      //Torso
+      ctx.beginPath();
+      ctx.moveTo(0,0);
+      ctx.lineTo(15,95);
+      ctx.lineTo(95,15);
+      ctx.closePath();
+      ctx.fillStyle = "#c0860a"
+      ctx.fill();
+        }
+    }
+
+
+
+
+    draw();
+    </script>
+  </body>
+  </html>

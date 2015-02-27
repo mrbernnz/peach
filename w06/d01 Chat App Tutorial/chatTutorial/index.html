@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Tutorial</title>
+	<link rel="stylesheet" href="chatTutorial.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div style="background:#0099cc; font-size:22px; text-align:center; color:#FFF; font-weight:bold; height:100px; padding-top:50px;">Responsive Drop Down Menu jQuery CSS3 Using Icon Symbol</div>
+	<div id="wrapper">
+		<div id="navbar">
+			<div class="nav">
+			 	<a href="#introPage"><h3>Introduction</h3></a>
+			</div>
+		  	<div class="nav">
+		       <a href="#conceptPage"><h3>Concepts</h3></a>
+		       <ul class="list" id="conc_list">
+		           <a href="#c1"><li class="subList">Node.js</li></a>
+		           <a href="#c2"><li class="subList">Web Sockets</li></a>
+		       </ul>
+		   </div>
+		   
+		   <div class="nav">
+		       <a href="#serverPage"><h3>Chat Server </h3></a>
+		       <ul  class="list" id="chat_s_list">
+		           <a href="#c_s1"><li class="subList">Introduction</li></a>
+		           <a href="#c_s2"><li class="subList">Required</li></a>
+		           <a href="#c_s3"><li class="subList">Connection</li></a>
+		           <a href="#c_s4"><li class="subList">Receiving Messages</li></a>
+		           <a href="#c_s5"><li class="subList">Sending Messages</li></a>
+		           <a href="#c_s6"><li class="subList">Handling Disconnections</li></a>
+		           <a href="#c_s7"><li class="subList">Conclusion </li></a>
+		       </ul>
+		   </div>
+		   <div class="nav">
+		   <a href="#clientPage"><h3>Chat Client </h3></a>
+		       <ul  class="list" id="chat_c_list">
+		           <a href="#c_c1"><li class="subList">Introduction</li></a>
+		           <a href="#c_c2"><li class="subList">Prompt for Name</li></a>
+		           <a href="#c_c3"><li class="subList">Starting Connection</li></a>
+		           <a href="#c_c4"><li class="subList">Receiving Messages</li></a>
+		           <a href="#c_c5"><li class="subList">Sending Messages</li></a>
+		           <a href="#c_c6"><li class="subList">Conclusion</li></a>
+		       </ul>
+		   </div>
+		   <div class="nav">
+		       <a href="#github"><h3> Git </h3></a>
+		       <ul  class="list" id="git_list">
+		           <a href="#git_local"><li class="subList">Creating aLocal Github</li></a>
+		           <a href="#github_repo"><li class="subList">Creating the Github Repo</li></a>
+		           <a href="#git_push"><li class="subList">Adding Files to Github</li></a>
+		           <a href="#git_best"><li class="subList"> Best Practices</li></a>
+		       </ul>
+		   </div>
+		   <div class="nav">
+		       <a href="#testingPage"><h3>Testing</h3></a>
+		       <ul class="list" id="test_list">
+		           <a href="#c_t1"><li class="subList"> Running the Server</li></a>
+		           <a href="#c_t2"><li class="subList"> Connecting to the Server </li></a>
+		           <a href="#c_t3"><li class="subList"> Debugging </li></a>
+		       </ul>
+		   </div>
+		   <div class="nav">
+		       <a href="#hostingPage"><h3>Hosting</h3></a>
+		       <ul class="list" id="host_list">
+		           <a href="#c_h1"><li class="subList">Introduction</li></a>
+		           <a href="#c_h2"><li class="subList">How to Host</li></a>
+		       </ul>
+		   </div>
+		</div>
+	
+		<div id="content">	
+			<div id="introPage">
+				<h1 id="c_intro">Introduction</h1>
+					<p>
+						In this tutorial we will be creating a simple web-based chat application with Node and Websockets. The topics that will be covered are the source code needed to build.
+						<ul>
+							<li>Client</li>
+							<li>Server</li>
+							<li>Styling (HTML/CSS)</li>
+						</ul>
+					</p>
+					<p>
+						As well as certain repositories to store your chat app in and how to have it hosted and running functionally.
+						<ul>
+							<li>Creating a Git Repo</li>
+							<li>Creating a Github Repo</li>
+							<li>Commiting your code at key points</li>
+							<li>Testing out locally</li>
+							<li>Hosting on Digital Ocean</li>
+							<li>Git clone to the correct Github Repo</li>
+							<li>Run a http-server</li>
+						</ul>
+					</p>
+			</div>
+			<div id="conceptPage">
+					<h1 id="c_concepts">Concepts You Should Know</h1>
+					<h2 id="c1">Node.js</h2>
+					<p>Node.js is a cross-platform runtime environment used to create networking application purely in JavaScript. This is what we will be using to code our chat server in. Node contains is own package manager called node package manager (or npm for short). The packages you download from here can be either executables or useable code libraries. We will primarily be using the code libraries (a specific one called ws). First, however, you must understand how to use npm. 
+					<p> The first thing you need to do is create a package.json file. To do this you need to open your terminal and cd into whatever directory that you will be using to hold your code. Type:</p>
+					
+					<pre class="prettyprint"><code>
+						$ npm init
+					</code></pre>
+	
+					<p> The following prompts are not very useful at this time, so you can literally press enter through all of them just to get your package.json configured. You'll know it worked when you have the package.json file in your diretory. The main reason why you need this file is to manage dependencies. When you download a package from npm, this is the place that will tell anyone who uses the code that the package is needed to run the program. </p>
+	
+					<h2 id="c2">Web Sockets</h2>
+	
+					<p>Web Sockets is a old internet protocol that is becoming increasinly more popular on todays web. When you browse the internet on your browser, most of the time you are using the http protols. A reqeust is sent to the server that you are trying to get information from and a response is send. The connection between you and the server is created and immediately severed one the response is sent. The flow of data is from client to server and then back to client. This way has a lot of benefits, but when your creating an application that is constantly sending/listening for messages, it becomes a big problem. Web Sockets solve this problem.</p>
+	
+					<p>The basic idea of web sockets is to not terminate that connectiong upon response, but to keep the connection until its manually disconnected. This way the client and server can constantly listen for each others messages being sent. Node contains a web sockets package that we are going to use to build our chat server. In order to install ws, cd into the same directory as used above and type: </p>
+	
+					<pre class="prettyprint"><code>
+						$ npm install ws --save
+					</code></pre>
+	
+					<p> the --save adds the ws package to the dependencies list in your package.json file. Now you should have everything you need to start your chat application </p>
+			</div>
+			<div id="serverPage">
+					<h1 id="c_server">Chat Server</h1>
+	
+					<h2 id="c_s1">Introduction</h2>
+					<p>Our chat server will be written using pure JavaScript under the Web Socket protocol. A basic chat server needs to be able do 3 things: allow clients to connect to it, receive messages being sent to it, and send the messages to clients that are currently connected. Our basic chat server will look like below at the end of this tutorial. I will explain each snippet of code in detail.</p>
+					<pre class="prettyprint"><code>
+						var WebSocketServer = require("ws").Server;
+						var server = new WebSocketServer({port: 3000});
+						var userDb = [];
+						server.on("connection", function(connection){
+						    userDb.push(connection);
+						    connection.on("message", function(msg){
+						        userDb.foreach(function(user){
+						            user.send(msg);
+						        });
+						    });
+						    conn.on("close", function(){
+								userDb.forEach(function(user){
+									if(user === conn){
+										index = userDb.indexOf(user);
+										userDb.splice(index, 1);
+									}
+								});
+						});
+					</code></pre>
+	
+					<p>First, you'll need to create the file. Since the file will be a JavaScript file, use .js as its extension (for example: server.js).</p>
+	
+					<h2 id="c_s2">Node.js Required</h2>
+	
+					<p>In order to use a package in your code, you will need to tell your file that you will require it. If you have not already, install ws into the folder that contains your chat server as described in an earlier section. This brings us to the first section of our code:<p>
+	
+					<pre class="prettyprint"><code>
+						var WebSocketServer = require("ws").Server;
+						var server = new WebSocketServer({port: 3000});
+					</code></pre>
+	
+					<p>Using the require keyword returns the package content and must be saved in a variable. In our case, the returned code is a constructor function, so we need to construct a new server. The second line does just that, we created a new web socket server object and simply called it server. The web socket contstructor takes one argument, and that is the port that the webs socket will be listening on. In our case, we are using port 3000 (which must be in object format represented by the curly braces).<p>
+	
+					<p>Now we have our project ready to go. A program with just these 2 lines of code will run, but will not be able accept any connections. For this we need to add an event listener that will listen for these connections.</p>
+	
+					<h2 id="c_s3">Connection</h2>
+					<p>We now need to specify what our program to will do when someone tries to connect to it. To do this we will create an event listener that listens for the connection event. The code is a follow:</p>
+	
+					<pre class="prettyprint"><code>
+						server.on("connection", function(conn){
+						}
+					</code></pre>
+	
+					<p>It may may seem short, but it does a lot in that one line of code. Remember that the variable <code class="variable">server</code> is the object that we created using the code from the ws package. Creating an event for this object is simply calling the method ".on" on it. The ".on" method takes two arguments: the type of event, and the function to execute when this event occurs. In this case the event is of type "connection" which means that function will fire whenever someone connects to the server. Notice that the anonymous function is being provided an argument that we called conn. This local variable will hold an object that represents the user that just connected. The server handles all incoming and outgoing messages coming from and going to the user through their conn object. This is very important to understand as we will be calling methods on this object in the next section.</p>
+	
+					<h2 id="c_s4">Receiving Messages</h2>
+					<p>Similar to listening for connections, we also need to listen for messages. To do this we must create an event on each user object that connects telling our program to listen to all incoming messages by them. The code is as follows.</p>
+					
+					<pre class="prettyprint"><code>
+						server.on("connection", function(conn){
+						    conn.on("message", function(msg){
+						    }
+						}
+					</code></pre>
+	
+					<p>Notice that the new event created is within the event listener for the connection. The <code class="variable">conn</code> variable that holds the connection object is a local variable and so is destroyed after the connection occurs.</p>
+	
+					<p>We use the ".on" method again to create an event, this time of type "message". This means that everytime the server gets a message from this conn obect, the server will execute the given function. The function has one parameter that we called <code class="variable">msg</code>. This will contain the string, or message, that the server is receving. It's important to note that the only type of data able to be sent through this connection are strings.</p>
+	
+					<h2 id="c_s5">Sending Messages</h2>
+					<p>If you looked back at the original full code I typed above, you'll notice that I skipped a few lines, primarly the ones that had to do with the <code class="variable">userDb</code> variable I created. </p>
+	
+					<pre class="prettyprint"><code>
+						var userDb = [];
+						server.on("connection", function(conn){
+						    userDb.push(connection);
+						    conn.on("message", function(msg){
+						    }
+						}
+					</code></pre>
+	
+					<p>Recall that the connection objects we are creating are not usable once the connection event ends. However, in order to send messages to each client, we need to have acess to them. To solve this problem, we created an array named userDb that is declared outside of the connection event handler. This is so we always have access to it. In the connection event, we then push the connection object created into the userDb array in order to save it.</p>
+	
+					<p>Now we need to take the incoming message we received and send it to all of the clients that have connected, which are all in the userDb array that we created in the last step. In order to send a message to a client that is connected, we need to call the ".send()" method on the connection object thats associated with that user.</p>
+	
+					<pre class="prettyprint"><code>
+						var userDb = [];
+						server.on("connection", function(connection){
+						    userDb.push(connection);
+						    connection.on("message", function(msg){
+						        userDb.foreach(function(user){
+						            user.send(msg);
+						        });
+						    });
+						});
+					</code></pre>
+	
+					<p>In order to do this we simply loop through the userDb array, which contains every connection object made so far, and call the ".send()" method on each object with the message that the server received.</p>
+	
+					<h2 id="c_s6">Handling Disconnections</h2>
+	
+					<p>The last problem we have to deal with is with disconnections. When someone disconnects from our server will still try to send them the messages as long as they are still apart of our userDb array. Luckily, there is an event called "close" that can handle this for us.</p>
+	
+					<pre class="prettyprint"><code>
+						conn.on("close", function(){
+						userDb.forEach(function(user){
+							if(user === conn){
+								index = userDb.indexOf(user);
+								userDb.splice(index, 1);
+							}
+						});
+					</code></pre>
+	
+					<p>This code is contained in the connection event. Again, we are creating an event using the ".on" method. When the connection is closed, this event executes the function given. In order to take the connection object out of the userDb array, we looped through the array and spliced the conn object that is the same as the connection object that is closing.</p>
+	
+					<h2 id="c_s7">Conclusion</h2>
+	
+					<p>This is a very basic chat server. Essentially all it does is allow clients to connect, and takes the messages the clients send and sends them out to everyone who is currently connected. it also handles disconnections. There is a lot more than you can do that is not in this tutorial. For example, most modern chat apps contain chat rooms, private messages, and emoticons. All of this can be implemented using the template above.</p> 
+			</div>
+			<div id="clientPage">
+				<h1 id="c_client">Chat Client</h1>
+				<h2 id="c_c1">Introduction</h2>
+				<p>
+					Our chat client will be written using pure JavaScript under the Web Socket protocol. Because it will be using a web browser as the interface it will be designed in HTML and CSS. A basic chat client needs to be able do 4 things: connect to the server, receive messages from the server, send a message to the server, which in turn will send to the other clients that are currently connected, and populate all messages received from the server onto the web browser. I will explain each snippet of code in detail. Our basic chat client will be below at the end of this chat client tutorial. 
+					<ul>
+						<li>
+							Bonus: Prompt created to store client name.
+						</li>
+					</ul>
+				</p>
+				<h2 id="c_c2">Prompt for Name</h2>
+				<p>I created a simple prompt to store the input value into the variable <code class="variable">name</code>. This will occur when you initially go to the chat app address.</p>
+				<pre class="prettyprint"><code>
+				var name;
+				var myFunction = function() 
+				{
+					var person = prompt("Please enter your name");
+	
+					if (person != null)
+					{
+					name = person;
+					};
+				};
+				myFunction();
+				</code></pre>
+	
+				<h2 id="c_c3">Starting Connection</h2> 
+				<p>In this example I set the variable to <code class="variable">ws</code>. This variable is set to a new instance of the constructor <code class="variable">Websocket</code> with a localhost pointing to the port <font color="red">3000</font>.
+				</p>
+				<pre class="prettyprint"><code>
+				var ws = new WebSocket("ws://localhost:3000");
+				</code></pre>	
+	
+				<h2 id="c_c4">Receiving Messages</h2>
+				<p>Create an addEventListener to <code class="variable">ws</code>, within the addEventListener the first argument <code class="variable">message</code> is listening for any incoming message from the server. The second argument is an anonymous function with a single parameter that I set to <code class="variable">message</code>.
+				</p>
+				<pre class="prettyprint"><code>
+						ws.addEventListener("message", function(message){})
+				</code></pre> 	
+				<p>
+					In this code block it would be inserted into curler brackets <font color="blue">{}</font> of the addEventListener. In this example I set the variable to <code class="variable">parsedmsg</code>. Assign it to the incoming message that will be parsed using JSON, <code class="variable">data</code> is the property of the object <code class="variable">message</code>. The property data allows you to store the incoming message from the server.
+				</p>	
+				<pre class="prettyprint"><code>
+					var parsedmsg = JSON.parse(message.data);
+				      div.appendChild(comment);
+				</code></pre>	
+				<p>
+					Set forEach to parsedmsg and insert an anonymous function as an argument. For future reference a forEach loop only takes in one argument. This will loop through every message coming from the server. Inside the anonymous function, I set a single parameter to <code class="variable">parse</code>. I assign the variable <code class="variable">newmsg</code> to the parse dot the keys of the . I assign the variable <code class="variable">div</code> to the element id <code class="tag">div</code>. I assign the variable <code class="variable">comment</code> to a created paragraph tag <code class="tag">p</code>. I insert <code class="variable">comment</code> into the <code class="tag">div</code>. 
+				</p>
+				<pre class="prettyprint"><code>
+					parsedmsg.forEach(function(parse)
+				    {
+				      var newmsg = parse.name + ": " + parse.message;
+				      var div = document.getElementById("div");
+				      var comment = document.createElement("p");
+				</code></pre>
+				<p>	
+					Adding Messages to DOM
+				</p>
+					<pre class="prettyprint"><code>
+						comment.innerHTML = newmsg;
+						console.log(newmsg);
+					});
+					</code></pre>	
+	
+				<h2 id="c_c5">Sending Message</h2>
+				<p>
+						  I create an addEventListener to the variable <code class="variable">textbox</code>. It will listen for the press of the keyboard in the first argument. In the second argument takes an anonymous function with one parameter <code class="variable">enter</code>. I set a if statement to execute only when the keycode equals 13. Keycodes are values that are assigned to individual keys on a keyboard. I assign a variable <code class="variable">msghash</code> to hash with the keys and values assigned to it. The name key takes in the value of the variable <code class="variable">name</code>. The message key takes in the value of the input, that is set to the id <code class="tag">text</code>. I assigned the variable <code class="variable">msgstrng</code> to string created variable <code class="variable">msghash</code>. If you remember from early <code class="variable">ws</code> is an instance of the constructor Websocket. Here I send <code class="variable">msgstrng</code> to the server. Then I clear the input.
+	
+				</p> 
+				<pre class="prettyprint"><code>
+					  var textbox = document.getElementById("text");
+					  textbox.addEventListener("keydown",function(enter)
+					  {
+					    if (enter.keyCode===13)
+					    {
+					      var msghash =
+					      {
+					        name:name,
+					        message:document.getElementById("text").value
+					      };
+					      var msgstrng = JSON.stringify(msghash);
+					      ws.send(msgstrng);
+					      textbox.value ="";
+					    }
+					  });
+				</code></pre>
+				<p>
+						  I create an addEventListener to the variable <code class="variable">button</code>. It will listen for the click of the button in the first argument. In the second argument takes an anonymous function without a parameter. I set a if statement to execute only when the variable <code class="variable">textbox</code> is not empty.  I assign a variable <code class="variable">msghash</code> to hash with the keys and values assigned to it. The name key takes in the value of the variable <code class="variable">name</code>. The message key takes in the value of the input, that is set to the id <code class="tag">text</code>. I assigned the variable <code class="variable">msgstrng</code> to string created variable <code class="variable">msghash</code>. If you remember from early <code class="variable">ws</code> is an instance of the constructor Websocket. Here I send <code class="variable">msgstrng</code> to the server. Then I clear the input.
+	
+				</p>
+				<pre class="prettyprint"><code>
+					var button = document.getElementById("button");
+					  button.addEventListener("click",function()
+					  {
+					    if (textbox.value!=="")
+					    {
+					      var msghash =
+					      {
+					        name:name,
+					        message:document.getElementById("text").value
+					      };
+					      var msgstrng = JSON.stringify(msghash);
+					      ws.send(msgstrng);
+					      textbox.value ="";
+					    }
+					  });
+				</code></pre>
+	
+				<h2 id="c_c6">Conclusion</h2>
+				<p>
+					This is what the code should look like when put all together.
+				</p>
+				<pre class="prettyprint"><code>
+					var name;
+				var myFunction = function() 
+				{
+				    var person = prompt("Please enter your name");
+				    
+				    if (person != null)
+				    {
+				        name = person;
+				    };
+				};
+				myFunction();
+	
+				var ws = new WebSocket("ws://localhost:3000");
+				ws.addEventListener("message", function(message)
+				{
+					var parsedmsg = JSON.parse(message.data);
+					parsedmsg.forEach(function(parse)
+				    {
+				      var newmsg = parse.name + ": " + parse.message;
+				      var comment = document.createElement("p");
+				      var div = document.getElementById("div");
+				      div.appendChild(comment);
+				      comment.innerHTML = newmsg;
+				      console.log(newmsg);
+				    })
+				    var textbox = document.getElementById("text");
+				    textbox.addEventListener("keydown",function(enter)
+					{
+					    if (enter.keyCode===13)
+					    {
+					      var msghash =
+					      {
+					        name:name,
+					        message:document.getElementById("text").value
+					      };
+					      var msgstrng = JSON.stringify(msghash);
+					      ws.send(msgstrng);
+					      textbox.value ="";
+					    }
+					});
+				  	var button = document.getElementById("button");
+				  	button.addEventListener("click",function()
+					{
+					    if (textbox.value!=="")
+					    {
+					      var msghash =
+					      {
+					        name:name,
+					        message:document.getElementById("text").value
+					      };
+					      var msgstrng = JSON.stringify(msghash);
+					      ws.send(msgstrng);
+					      textbox.value ="";
+					    }
+					});
+				});
+				</code></pre>
+			</div>
+			<div id="github">
+				<a name="github"></a>
+				<h1>Working with Git and GitHub</h1>
+				<p><b>Git</b> is a version control system that allows you to stage and store various versions of your code. This then allows you to revert to a working version of your code, or allow others to work on it with you.</p>
+				<p><b>GitHub</b> is kind of like the social media hub of Git. It is a cloud-based site that allows users to store their code, usually for others to see and use to create other applications and websites with that code.</p>
+				<p>For now, we're going to focus on the basics of creating a <b>repository</b>, or <b>repo</b>, as well as the fundamentals of creating a repo on GitHub and adding files to that repo.</p>
+				<a name="git_local"></a>
+				<h2>Creating a Local Git Repo</h2>
+				<p>The first thing you need is to create a local repo on your hard drive. You can do this by opening your terminal and navigating to your current project file, then initializing a git repo, like so:</p>
+				<pre class="prettyprint"><code>
+	  $ cd YOUR_PROJECT_FOLDER
+	  $ git init
+				</pre></code>
+				<p><i>**As you may have noticed, the command for git is simply</i> <code>git</code>.</p>
+				<p>Congrats! You now have a local git repo.</p>
+	
+				<a name="github_repo"></a>
+				<h2>Creating a Repo on GitHub</h2>
+				<p>First, you must, of course, create an account on <a href="http://github.com">GitHub</a>. If you are new to GitHub or have not yet done this, <a href="https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key">generate an SSH key</a>. (Go ahead, we'll wait!)</p>
+				<p>Now that you are officially a GitHub member, click on the plus sign in the top right corner.</p>
+				<img src="http://i.imgur.com/5cjtHQU.png">
+				<p>Now, click "new repository".</p>
+				<img src="http://i.imgur.com/sTyDjRK.png">
+				<p>You will now see a page that will ask for your repository name and an optional description. It is usually best to make the repository name the same as the name of the folder in which your project files are stored.<p>
+				<p>When you are done with this, click the big green "Create repository" button at the bottom.</p>
+				<img src="http://i.imgur.com/yG06Hpm.png">
+				<p>Hooray! Your GitHub repo has been created.</p>
+	
+				<a name="git_push"></a>
+				<h2>Adding Your Files to GitHub</h2>
+				<p>After your GitHub repo is created, you will be taken to a page that looks something like this:</p>
+				<img src="http://i.imgur.com/9Nnf7fI.png">
+				<p>While it gives you handy instructions, we suggest you follow ours. :)</p>
+				<p>Click the "SSH" button and copy that link to your clipboard.</p>
+				<p>Now, return to your terminal. In that same project folder where you initialized your repo, you will now <b>add</b> your files to be <b>staged</b>, <b>commit</b> them with a message that describes the changes (or, in this instance, that it is your first commit), and then <b>push</b> your files into the GitHub repo.</p>
+				<pre class="prettyprint"><code>
+	  $ git add .
+	  $ git commit -m "first commit"
+	  $ git remote add origin git@github.com:YOUR_GITHUB_NAME/YOUR_GITHUB_REPO.git
+	  $ git push origin master
+				</pre></code>
+				<p>Typing a period after <code>add</code> adds all of the files in the folder. The <code>-m</code> flag creates a message. This is mandatory for all commits. The message is then added in quotations, and cannot contain certain special characters.</p>
+				<p>After <code>git remote add origin</code>, replace the link in the above code with the SSH link you copied from the page.</p>
+				<p>Ta-da! Your files are now added. If all went well, upon a refresh of the page with instructions, you should see your brand new repo with the results of your new commit.</p>
+				<a name="git_best"</a>
+				<h2>Best Practices: Knowing When to Commit</h2>
+			</div>
+		</div>
+	
+			<div id="testingPage">
+					<h1 id="c_testing">Testing</h1> 
+	
+					<h2 id="c_t1">Running the server</h2>
+					<p>To run your newly created chat server, you need to open a terminal window and cd into the directory its contained in. You can then simply type:</p>
+					
+					<pre class="prettyprint"><code>
+						$ node server.js
+					</code></pre>
+	
+					<p>where server.js is whatever you called your server file. Node will give you error messages is something goes wrong, which may or may not be helpful depending on the error. This is also the standard for running any node.js program in the terminal.</p>
+	
+					<h2 id="c_t2">Connecting to the server</h2>
+	
+					<p>Next, you'll need to open your HTML client file in your browser of choice. As long as the server is running, and you connect to the port that your server is running on, the chat app should run flawlessly. </p>
+	
+					<h2 id="c_t3">Debuging</h2>
+	
+					<p>When your coding something like this, some bugs are bound to infiltrate your application. I find the easiest way to debug your program is to simply console.log as many variabls as you can in order to figure out where the problem is. This can also help determine whether the problem is on the server or the client side. </p>
+	
+					<p>Also, if you did not know already, most browsers (and certainly the most popular ones) have a JavaScript console built in. You can find these looking through menus of the browser, usually under developer tools or just tools. </p>
+			</div>
+			<div id="hostingPage">
+				<h1 id="c_hosting">Hosting</h2> 
+	
+				<h2 id="c_h1">Introduction</h2>
+	
+				<p>I have noticed that one of the least talked about topic when looking through other tutorials in the category of web programming is how to host your newly formed web application or web site. One of the easiest, and certainly cheap, ways of doing this is through Digital Ocean (DO). Getting an account through DO is easy and can be found <a>here</a>.</p>
+	
+	
+				<h2 id="c_h2">How to host</h2>
+	
+				<p>Now that you have a completed client and server and you've tested to see if it works, push your code to github. Now you need to access your DO server. Open up your terminal and type:</p>
+				<pre class="prettyprint"><code>
+					$ ssh root@[domain name]
+				</code></pre>
+	
+				<p>Insert your domain name in and don't include the brackets. You will then be prompted to enter in a password. Once you log in your will be in your root directory on the DO server. You will now need to clone your github repository onto your DO server. To do this type:</p>
+	
+				<pre class="prettyprint"><code>
+					$ git clone [domain]
+				</code></pre>
+	
+				<p>Insert the domain that the github website gives you for the repository your cloning and be sure not to include the brackets. This will clone the entire repo onto the DO server. </p>
+	
+				<p>Now that you have everything on the DO server, you need to make sure you have the ws npm package installed. Because you created the package.json file that lists it as a dependency, all you need to do is type the following:</p>
+	
+				<pre class="prettyprint"><code>
+					$ npm install
+				</code></pre>
+	
+				<p>Next you have to start the chat server the same way you did before. Type:</p>
+	
+				<pre class="prettyprint"><code>
+					$ node server.js
+				</code></pre>
+	
+				<p>With your chat server up an running, you need to allow someone access to the client html file. In order to do this you need to start an http server to dish out your html file on the DO server. Luckily, node has a built in package called http-server which will do this for you.  To do this you need a second terminal window that is also connected to your DO server. Open another terminal window and ssh into the DO server the same way you did above. cd into the directory that contains your html file. type:</p>
+	
+				<pre class="prettyprint"><code>
+					$ http-server -p 80
+				</code></pre>
+	
+				<p>You are now running your http server through port 80, the standard port that a web browser will attempt to connect to. Go to your browser and type in your DO domain name and the client html should pop up and connect to the server. You can now make sure that you can send messages to other clients by opnening up a new tab and going to the same domain name. </p>
+			</div>
+		</div>
+	</div>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

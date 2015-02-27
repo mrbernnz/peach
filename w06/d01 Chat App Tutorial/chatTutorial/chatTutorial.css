@@ -1,0 +1,102 @@
+/*the complete page*/
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#wrapper {
+	width: 100%;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2 {
+	margin-top: 30px;
+}
+
+p {
+
+}
+	
+.tag {
+	border: 1px solid #0000ff;
+}
+
+code {
+	background-color: #ebebeb;
+	padding: 3px;
+	font-family: 'Inconsolata';
+}
+
+.prettyprint, .prettyprint code {
+	max-width: 48em;
+	padding: 0px 24px;
+	background-color: #ebebeb;
+	border-color: #f0f6ba;
+	font-family: 'Inconsolata';
+}
+
+
+#introPage {
+	
+}
+
+#conceptPage {
+
+}
+
+#serverPage {
+
+}
+
+#clientPage {
+
+}
+
+
+/*navigation list*/
+.list {
+	margin: 0;
+	list-style:none;
+	display: none;
+	border: 1px solid black;
+}
+
+/*navigation sublist*/
+.subList {
+	margin: 2px;
+}
+/*navigation headers*/
+#navbar {
+	width: 175px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: navy;
+	color: white;
+	height: 100%;
+	padding: 20px;
+	border: 1px solid;
+	border-color: #FFFFFF;
+}
+
+
+#navbar ul, #navbar a {
+	color: white;
+	text-decoration: none;
+}
+
+#navbar a:hover {
+	color: gray;
+}
+/*edits content*/
+#content {
+	max-width: 800px;
+	position: 
+	right: 0;
+	overflow: auto;
+}

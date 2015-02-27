@@ -1,0 +1,27 @@
+<html>
+<body>
+
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var a = prompt("Enter a number.");
+  var x = parseInt(a);
+  var b = 0;
+
+  while (b < x) {
+    var c = Math.floor(Math.random() * (400 - 1 )+ 1);
+    var d = Math.floor(Math.random() * (400 - 1 )+ 1) -1;
+
+
+    var canvas = document.getElementById('the_canvas');
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = "red";
+    ctx.fillRect (c, d, 50, 50);
+    b++;
+  }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var numb = prompt("Enter a number?");
+  //var x = parseInt(numb);
+  var rand = 0;
+
+  while (rand <= numb) {
+    var canvas = document.getElementById('the_canvas');
+    var ctx = canvas.getContext('2d');
+
+    var c = Math.floor(Math.random() * (400 - 0 ) + 1);
+    var d = Math.floor(Math.random() * (400 - 0 ) + 1);
+    var r = Math.floor(Math.random() * (255 - 0 ) + 1);
+    var g = Math.floor(Math.random() * (255 - 0 ) + 1);
+    var b = Math.floor(Math.random() * (255 - 0 ) + 1);
+    ctx.fillStyle = "rgb("+r+", "+g+", "+b+")";
+    ctx.fillRect (c, d, 50, 50);
+    rand++
+  }
+
+  </script>
+</body>
+</html>

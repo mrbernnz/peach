@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Tutorial</title>
+</head>
+<body>
+<div id="div"></div>
+<div>
+	<input type="text" id="text"></input>
+	<button id="button">Submit</button>
+</div>
+<script type="text/javascript">
+var name;
+var myFunction = function() 
+{
+    var person = prompt("Please enter your name");
+    
+    if (person != null)
+    {
+        name = person;
+    };
+};
+myFunction();
+
+var ws = new WebSocket("ws://localhost:3000");
+ws.addEventListener("message", function(message)
+{
+	var parsedmsg = JSON.parse(message.data);
+	parsedmsg.forEach(function(parse)
+    {
+      var newmsg = parse.name + ": " + parse.message;
+      var comment = document.createElement("p");
+      var div = document.getElementById("div");
+      div.appendChild(comment);
+      comment.innerHTML = newmsg;
+      console.log(newmsg);
+    })
+    var textbox = document.getElementById('text');
+    textbox.addEventListener("keydown",function(enter)
+	{
+	    if (enter.keyCode===13)
+	    {
+	      var msghash =
+	      {
+	        name:name,
+	        message:document.getElementById("text").value
+	      };
+	      var msgstrng = JSON.stringify(msghash);
+	      ws.send(msgstrng);
+	      textbox.value ="";
+	    }
+	});
+  	var button = document.getElementById('button');
+  	button.addEventListener("click",function()
+	{
+	    if (textbox.value!=="")
+	    {
+	      var msghash =
+	      {
+	        name:name,
+	        message:document.getElementById("text").value
+	      };
+	      var msgstrng = JSON.stringify(msghash);
+	      ws.send(msgstrng);
+	      textbox.value ="";
+	    }
+	});
+});
+</script>
+</body>
+</html>

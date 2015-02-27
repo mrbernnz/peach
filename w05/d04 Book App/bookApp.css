@@ -1,0 +1,56 @@
+#bookcase-cont
+{
+  height: 390px;
+  width: 100%;
+  background-image: url('border.png');
+}
+
+#bookcase
+{
+  width: 100%;
+  height: 360px;
+  background-image: url('wood.png');
+  box-shadow: inset 0 0 60px 60px rgba(0,0,0,0.4);
+}
+
+#hidden-container
+{
+  position: absolute;
+  left: -9999px;
+}
+
+.book {
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.book .canvas-texture {
+  position: absolute;
+}
+
+.book .booktext {
+  white-space: nowrap;
+  color: #BBA217;
+  font-size: 1.25em;
+  font-family: Garamond, Serif;
+  font-weight: 900;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.2), -1px -1px 1px rgba(0,0,0,0.8);
+
+  display: block;
+  position: relative;
+  left: 50%;
+
+  @originx: 0%;
+  @originy: 50%;
+  transform-origin: @originx @originy;
+  -webkit-transform-origin: @originx @originy;
+  -moz-transform-origin: @originx @originy;
+  -o-transform-origin: @originx @originy;
+
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}

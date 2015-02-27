@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyup Turnup!</title>
+</head>
+<body>
+  <!-- Create an HTML page with a <p> tag and a text input. Add an event listener to the text input box that listens for the keyup event and updates the <p> to whatever is in the text input box. -->
+
+  <p>
+    <input type="text" id="box" value="">
+    </p>
+    <script>
+    var inpt = document.querySelector("#box").value;
+    var p1 = document.querySelector("p");
+    inpt.addEventListener("keyup",function()
+    {
+      var par = document.createElement()
+      par.innerText = add;
+
+      // var inpt = document.querySelector("box").value;
+      // document.querySelector("p1").innerHTML = inpt;
+    });
+  </script>
+</body>
+</html>
+
+
+<!--
+<script type="text/javascript">
+function changeText2()
+{
+var userInput = document.getElementById('userInput').value;
+document.getElementById('boldStuff2').innerHTML = userInput;
+}
+</script>
+<p>Welcome to the site <b id='boldStuff2'>dude</b> </p>
+<input type='text' id='userInput' value='Enter Text Here' />
+<input type='button' onclick='changeText2()' value='Change Text'/>
+-->
+
+<!--
+newParagraph.textContent = textArea.value;
+
+function addText()
+{
+  var newParagraph = document.createElement('p');
+  newParagraph.textContent = textArea.value;
+  document.getElementById("id1").appendChild(newParagraph);
+  myDiv.insertBefore(newParagraph, textArea);
+}
+
+document.getElementById("textArea").onblur = addText; -->

@@ -1,0 +1,49 @@
+
+<h1>Chat Server Implementation</h1>
+
+<h2>Introduction</h2>
+<p>Our chat server will be written using pure JavaScript under the Web Socket protocol. A basic chat server needs to be able do 3 things: allow clients to connect to it, receive messages being sent to it, and send the messages to clients that are currently connected. Our basic chat server will look like below at the end of this tutorial. I will explain each snippet of code in detail.</p>
+
+
+<p>First, you'll need to create the file. Since the file will be a JavaScript file, use .js as its extension (for example: server.js).</p>
+
+<h2>Node.js Required</h2>
+
+<p>In order to use a package in your code, you will need to tell your file that you will require it. If you have not already, install ws into the folder that contains your chat server as described in an earlier section. This brings us to the first section of our code:<p>
+
+<p>Using the require keyword returns the package content and must be saved in a variable. In our case, the returned code is a constructor function, so we need to construct a new server. The second line does just that, we created a new web socket server object and simply called it server. The web socket contstructor takes one argument, and that is the port that the webs socket will be listening on. In our case, we are using port 3000 (which must be in object format represented by the curly braces).<p>
+
+<p>Now we have our project ready to go. A program with just these 2 lines of code will run, but will not be able accept any connections. For this we need to add an event listener that will listen for these connections.</p>
+
+<h2>Connection</h2>
+<p>We now need to specify what our program to will do when someone tries to connect to it. To do this we will create an event listener that listens for the connection event. The code is a follow:</p>
+
+<p>It may may seem short, but it does a lot in that one line of code. Remember that the variable server is the object that we created using the code from the ws package. Creating an event for this object is simply calling the method ".on" on it. The ".on" method takes two arguments: the type of event, and the function to execute when this event occurs. In this case the event is of type "connection" which means that function will fire whenever someone connects to the server. Notice that the anonymous function is being provided an argument that we called conn. This local variable will hold an object that represents the user that just connected. The server handles all incoming and outgoing messages coming from and going to the user through their conn object. This is very important to understand as we will be calling methods on this object in the next section.</p>
+
+<h2>Receiving Messages</h2>
+<p>Similar to listening for connections, we also need to listen for messages. To do this we must create an event on each user object that connects telling our program to listen to all incoming messages by them. The code is as follows.<p>
+
+
+<p>Notice that the new event created is within the event listener for the connection. The conn variable that holds the connection object is a local variable and so is destroyed after the connection occurs.</p>
+
+<p>We use the ".on" method again to create an event, this time of type "message". This means that everytime the server gets a message from this conn obect, the server will execute the given function. The function has one parameter that we called msg. This will contain the string, or message, that the server is receving. It's important to note that the only type of data able to be sent through this connection are strings.</p>
+
+<h2>Sending Messages</h2>
+<p>If you looked back at the original full code I typed above, you'll notice that I skipped a few lines, primarly the ones that had to do with the userDb variable I created. </p>
+
+<p>Recall that the connection objects we are creating are not usable once the connection event ends. However, in order to send messages to each client, we need to have acess to them. To solve this problem, we created an array named userDb that is declared outside of the connection event handler. This is so we always have access to it. In the connection event, we then push the connection object created into the userDb array in order to save it.</p>
+
+<p>Now we need to take the incoming message we received and send it to all of the clients that have connected, which are all in the userDb array that we created in the last step. In order to send a message to a client that is connected, we need to call the ".send()" method on the connection object thats associated with that user.</p>
+
+
+<p>In order to do this we simply loop through the userDb array, which contains every connection object made so far, and call the ".send()" method on each object with the message that the server received.</p>
+
+<h2>Handling Disconnections</h2>
+
+<p>The last problem we have to deal with is with disconnections. When someone disconnects from our server will still try to send them the messages as long as they are still apart of our userDb array. Luckily, there is an event called "close" that can handle this for us.</p>
+
+<p>This code is contained in the connection event. Again, we are creating an event using the ".on" method. When the connection is closed, this event executes the function given. In order to take the connection object out of the userDb array, we looped through the array and spliced the conn object that is the same as the connection object that is closing.</p>
+
+<h2>Conclusion</h2>
+
+<p>This is a very basic chat server. Essentially all it does is allow clients to connect, and takes the messages the clients send and sends them out to everyone who is currently connected. it also handles disconnections. There is a lot more than you can do that is not in this tutorial. For example, most modern chat apps contain chat rooms, private messages, and emoticons. All of this can be implemented using the template above.</p> 

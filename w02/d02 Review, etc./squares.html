@@ -1,0 +1,46 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+  <script>
+    var canvas = document.getElementById('the_canvas');
+    var ctx = canvas.getContext('2d');
+var moveRight = true;
+  var handleKeyDown = function(evt) {
+    if (evt.keyCode === 37) {
+      //Left arrow was pressed
+      moveRight = false;
+    } else if (evt.keyCode === 39) {
+      //Left arrow was pressed
+      moveRight = true;
+    }
+  }
+  //don't worry about what window is,
+  //just realize that we are telling
+  //the browser to call our handleKeyDown
+  //function defined above when a user
+  //presses a key
+  window.addEventListener('keydown',handleKeyDown,true);
+  var x = 0;
+  var draw = function() {
+    //clear background
+    ctx.fillStyle = "gray";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+    if (moveRight === true) {
+      //move the square to the right
+      x = x + 1;
+    } else {
+      //move the square to the left
+      x = x - 1;
+    }
+    //make sure it doesn't go off the screen though
+    if (x > canvas.width) {
+      x %= canvas.width;
+      x = 0;
+    }
+    //draw square in new position
+    ctx.fillStyle = "red";
+    ctx.fillRect (x, 300, 100, 50);
+  }
+  setInterval(draw, 20);  </script>
+</body>
+</html>

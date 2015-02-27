@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  background-color: #393739;
+  color: #ffffff;
+}
+table, th, td{
+  border: solid black;
+}
+thead{
+  height: 50px;
+}
+a:link {
+    color: #d2f413;
+}
+
+a:visited {
+    color: #ffa200;
+}
+img {
+  height: 50%;
+}
