@@ -1,8 +1,8 @@
-##Post-WDI Resources
+## Post-WDI Resources
 
 ---
 
-###Ruby
+### Ruby
 
 Books
 
@@ -16,7 +16,7 @@ Online
 - [iwanttolearnruby](http://iwanttolearnruby.com/) - Collection of Ruby tutorials, excercises, puzzles, screencasts, blogs, podcasts, etc geared towards learning Ruby.
 - [Learn Ruby The Hard Way](http://ruby.learncodethehardway.org/) - Great free tutorial/book on Ruby
 
-###Rails
+### Rails
 
 Books
 
@@ -25,7 +25,7 @@ Books
 Online
 - [Railscasts](http://railscasts.com/) - Fantastic video series covering a multitude of topics on Rails. One of the best resources on the internet.
 
-###Javascript
+### Javascript
 
 Books
 
@@ -37,7 +37,7 @@ Online
 - [js-must-watch](https://github.com/bolshchikov/js-must-watch) - Collection of videos on Javascript organized by year. Some of the older ones featuring Douglass Crockford are particularly good.
 - [Human Javascript](http://read.humanjavascript.com/) - Online book about writing good, readable Javascript
 
-###Node
+### Node
 
 Online
 
@@ -46,17 +46,17 @@ Online
 - [Johnny-Five](https://github.com/rwaldron/johnny-five) - Open source robotics progamming framoework written in Node
 - [Node Copter](http://nodecopter.com/) - Full day event where 15 - 60 developers team up in groups of 3 and use Node to program a drone.
 
-###Backbone
+### Backbone
 
 Online
 
 - [developing backbone.js applications](http://addyosmani.github.io/backbone-fundamentals/) - A thorough and well written book on backbone.
 
 
-###Misc
+### Misc
 
 - [techtalks](http://phatak-dev.github.io/techtalks/) - Curated collection of technical talks.
 
-###Meet Ups
+### Meet Ups
 - [Brooklyn.js](http://brooklynjs.com)
 - [Manhattan.js](http://manhattanjs.com)
